@@ -1,3 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
 
+body header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 22px;
+  padding-right: 26px;
+  height: 95px;
+  border-top: 5px solid #572EE5;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box; }
+  body header .logo {
+    width: 56px;
+    height: 49px; }
+    body header .logo img {
+      width: 100%;
+      height: 100%; }
+  body header nav .menu #checkbox {
+    display: block;
+    width: 20px;
+    height: 20px;
+    opacity: 0;
+    z-index: 2;
+    position: absolute;
+    margin-right: 12px;
+    /*movimiento a cruz*/ }
+    body header nav .menu #checkbox[type="checkbox"]:checked ~ ul {
+      display: block;
+      height: 100%;
+      padding-top: 30px; }
+    body header nav .menu #checkbox:checked ~ span {
+      opacity: 1;
+      -webkit-transform: rotate(45deg) translate(2px, 1px);
+              transform: rotate(45deg) translate(2px, 1px); }
+    body header nav .menu #checkbox:checked ~ span:nth-last-child(3) {
+      opacity: 0;
+      -webkit-transform: rotate(0deg) scale(0.2, 0.2);
+              transform: rotate(0deg) scale(0.2, 0.2); }
+    body header nav .menu #checkbox:checked ~ span:nth-last-child(2) {
+      -webkit-transform: rotate(-45deg) translate(1px, 0px);
+              transform: rotate(-45deg) translate(1px, 0px); }
+  body header nav .menu .menu-span {
+    display: block;
+    width: 19.23px;
+    height: 2px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #572EE5;
+    z-index: 1;
+    -webkit-transform-origin: 3px 0px;
+            transform-origin: 3px 0px;
+    margin-right: 12px; }
+    body header nav .menu .menu-span:first-child {
+      -webkit-transform-origin: 0% 0%;
+              transform-origin: 0% 0%; }
+    body header nav .menu .menu-span:nth-last-child(2) {
+      -webkit-transform-origin: 0% 100%;
+              transform-origin: 0% 100%; }
+  body header nav .menu ul {
+    background: rgba(87, 46, 229, 0.9);
+    width: 100%;
+    height: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    text-align: center; }
+    body header nav .menu ul li {
+      margin-bottom: 13px; }
+      body header nav .menu ul li a {
+        display: block;
+        width: 100%;
+        line-height: 30px;
+        color: #ffffff;
+        font-size: 20px;
+        text-decoration: none; }
+    body header nav .menu ul .line {
+      width: 41px;
+      border: 1px solid #ffffff;
+      opacity: .5;
+      margin: 0 auto;
+      margin-bottom: 11.9px; }
+    body header nav .menu ul .list-button {
+      display: none; }
+
+@media screen and (min-width: 1440px) {
+  body header {
+    height: 90px;
+    padding: 0 156px; }
+    body header .logo {
+      width: 69px;
+      height: 59.1px; }
+    body header nav .menu #checkbox {
+      display: none; }
+    body header nav .menu .menu-span {
+      display: none; }
+    body header nav .menu ul {
+      position: unset;
+      width: 500px;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      height: auto;
+      background: none; }
+      body header nav .menu ul li {
+        margin: 0;
+        list-style: none; }
+        body header nav .menu ul li a {
+          font-size: 14px;
+          color: #572EE5;
+          line-height: 0; }
+        body header nav .menu ul li:hover {
+          border-bottom: 2px solid #5ED7C6; }
+        body header nav .menu ul li .text1 {
+          visibility: hidden; }
+          body header nav .menu ul li .text1::before {
+            display: block;
+            width: 100%;
+            line-height: 32px;
+            content: 'MODO NOCTURNO';
+            visibility: visible; }
+        body header nav .menu ul li .text2 {
+          visibility: hidden; }
+          body header nav .menu ul li .text2::before {
+            display: block;
+            width: 100%;
+            line-height: 32px;
+            content: 'FAVORITOS';
+            visibility: visible; }
+        body header nav .menu ul li .text3 {
+          visibility: hidden; }
+          body header nav .menu ul li .text3::before {
+            display: block;
+            width: 100%;
+            line-height: 32px;
+            content: 'MIS GIFOS';
+            visibility: visible; }
+      body header nav .menu ul .line {
+        display: none; }
+      body header nav .menu ul .list-button {
+        display: block;
+        width: 54px;
+        height: 54px;
+        border: 1px solid #572EE5;
+        border-radius: 50%;
+        cursor: pointer; }
+        body header nav .menu ul .list-button img {
+          margin-top: 50%;
+          -webkit-transform: translateY(-50%);
+                  transform: translateY(-50%); }
+        body header nav .menu ul .list-button:hover {
+          border-bottom: 1px solid #572EE5; } }
 
 /*# sourceMappingURL=style.css.map */

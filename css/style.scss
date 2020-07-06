@@ -1,0 +1,232 @@
+* {
+     margin: 0;
+     padding: 0;
+     border: 0;
+     box-sizing: border-box;
+}
+
+
+body {
+
+     header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding-left: 22px;
+          padding-right: 26px;
+          height: 95px;
+          border-top: 5px solid #572EE5;
+          box-sizing: content-box;
+
+          .logo {
+               width: 56px;
+               height: 49px;
+
+               img {
+                    width: 100%;
+                    height: 100%;
+               }
+          }
+
+          nav {
+
+               .menu {
+                    
+                    #checkbox {                         
+                         display: block;
+                         width: 20px;
+                         height: 20px;
+                         opacity: 0;
+                         z-index: 2;
+                         position: absolute;
+                         margin-right: 12px;
+                         &[type="checkbox"]:checked ~ ul {
+                              display: block;
+                              height: 100%;
+                              padding-top: 30px;
+                          }
+                          /*movimiento a cruz*/
+                          &:checked ~ span {
+                              opacity: 1;
+                              transform: rotate(45deg) translate(2px, 1px);
+                          }
+                          &:checked ~ span:nth-last-child(3) {
+                              opacity: 0;
+                              transform: rotate(0deg) scale(0.2, 0.2);
+                          }
+                          &:checked ~ span:nth-last-child(2) {
+                              transform: rotate(-45deg) translate(1px, 0px);
+                          }
+                    }
+
+                    .menu-span {
+                         display: block;
+                         width: 19.23px;
+                         height: 2px;
+                         margin-bottom: 5px;
+                         position: relative;
+                         background: #572EE5;
+                         z-index: 1;
+                         transform-origin: 3px 0px;
+                         margin-right: 12px;
+                         &:first-child {
+                              transform-origin: 0% 0%;
+                          }
+                         &:nth-last-child(2) {                              
+                              transform-origin: 0% 100%;
+                         }
+                    }
+
+                    ul {
+                         background: rgba(87,46,229,0.90);
+                         width: 100%;
+                         height: 0;
+                         display: flex;
+                         flex-direction: column;
+                         position: absolute;
+                         top: 100px;
+                         left: 0;
+                         text-align: center;
+
+                         li { 
+                              margin-bottom: 13px;
+
+                              a {
+                                   display: block;
+                                   width: 100%;
+                                   line-height: 30px;
+                                   color: #ffffff;
+                                   font-size: 20px;
+                                   text-decoration: none;
+                              }
+                         }
+
+                         .line {
+                              width: 41px;
+                              border: 1px solid #ffffff;
+                              opacity: .5;
+                              margin: 0 auto;
+                              margin-bottom: 11.9px;
+                         }
+
+                         
+                         .list-button {
+                              display: none;
+                         }
+                    }
+               }
+          }
+     }
+}
+
+
+
+
+
+@media screen and (min-width: 1440px) {
+     body {
+
+          header {
+               height: 90px;
+               padding: 0 156px;
+
+               .logo {
+                    width: 69px;
+                    height: 59.1px;
+               }
+
+               nav {
+
+                    .menu {
+
+                         #checkbox {
+                              display: none;
+                         }
+
+                         .menu-span {
+                              display: none;
+                         }
+
+                         ul {
+                              position: unset;
+                              width: 500px;
+                              flex-direction: row;
+                              justify-content: space-between;
+                              align-items: center;
+                              height: auto;
+                              background: none;
+
+                              li {
+                                   margin: 0;
+                                   list-style: none;
+
+                                   a {                                        
+                                        font-size: 14px;
+                                        color: #572EE5;
+                                        line-height: 0;
+                                        
+                                   }&:hover {
+                                        border-bottom: 2px solid #5ED7C6;
+                                   }
+
+                                   .text1 {                                        
+                                        visibility: hidden;     
+                                        &::before {
+                                             display: block;
+                                             width: 100%;
+                                             line-height: 32px;
+                                             content: 'MODO NOCTURNO';
+                                             visibility: visible;                   
+                                        }                                        
+                                   }
+
+                                   .text2 {
+                                        visibility: hidden;
+                                        &::before {
+                                             display: block;
+                                             width: 100%;
+                                             line-height: 32px;
+                                             content: 'FAVORITOS';
+                                             visibility: visible;
+                                        }
+                                   }
+
+                                   .text3 {
+                                        visibility: hidden;
+                                         &::before {
+                                              display: block;
+                                              width: 100%;
+                                              line-height: 32px;
+                                              content: 'MIS GIFOS';
+                                              visibility: visible;
+                                         }
+                                   }
+                              }
+
+                              .line {
+                                   display: none;
+                              }
+
+                              .list-button {
+                                   display: block;
+                                   width: 54px;
+                                   height: 54px;
+                                   border: 1px solid #572EE5;
+                                   border-radius:50%;
+                                   cursor: pointer;                       
+
+                                   img {                                    
+                                        margin-top: 50%;
+                                        transform: translateY(-50%);
+                                   }
+                                   &:hover {
+                                        border-bottom: 1px solid #572EE5;;
+                                   }
+
+                              }
+                         }
+                    }
+               }
+          }
+     }
+}
