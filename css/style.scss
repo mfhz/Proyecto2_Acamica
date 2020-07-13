@@ -1,8 +1,15 @@
+@font-face {
+     font-family: ProximaNova;
+     src: url(./fuentes/ProximaNova-Regular.otf);
+     font-family: ProximaNova-bold;
+     src: url(./fuentes/Proxima\ Nova\ Bold.otf);
+}
 * {
      margin: 0;
      padding: 0;
      border: 0;
-     box-sizing: border-box;
+     box-sizing: border-box;     
+     font-family: ProximaNova;
 }
 
 
@@ -33,7 +40,7 @@ body {
                .menu {
                     
                     #checkbox {                         
-                         display: block;
+                         display: flex;
                          width: 20px;
                          height: 20px;
                          opacity: 0;
@@ -81,7 +88,7 @@ body {
                          background: rgba(87,46,229,0.90);
                          width: 100%;
                          height: 0;
-                         display: flex;
+                         display: none;
                          flex-direction: column;
                          position: absolute;
                          top: 100px;
@@ -117,6 +124,26 @@ body {
                }
           }
      }
+
+     main {
+
+          .title {
+               text-align: center;
+               padding: 0 4em;
+
+               h1 {
+                    color: #572EE5;
+                    font-family: ProximaNova-bold;
+
+                    span {
+                         color:#4fe3c1;
+                         font-family: ProximaNova-bold;
+                    }
+               }
+          }
+     }
+
+
 }
 
 
@@ -150,6 +177,7 @@ body {
                          ul {
                               position: unset;
                               width: 500px;
+                              display: flex;
                               flex-direction: row;
                               justify-content: space-between;
                               align-items: center;
