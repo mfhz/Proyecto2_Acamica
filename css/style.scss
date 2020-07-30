@@ -1,15 +1,9 @@
-@font-face {
-     font-family: ProximaNova;
-     src: url(./fuentes/ProximaNova-Regular.otf);
-     font-family: ProximaNova-bold;
-     src: url(./fuentes/Proxima\ Nova\ Bold.otf);
-}
 * {
      margin: 0;
      padding: 0;
      border: 0;
      box-sizing: border-box;     
-     font-family: ProximaNova;
+     font-family: 'Montserrat';
 }
 
 
@@ -133,11 +127,9 @@ body {
 
                h1 {
                     color: #572EE5;
-                    font-family: ProximaNova-bold;
 
                     span {
                          color:#4fe3c1;
-                         font-family: ProximaNova-bold;
                     }
                }
           }

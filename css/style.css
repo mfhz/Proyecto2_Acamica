@@ -1,15 +1,10 @@
-@font-face {
-  font-family: ProximaNova;
-  src: url(./fuentes/ProximaNova-Regular.otf);
-  font-family: ProximaNova-bold;
-  src: url(./fuentes/Proxima\ Nova\ Bold.otf); }
 * {
   margin: 0;
   padding: 0;
   border: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: ProximaNova; }
+  font-family: 'Montserrat'; }
 
 body header {
   display: -webkit-box;
@@ -110,11 +105,9 @@ body main .title {
   text-align: center;
   padding: 0 4em; }
   body main .title h1 {
-    color: #572EE5;
-    font-family: ProximaNova-bold; }
+    color: #572EE5; }
     body main .title h1 span {
-      color: #4fe3c1;
-      font-family: ProximaNova-bold; }
+      color: #4fe3c1; }
 
 @media screen and (min-width: 1440px) {
   body header {
