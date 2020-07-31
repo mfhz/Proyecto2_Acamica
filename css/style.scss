@@ -217,6 +217,10 @@ body {
                     width: 243px;
                     height: 187px;
                     display: flex;                    
+                    
+                    .box-gifos {
+                         display: none;
+                    }
 
                     img {
                          width: 100%;
@@ -383,6 +387,76 @@ body {
                               font-size: 16px;
                               margin-top: 7px;
                               margin-bottom: 50px;
+                         }
+                    }
+               }
+
+               .gifos {
+                    height: 640px;
+                    padding-top: 67px;
+                    margin-top: 95px;
+                    overflow: unset;
+     
+                    h2 {
+                         font-size: 25px;
+
+                    }
+     
+                    p {
+                         font-size: 18px;
+
+                         br {
+                              display: none;
+                         } 
+                    }
+     
+                    .list-gifos {                   
+                         width: 100%;
+                         margin-top: 53px;
+                         width: 100%;
+                         height: 275px;
+                         align-items: center;
+                         justify-content: center;
+
+                         .box-gifos{
+                              display: block;     
+                              width: 40px;
+                              height: 40px;                         
+                              border: 1px solid #572EE5;
+                              margin-right: 22px;
+                              // margin-left: 22px;
+
+                              .left-gifos {
+                                   width: inherit;
+                                   height: inherit;                                   
+     
+                                   img {
+                                        width: 8px;
+                                        height: 14px;      
+                                        margin: 0 auto;                                  
+                                        position: relative;
+                                        top: 50%;
+                                        transform: translateY(-50%);
+                                   }
+                              }
+
+                              .rigth-gifos {
+                                   width: inherit;
+                                   height: inherit;                                   
+     
+                                   img {
+                                        width: 8px;
+                                        height: 14px;      
+                                        margin: 0 auto;                                  
+                                        position: relative;
+                                        top: 50%;
+                                        transform: translateY(-50%);
+                                   }
+                              }
+                         }
+
+                         img {
+                              width: 357px;
                          }
                     }
                }

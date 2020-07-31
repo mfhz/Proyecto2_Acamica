@@ -174,6 +174,8 @@ body main .gifos {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }
+    body main .gifos .list-gifos .box-gifos {
+      display: none; }
     body main .gifos .list-gifos img {
       width: 100%;
       height: 100%;
@@ -279,6 +281,58 @@ body main .gifos {
     body main .search .text-search p {
       font-size: 16px;
       margin-top: 7px;
-      margin-bottom: 50px; } }
+      margin-bottom: 50px; }
+    body main .gifos {
+      height: 640px;
+      padding-top: 67px;
+      margin-top: 95px;
+      overflow: unset; }
+      body main .gifos h2 {
+        font-size: 25px; }
+      body main .gifos p {
+        font-size: 18px; }
+        body main .gifos p br {
+          display: none; }
+      body main .gifos .list-gifos {
+        width: 100%;
+        margin-top: 53px;
+        width: 100%;
+        height: 275px;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center; }
+        body main .gifos .list-gifos .box-gifos {
+          display: block;
+          width: 40px;
+          height: 40px;
+          border: 1px solid #572EE5;
+          margin-right: 22px; }
+          body main .gifos .list-gifos .box-gifos .left-gifos {
+            width: inherit;
+            height: inherit; }
+            body main .gifos .list-gifos .box-gifos .left-gifos img {
+              width: 8px;
+              height: 14px;
+              margin: 0 auto;
+              position: relative;
+              top: 50%;
+              -webkit-transform: translateY(-50%);
+                      transform: translateY(-50%); }
+          body main .gifos .list-gifos .box-gifos .rigth-gifos {
+            width: inherit;
+            height: inherit; }
+            body main .gifos .list-gifos .box-gifos .rigth-gifos img {
+              width: 8px;
+              height: 14px;
+              margin: 0 auto;
+              position: relative;
+              top: 50%;
+              -webkit-transform: translateY(-50%);
+                      transform: translateY(-50%); }
+        body main .gifos .list-gifos img {
+          width: 357px; } }
 
 /*# sourceMappingURL=style.css.map */
