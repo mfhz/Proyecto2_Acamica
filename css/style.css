@@ -152,6 +152,32 @@ body main .search .text-search {
     font-size: 14px;
     margin-top: 2px;
     line-height: 25px; }
+body main .gifos {
+  background: #F3F5F8;
+  margin-top: 45px;
+  padding: 0 5.6%;
+  padding-top: 46px;
+  text-align: center;
+  height: 430px;
+  overflow: hidden; }
+  body main .gifos h2 {
+    color: #572EE5;
+    font-size: 20px;
+    margin-bottom: 7px; }
+  body main .gifos p {
+    line-height: 23px;
+    font-family: 'Roboto'; }
+  body main .gifos .list-gifos {
+    margin-top: 32px;
+    width: 243px;
+    height: 187px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+    body main .gifos .list-gifos img {
+      width: 100%;
+      height: 100%;
+      margin-right: 22px; }
 
 @media screen and (min-width: 1440px) {
   body header {
