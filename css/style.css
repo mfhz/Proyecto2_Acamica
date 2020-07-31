@@ -108,6 +108,49 @@ body main .title {
     color: #572EE5; }
     body main .title h1 span {
       color: #4fe3c1; }
+body main .search .img-search {
+  width: 273px;
+  height: 130px;
+  margin: 0 auto;
+  margin-top: 31px; }
+  body main .search .img-search img {
+    width: 100%;
+    height: 100%; }
+body main .search .inp-search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 55px;
+  padding-right: 25px;
+  width: 334px;
+  height: 50px;
+  margin: 0 auto;
+  margin-bottom: 31px;
+  border: 1px solid #572EE5;
+  border-radius: 27px; }
+  body main .search .inp-search input {
+    width: 220px;
+    height: 40px;
+    font-size: 16px;
+    font-family: 'Roboto'; }
+body main .search .text-search {
+  text-align: center;
+  padding: 0 20%; }
+  body main .search .text-search h3 {
+    color: #572EE5;
+    font-size: 16px;
+    font-weight: bold; }
+  body main .search .text-search p {
+    color: #572EE5;
+    font-size: 14px;
+    margin-top: 2px;
+    line-height: 25px; }
 
 @media screen and (min-width: 1440px) {
   body header {

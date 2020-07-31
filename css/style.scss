@@ -133,6 +133,63 @@ body {
                     }
                }
           }
+
+          .search {
+
+               .img-search {
+
+                    width: 273px;
+                    height: 130px;
+                    margin: 0 auto;
+                    margin-top: 31px;
+
+                    img {
+                         width: 100%;
+                         height: 100%;
+                    }
+               }
+
+               .inp-search {
+
+                    display: flex;   
+                    justify-content: space-between;
+                    align-items: center;
+                    padding-left: 55px;
+                    padding-right: 25px;    
+                    width: 334px;
+                    height: 50px;
+                    margin: 0 auto;
+                    margin-bottom: 31px;
+                    border: 1px solid #572EE5;
+                    border-radius: 27px;
+
+                    input {
+                         width: 220px;
+                         height: 40px;
+                         font-size: 16px;
+                         font-family: 'Roboto';
+                    }
+               }
+
+               .text-search {
+
+                    text-align: center;
+                    padding: 0 20%;
+
+                    h3 {                         
+                         color: #572EE5;
+                         font-size: 16px;
+                         font-weight: bold;
+                    }
+
+                    p {
+                         color: #572EE5;
+                         font-size: 14px;
+                         margin-top: 2px;
+                         line-height: 25px;
+                    }
+               }
+          }
      }
 
 
