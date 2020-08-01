@@ -506,5 +506,27 @@ body {
                     }
                }
           }
+
+          footer {
+               height: 116px;
+               flex-direction: row;  
+               padding-left: 156px;
+               padding-right: 158px;  
+
+               .text-one-footer {
+                    margin: 0;
+                    margin-right: 17px;
+               }
+
+               .social-networks {
+                    width: unset;
+                    height: 20.2px;
+               }
+
+               .text-two-footer {
+                    margin: 0;
+                    margin-left: auto;
+               }
+          }
      }
 }

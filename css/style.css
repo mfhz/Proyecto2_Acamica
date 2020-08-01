@@ -374,6 +374,23 @@ body footer {
               -webkit-transform: translateY(-50%);
                       transform: translateY(-50%); }
         body main .gifos .list-gifos img {
-          width: 357px; } }
+          width: 357px; }
+  body footer {
+    height: 116px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding-left: 156px;
+    padding-right: 158px; }
+    body footer .text-one-footer {
+      margin: 0;
+      margin-right: 17px; }
+    body footer .social-networks {
+      width: unset;
+      height: 20.2px; }
+    body footer .text-two-footer {
+      margin: 0;
+      margin-left: auto; } }
 
 /*# sourceMappingURL=style.css.map */
