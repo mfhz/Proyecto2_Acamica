@@ -25,9 +25,13 @@ body header {
   body header .logo {
     width: 56px;
     height: 49px; }
-    body header .logo img {
-      width: 100%;
-      height: 100%; }
+    body header .logo a {
+      display: block;
+      width: inherit;
+      height: inherit; }
+      body header .logo a img {
+        width: 100%;
+        height: 100%; }
   body header nav .menu #checkbox {
     display: -webkit-box;
     display: -ms-flexbox;
