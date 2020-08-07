@@ -33,4 +33,25 @@ body .interactive-search {
     margin-top: 78px;
     font-weight: 600px; }
 
+@media screen and (min-width: 1440px) {
+  body .search .text-search {
+    display: none; }
+  body .line {
+    display: none; }
+  body .interactive-search {
+    padding: 0 156px; }
+    body .interactive-search h2 {
+      line-height: 30px;
+      font-size: 35px;
+      margin-bottom: 60px; }
+    body .interactive-search .box-search {
+      grid-template-columns: 260px 260px 260px 260px;
+      grid-row-gap: 29px;
+      grid-column-gap: 28px; }
+      body .interactive-search .box-search img {
+        width: 100%;
+        height: 200px; }
+    body .interactive-search button {
+      margin-bottom: 62px; } }
+
 /*# sourceMappingURL=style3.css.map */

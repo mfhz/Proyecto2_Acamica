@@ -28,6 +28,7 @@ body main .my-gifos {
     grid-row-gap: 25px;
     grid-column-gap: 21px; }
     body main .my-gifos .card-gifos img {
+      width: 100%;
       height: 120px;
       margin-right: 21px; }
   body main .my-gifos button {
@@ -52,8 +53,7 @@ body main .my-gifos {
     body main .my-gifos h1 {
       font-size: 25px;
       line-height: 30px;
-      margin-bottom: 36px;
-      color: #572EE5; }
+      margin-bottom: 36px; }
     body main .my-gifos .card-gifos {
       grid-template-columns: 260px 260px 260px 260px;
       grid-row-gap: 29px;
@@ -63,15 +63,7 @@ body main .my-gifos {
         height: 200px;
         margin-right: 0; }
     body main .my-gifos button {
-      width: 127px;
-      height: 50px;
-      border: 1px solid #572EE5;
-      border-radius: 25px;
-      background-color: #ffffff;
-      font-size: 13px;
-      color: #572EE5;
       margin-top: 78px;
-      margin-bottom: 52px;
-      font-weight: 600px; } }
+      margin-bottom: 52px; } }
 
 /*# sourceMappingURL=style2.css.map */
