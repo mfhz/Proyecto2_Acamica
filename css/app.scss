@@ -2,95 +2,6 @@ body {
     
     main {
 
-        .gifos {
-            
-            .list-gifos {
-
-                .zoom {            
-                    width: 100vw;
-                    height: 100vh;
-                    // width: 100%;
-                    // height: 100%;
-                    padding-top: 20%;
-                    position: fixed;
-                    display: flex;
-                    flex-direction: column;
-                    /* justify-content: center; */
-                    align-items: center;
-                    /* background-color:rgba(0,0,0,0.70); */
-
-                    .close {
-                        width: 13.8px;
-                        height: 14px;
-                        align-self: flex-end;
-                        margin-bottom: 74px;
-                        margin-right: 35px;
-                    }
-
-                    .container {
-                        width: 100%;
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-between;
-
-                        .container-text {
-
-                            p {
-                                align-self: flex-start;
-                                margin-top: 14px;
-                                margin-left: 35px;
-                                font-size: 15px;
-                                &::before {
-                                    content: 'Usuario';
-                                }
-                            }
-
-                            h3 {
-                                align-self: flex-start;
-                                margin-top: 6px;
-                                margin-left: 29.5px;
-                                font-size: 16px;
-                                &::before {
-                                    content: 'Titulo 2';
-                                }
-                            }
-                        }
-
-                        .container-img {
-                            display: flex;
-                            align-items: center;
-                            margin-right: 29px;
-                            padding-top: 17px;
-
-                            .img-fav {
-                                width: 20px;
-                                height: 18px;
-                            }
-
-                            .box-img-download {
-                                width: 36px;
-                                height: 36px;
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
-                                border: 1px solid #9CAFC3;
-                                border-radius: 6px;
-                                margin-left: 29px;
-                                opacity: .5;
-
-                                .img-download {
-                                    width: 19.2px;
-                                    height: 21.1px;
-                                    opacity: .5;
-                                }
-                            }
-                        }
-                    }
-                    
-                }
-            }
-        }
-
         .caja-off {           
             // display: block;
             width: 100vw;
@@ -105,7 +16,7 @@ body {
                 // height: 100vh;
                 width: 100%;
                 height: 100%;
-                padding-top: 20%;
+                padding-top: 15%;
                 position: fixed;
                 display: flex;
                 flex-direction: column;

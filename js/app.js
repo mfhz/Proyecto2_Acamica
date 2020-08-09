@@ -5,13 +5,15 @@ let contenedor, contenedor2, contenedor3, contenedor4, contenedor5;
 let text;
 let cerrar, fav, descarga;
 
+console.log(imagen);
 
 imagen.forEach(re => {
-    re.addEventListener('click', function(ev) {
-        var altovent = window.screen.height;
-        console.log(altovent);
+    re.addEventListener('click', function(ev, index) {
+        // var altovent = window.screen.height;
+        // console.log(altovent);
+        console.log(re[0]);
         document.getElementsByTagName("html")[0].style.overflow = "hidden";
-        console.log(re.parentNode);
+        // console.log(re.parentNode);
         caja.style.height = '2000' + "px";
         caja.classList.remove('caja');
         caja.classList.add('caja-off');
