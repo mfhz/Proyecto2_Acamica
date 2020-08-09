@@ -91,4 +91,24 @@ body main .caja-off {
             height: 21.1px;
             opacity: .5; }
 
+@media screen and (min-width: 1440px) {
+  body main .caja-off .zoom {
+    padding-top: 66.4px; }
+    body main .caja-off .zoom .close {
+      width: 15.2px;
+      height: 15.2px;
+      margin-bottom: 78.4px;
+      margin-right: 278.4px; }
+    body main .caja-off .zoom .zoom-img {
+      width: 695px;
+      height: 385px; }
+    body main .caja-off .zoom .container .container-text p {
+      margin-top: 27px;
+      margin-left: 375px; }
+    body main .caja-off .zoom .container .container-text h3 {
+      margin-left: 375.5px; }
+    body main .caja-off .zoom .container .container-img {
+      margin-right: 394px;
+      padding-top: 22px; } }
+
 /*# sourceMappingURL=app.css.map */

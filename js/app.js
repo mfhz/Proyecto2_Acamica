@@ -1,5 +1,5 @@
 let caja = document.querySelector('.caja');
-let padreImg = document.querySelector('.list-gifos');
+let padreImg = document.querySelector('.box-zoom-img');
 let imagen = document.querySelectorAll('.zoom-img');
 let contenedor, contenedor2, contenedor3, contenedor4, contenedor5;
 let text;
