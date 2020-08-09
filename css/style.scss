@@ -10,6 +10,7 @@
 body {
 
      header {
+          position: relative;
           display: flex;
           justify-content: space-between;
           align-items: center;
@@ -234,6 +235,10 @@ body {
                          margin-right: 22px;
                     }
                }
+          }
+
+          .caja {
+               display: none;
           }
      }
 
