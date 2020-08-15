@@ -106,6 +106,14 @@ body {
                                    color: #ffffff;
                                    font-size: 20px;
                                    text-decoration: none;
+                                   &.active {
+                                        visibility: hidden;
+                                        margin-left: 22%;
+                                        &::before {
+                                             content: 'Modo Diurno ';
+                                             visibility: visible;
+                                        }
+                                   }
                               }
                          }
 

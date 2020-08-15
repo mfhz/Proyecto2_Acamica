@@ -5,7 +5,7 @@ let contenedor, contenedor2, contenedor3, contenedor4, contenedor5;
 let text;
 let cerrar, fav, descarga;
 
-console.log(imagen);
+// console.log(imagen);
 
 imagen.forEach(re => {
     re.addEventListener('click', function(ev, index) {
@@ -77,6 +77,21 @@ imagen.forEach(re => {
             this.parentNode.remove();
         })
         
-    })
-    
+    })    
+})
+
+
+
+
+
+
+
+
+
+// Modo Oscuro
+const btnSwitch = document.querySelector('#switch');
+
+btnSwitch.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    // document.body.style.background = 'red';
 })

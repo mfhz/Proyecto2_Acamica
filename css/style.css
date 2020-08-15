@@ -98,6 +98,12 @@ body header {
         color: #ffffff;
         font-size: 20px;
         text-decoration: none; }
+        body header nav .menu ul li a.active {
+          visibility: hidden;
+          margin-left: 22%; }
+          body header nav .menu ul li a.active::before {
+            content: 'Modo Diurno ';
+            visibility: visible; }
     body header nav .menu ul .line {
       width: 41px;
       border: 1px solid #ffffff;
