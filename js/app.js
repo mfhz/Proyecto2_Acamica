@@ -93,5 +93,5 @@ const btnSwitch = document.querySelector('#switch');
 
 btnSwitch.addEventListener('click', () => {
     document.body.classList.toggle('dark');
-    // document.body.style.background = 'red';
+    btnSwitch.classList.toggle('active');
 })

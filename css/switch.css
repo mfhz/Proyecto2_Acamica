@@ -1,3 +1,36 @@
-
+.dark {
+  background: #37383C; }
+  .dark header {
+    border-color: #000000; }
+    .dark header nav .menu span {
+      background: #ffffff; }
+    .dark header nav .menu ul {
+      background: #000000; }
+  .dark main .title h1 {
+    color: #ffffff; }
+  .dark main .search .inp-search {
+    border-color: #ffffff; }
+    .dark main .search .inp-search input {
+      background: #37383C; }
+  .dark main .search .text-search h3 {
+    color: #ffffff; }
+  .dark main .search .text-search p {
+    color: #ffffff;
+    font-weight: 300; }
+  .dark main .gifos {
+    background: #222326; }
+    .dark main .gifos h2 {
+      color: #ffffff; }
+    .dark main .gifos p {
+      color: #ffffff;
+      font-weight: 300; }
+  .dark footer {
+    border-color: #000000; }
+    .dark footer .text-one-footer {
+      color: #ffffff;
+      font-weight: 100; }
+    .dark footer .text-two-footer {
+      color: #ffffff;
+      font-weight: 100; }
 
 /*# sourceMappingURL=switch.css.map */
