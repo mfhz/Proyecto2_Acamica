@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/style2.css">
+    <link rel="stylesheet" href="./css/switch.css">
+    <link rel="stylesheet" href="./css/app.css">
     <title>Document</title>
 </head>
 <body>
@@ -21,7 +23,7 @@
                     <span class="menu-span"></span>
                     <span class="menu-span"></span>
                     <ul>
-                         <li><a class="text1" href="">Modo Nocturno</a></li>
+                         <li><a class="text1" id="switch">Modo Nocturno</a></li>
                          <div class="line"></div>
                          <li><a  class="text2" href="">Favoritos</a></li>
                          <div class="line"></div>
@@ -60,16 +62,19 @@
                          <img src="./images/button-left.svg" alt="">
                     </div>
                </div>
-               <img src="./images/cat-test.jpg" alt="">
-               <img src="./images/cat-test.jpg" alt="">
-               <img src="./images/cat-test.jpg" alt="">
+               <div class="box-zoom-img">
+                    <img class="zoom-img" src="./images/cat-test.jpg" alt="">
+                    <img class="zoom-img" src="./images/cat-test2.jpg" alt="">
+                    <img class="zoom-img" src="./images/cat-test.jpg" alt="">
+               </div>
                <div class="box-gifos">
                     <div class="rigth-gifos">
                          <img src="./images/button-right.svg" alt="">
                     </div>
                </div>
           </div>
-     </section>
+        </section>
+        <section class="caja caja-off"></section>
     </main>
     <footer>
     <p class="text-one-footer">Compartir en:</p>
@@ -86,6 +91,8 @@
     </div>
     <p class="text-two-footer">© GIFOS 2020 All Rights Reserved.</p>
     </footer>
+
+    <script src="./js/app.js"></script>
     
 </body>
 </html>
