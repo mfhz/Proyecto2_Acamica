@@ -2,10 +2,13 @@
   background: #37383C; }
   .dark header {
     border-color: #000000; }
+    .dark header nav .menu #checkbox[type="checkbox"]:checked ~ ul {
+      display: block;
+      height: 100vh;
+      padding-top: 30px;
+      background: #000000; }
     .dark header nav .menu span {
       background: #ffffff; }
-    .dark header nav .menu ul {
-      background: #000000; }
   .dark main .title h1 {
     color: #ffffff; }
   .dark main .search .inp-search {

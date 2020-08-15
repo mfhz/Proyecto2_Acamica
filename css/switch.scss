@@ -9,12 +9,18 @@
 
             .menu {
 
-                span {
-                    background: #ffffff;
+                #checkbox {
+
+                    &[type="checkbox"]:checked ~ ul {
+                        display: block;
+                        height: 100vh;
+                        padding-top: 30px;
+                        background: #000000;
+                    }
                 }
 
-                ul {
-                    background: #000000;
+                span {
+                    background: #ffffff;
                 }
             }
         }
