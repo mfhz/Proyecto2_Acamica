@@ -86,3 +86,46 @@
     }
     
 }
+
+
+@media screen and (min-width: 1440px) {
+    .dark {
+    
+        header {
+            border-color: #000000;
+            // background: #37383C;
+    
+            nav {
+    
+                .menu {
+
+                    li {
+
+                        a {
+                            color: #ffffff;
+                        }
+                    }
+
+                    .list-button {
+                        border-color: #ffffff;
+                        background: #ffffff;
+                    }
+                }
+            }
+        }
+    
+        main {
+    
+            .gifos {
+
+                .list-gifos {
+
+                    .box-gifos {
+                        border-color: #ffffff;
+                    }
+                }
+
+            }
+        }       
+    }
+}

@@ -36,4 +36,15 @@
       color: #ffffff;
       font-weight: 100; }
 
+@media screen and (min-width: 1440px) {
+  .dark header {
+    border-color: #000000; }
+    .dark header nav .menu li a {
+      color: #ffffff; }
+    .dark header nav .menu .list-button {
+      border-color: #ffffff;
+      background: #ffffff; }
+  .dark main .gifos .list-gifos .box-gifos {
+    border-color: #ffffff; } }
+
 /*# sourceMappingURL=switch.css.map */
