@@ -9,6 +9,8 @@
 body {
   -webkit-transition: .3s ease all;
   transition: .3s ease all; }
+  body.navbar {
+    overflow: hidden; }
   body header {
     position: relative;
     display: -webkit-box;
@@ -102,11 +104,11 @@ body {
           font-size: 20px;
           text-decoration: none; }
           body header nav .menu ul li a.active {
-            visibility: hidden;
-            margin-left: 22%; }
+            font-size: 0;
+            height: 30px; }
             body header nav .menu ul li a.active::before {
-              content: 'Modo Diurno ';
-              visibility: visible; }
+              content: "Modo Diurno";
+              font-size: 20px; }
       body header nav .menu ul .line {
         width: 41px;
         border: 1px solid #ffffff;

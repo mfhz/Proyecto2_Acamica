@@ -8,6 +8,9 @@
 
 
 body {
+     &.navbar {
+          overflow: hidden;
+     }
      transition: .3s ease all;
 
      header {
@@ -40,7 +43,8 @@ body {
           nav {
 
                .menu {
-                    
+
+
                     #checkbox {                         
                          display: flex;
                          width: 20px;
@@ -108,11 +112,14 @@ body {
                                    font-size: 20px;
                                    text-decoration: none;
                                    &.active {
-                                        visibility: hidden;
-                                        margin-left: 22%;
+                                        // visibility: hidden;
+                                        font-size:  0;
+                                        height: 30px;
                                         &::before {
-                                             content: 'Modo Diurno ';
-                                             visibility: visible;
+                                             content: "Modo Diurno";
+                                             // margin-left: 22%;
+                                             font-size: 20px;
+                                             // visibility: visible;
                                         }
                                    }
                               }
@@ -131,6 +138,7 @@ body {
                               display: none;
                          }
                     }
+
                }
           }
      }

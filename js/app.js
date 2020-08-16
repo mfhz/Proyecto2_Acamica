@@ -95,7 +95,7 @@ btnSwitch.addEventListener('click', () => {
     document.body.classList.toggle('dark');
     // document.body.style.background = 'red';
     btnSwitch.classList.toggle('active');
-    
+
     //Guardar el modo en LocalStorage
     if (document.body.classList.contains('dark')) {
         localStorage.setItem('dark-mode', 'true');
@@ -112,3 +112,14 @@ if (localStorage.getItem('dark-mode') === 'true') {
     document.body.classList.remove('dark');    
     btnSwitch.classList.remove('active');
 }
+
+
+
+
+
+const menuNav = document.querySelector('.menu');
+menuNav.addEventListener('click', () => {
+    // menuNav.style.overflow = 'hidden';
+    document.body.classList.toggle('navbar');
+
+})
