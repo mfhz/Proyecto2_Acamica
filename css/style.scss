@@ -239,7 +239,7 @@ body {
 
                .list-gifos {
                     margin-top: 32px;
-                    width: 243px;
+                    width: 100%;
                     height: 187px;
                     display: flex;                    
                     
@@ -249,8 +249,9 @@ body {
 
                     .box-zoom-img {
                          // width: 100vw;
-                         display: flex; 
-                         justify-content: center;
+                         display: flex;
+                         overflow-x: auto; 
+                         justify-content: start;
 
                          .zoom-img {
                               width: 243px;

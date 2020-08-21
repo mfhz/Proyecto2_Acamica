@@ -186,7 +186,7 @@ body {
       font-family: 'Roboto'; }
     body main .gifos .list-gifos {
       margin-top: 32px;
-      width: 243px;
+      width: 100%;
       height: 187px;
       display: -webkit-box;
       display: -ms-flexbox;
@@ -197,9 +197,10 @@ body {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
-        -webkit-box-pack: center;
-            -ms-flex-pack: center;
-                justify-content: center; }
+        overflow-x: auto;
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: start; }
         body main .gifos .list-gifos .box-zoom-img .zoom-img {
           width: 243px;
           height: 187px;
