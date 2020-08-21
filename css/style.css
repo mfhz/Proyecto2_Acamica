@@ -186,7 +186,7 @@ body {
       font-family: 'Roboto'; }
     body main .gifos .list-gifos {
       margin-top: 32px;
-      width: 243px;
+      width: 100%;
       height: 187px;
       display: -webkit-box;
       display: -ms-flexbox;
