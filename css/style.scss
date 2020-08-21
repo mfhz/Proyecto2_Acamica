@@ -249,8 +249,9 @@ body {
 
                     .box-zoom-img {
                          // width: 100vw;
-                         display: flex; 
-                         justify-content: center;
+                         display: flex;
+                         overflow-x: auto; 
+                         justify-content: start;
 
                          .zoom-img {
                               width: 243px;
