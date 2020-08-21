@@ -197,9 +197,10 @@ body {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
-        -webkit-box-pack: center;
-            -ms-flex-pack: center;
-                justify-content: center; }
+        overflow-x: auto;
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: start; }
         body main .gifos .list-gifos .box-zoom-img .zoom-img {
           width: 243px;
           height: 187px;
