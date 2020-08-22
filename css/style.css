@@ -254,7 +254,7 @@ body {
     height: 90px;
     padding: 0 156px; }
     body header .logo {
-      width: 69px;
+      width: 71px;
       height: 59.1px; }
     body header nav .menu #checkbox {
       display: none; }
@@ -300,7 +300,8 @@ body {
             margin-left: 0; }
             body header nav .menu ul li .text1.active::before {
               content: 'MODO DIURNO';
-              visibility: visible; }
+              visibility: visible;
+              font-size: 14px; }
         body header nav .menu ul li .text2 {
           visibility: hidden; }
           body header nav .menu ul li .text2::before {

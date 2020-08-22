@@ -328,7 +328,7 @@ body {
                padding: 0 156px;
 
                .logo {
-                    width: 69px;
+                    width: 71px;
                     height: 59.1px;
                }
 
@@ -374,7 +374,8 @@ body {
                                              width: 100%;
                                              line-height: 32px;
                                              content: 'MODO NOCTURNO';
-                                             visibility: visible;                   
+                                             visibility: visible;
+                                                              
                                         }
                                         &.active {
                                              visibility: hidden;
@@ -382,6 +383,7 @@ body {
                                              &::before {
                                                   content: 'MODO DIURNO';
                                                   visibility: visible;
+                                                  font-size: 14px;  
                                              }
                                         }                                      
                                    }
