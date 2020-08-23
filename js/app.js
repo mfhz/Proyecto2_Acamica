@@ -276,13 +276,52 @@ function obtenerApi(user) {
         })
 }
 
-
-
-
-
 function obtenerUsuario() {
     // console.log('click imagen')
     const info = document.querySelector('#busqueda').value;
     // console.log(info);
     obtenerApi(info);
+}
+
+
+
+
+
+
+
+
+
+// Mostrar Trending en pantalla principal
+document.addEventListener('DOMContentLoaded', obtenerTrending);
+const boxtrending = document.querySelector('.box-zoom-img');
+
+
+function obtenerTrending() {
+    const url = `http://api.giphy.com/v1/gifs/trending?&api_key=${api_key}&limit=20`;
+    fetch(url)
+        .then((success) => {
+            // console.log(success);
+            if (success.ok) {
+                return success.json();
+            } else {
+                throw new Error(('success') + ' no comunica con la API');
+            }
+
+        })
+        .then((data) => {
+            // console.log(data.data);
+
+            data.data.forEach((el) => {
+                console.log(el);                    
+                    const image = document.createElement('img');
+                    image.src = el.images.downsized.url;
+                    image.classList.add('zoom-img');
+                    // boxtrending.insertAdjacentElement('afterbegin', image);
+                    boxtrending.appendChild(image);
+            })
+        })
+        .catch((err) => {
+            console.log(`${err}`);
+        })
+    
 }

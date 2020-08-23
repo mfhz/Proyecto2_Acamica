@@ -409,8 +409,28 @@ body {
               top: 50%;
               -webkit-transform: translateY(-50%);
                       transform: translateY(-50%); }
-        body main .gifos .list-gifos img {
-          width: 357px; }
+        body main .gifos .list-gifos .box-gifos1 {
+          display: block;
+          width: 40px;
+          height: 40px;
+          border: 1px solid #572EE5;
+          margin-left: 25px; }
+          body main .gifos .list-gifos .box-gifos1 .rigth-gifos {
+            width: inherit;
+            height: inherit; }
+            body main .gifos .list-gifos .box-gifos1 .rigth-gifos img {
+              width: 8px;
+              height: 14px;
+              margin: 0 auto;
+              position: relative;
+              top: 50%;
+              -webkit-transform: translateY(-50%);
+                      transform: translateY(-50%); }
+        body main .gifos .list-gifos .box-zoom-img {
+          width: 1121px;
+          overflow: hidden; }
+          body main .gifos .list-gifos .box-zoom-img .zoom-img {
+            width: 357px; }
   body footer {
     height: 116px;
     -webkit-box-orient: horizontal;
