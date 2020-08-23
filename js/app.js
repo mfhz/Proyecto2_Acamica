@@ -141,6 +141,8 @@ const caja1 = document.querySelector('#box-search');
 const btn =document.querySelector('#btnSearch');
 const impresionError = document.querySelector('#error');
 const titulo = document.querySelector('#titleError');
+const tituloN = document.querySelector('#titleNoError');
+const btnMore = document.querySelector('#btnMore');
 btn.addEventListener('click', obtenerUsuario);
 const api_key = 'aSfyIm4TLkXUqhZxWhGqVaDndjyX8PBd';
 const num = 0;
@@ -182,10 +184,15 @@ function obtenerApi(user) {
                     // console.log(caja.childNodes);                        
                 }
 
-                titulo.innerText = user;
+                tituloN.classList.remove('error');
+                tituloN.innerText = user;
+
                 
                 data.data.forEach(function(el) {                
-                    // console.log(el.images.downsized.url);                    
+                    // console.log(el.images.downsized.url);          
+                    
+                    // console.log(titulo);
+                    
                     const image = document.createElement('img');
                     // const title = document.createElement('h2');
                     const boxGif = document.createElement('div');
@@ -198,10 +205,7 @@ function obtenerApi(user) {
                     boxGif.appendChild(image);
                     // boxGif.appendChild(title);
                     caja1.insertAdjacentElement('afterbegin', boxGif);
-                }); 
-
-
-                
+                });               
             }
 
         })
@@ -211,51 +215,64 @@ function obtenerApi(user) {
 
             // console.log(impresionError.childNodes);
 
-            impresionError.classList.remove('error');
+            // console.log(user);
+            tituloN.classList.add('error');
+            if (user != '') {
+                impresionError.classList.remove('error');
 
-            if (caja.childNodes.length === 0) {
-                // console.log('si está vacio');
-                // console.log(user);
-                // console.log(impresionError.children);
-                
+                console.log(caja.childNodes.length);
+                if (caja1.childNodes.length === 0) {
+                    // console.log('si está vacio');
+                    // console.log(user);
+                    // console.log(impresionError.children);
+                    
+                    
+                    // console.log(impresionError.children.length);
+                    if (impresionError.children.length === 1 || impresionError.children.length === 2 ) {
+                        
+                        const errorBox = document.createElement('div');
+                        const errorImg = document.createElement('img');
+                        const errorText = document.createElement('p');
 
-                if (impresionError.children.length === 1) {
-                    
-                    const errorBox = document.createElement('div');
-                    const errorImg = document.createElement('img');
-                    const errorText = document.createElement('p');
-
-                    
-                    
-                    titulo.innerText = user;
-                    errorImg.setAttribute('src', './icon-busqueda-sin-resultado.svg')
-                    errorText.innerText = 'Intenta con otra búsqueda.';
-                    
-                    
-                    
-                    impresionError.appendChild(titulo);
-                    impresionError.appendChild(errorImg);
-                    impresionError.appendChild(errorText);
-        
-        
-                    // image.src = el.images.downsized.url;
-                    // image.classList.add('imgGif');
+                        btnMore.classList.add('error');
+    
+                        
+                        
+                        titulo.innerText = user;
+                        errorImg.setAttribute('src', './images/icon-busqueda-sin-resultado.svg')
+                        errorText.innerText = 'Intenta con otra búsqueda.';
+                        
+                        
+                        
+                        impresionError.appendChild(titulo);
+                        impresionError.appendChild(errorImg);
+                        impresionError.appendChild(errorText);
+            
+            
+                        // image.src = el.images.downsized.url;
+                        // image.classList.add('imgGif');
+                    } else {
+                        titulo.innerText = user;
+                        impresionError.insertAdjacentElement('afterbegin', titulo);
+                    }
+    
+    
                 } else {
+                    console.log('no entra')
+                    for (let i = 0; i < 25; i++) {
+                        // console.log('SI');
+                        caja1.removeChild(caja1.firstChild);
+                                                
+                    }
                     titulo.innerText = user;
                     impresionError.insertAdjacentElement('afterbegin', titulo);
                 }
-
-
             } else {
-                console.log('no entra')
-                for (let i = 0; i < 25; i++) {
-                    // console.log('SI');
-                    caja.removeChild(caja.firstChild);
-                                            
-                }
-                titulo.innerText = user;
-                impresionError.insertAdjacentElement('afterbegin', titulo);
+                // console.log('esta vacio completamente')
+                line.classList.add('error');
+                sectionGifs.classList.add('error');
             }
+
         })
 }
 
