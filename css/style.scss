@@ -195,6 +195,10 @@ body {
                          font-family: 'Roboto';
                          outline: none;
                     }
+
+                    #btnSearch {
+                         cursor: pointer;
+                    }
                }
 
                .text-search {
@@ -328,7 +332,7 @@ body {
                padding: 0 156px;
 
                .logo {
-                    width: 69px;
+                    width: 71px;
                     height: 59.1px;
                }
 
@@ -374,7 +378,8 @@ body {
                                              width: 100%;
                                              line-height: 32px;
                                              content: 'MODO NOCTURNO';
-                                             visibility: visible;                   
+                                             visibility: visible;
+                                                              
                                         }
                                         &.active {
                                              visibility: hidden;
@@ -382,6 +387,7 @@ body {
                                              &::before {
                                                   content: 'MODO DIURNO';
                                                   visibility: visible;
+                                                  font-size: 14px;  
                                              }
                                         }                                      
                                    }
@@ -545,9 +551,37 @@ body {
                               }
                          }
 
-                         img {
-                              width: 357px;
+                         .box-gifos1{
+                              display: block;     
+                              width: 40px;
+                              height: 40px;                         
+                              border: 1px solid #572EE5;
+                              margin-left: 25px;
+
+                              .rigth-gifos {
+                                   width: inherit;
+                                   height: inherit;                                   
+     
+                                   img {
+                                        width: 8px;
+                                        height: 14px;      
+                                        margin: 0 auto;                                  
+                                        position: relative;
+                                        top: 50%;
+                                        transform: translateY(-50%);
+                                   }
+                              }
                          }
+
+                         .box-zoom-img {
+                              width: 1121px;
+                              overflow: hidden;
+
+                              .zoom-img {
+                                   width: 357px;
+                              }
+                         }
+                         
                     }
                }
           }

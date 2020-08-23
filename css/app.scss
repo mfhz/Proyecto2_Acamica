@@ -2,6 +2,70 @@ body {
     
     main {
 
+        #line {
+            width: 157px;
+            border: 1px solid #9CAFC3;
+            margin: 0 auto;
+            margin-top: 35px;
+            margin-bottom: 43px;
+            opacity: 0.5;
+        }
+    
+        .interactive-search {
+            padding: 0 21px;
+            text-align: center;
+    
+            h2 {
+                line-height: 40px;
+                font-size: 25px;
+                color: #572ee5;
+                text-align: center;
+                margin-bottom: 38px;
+            }
+    
+            .box-search {
+                display: grid;
+                grid-template-columns: 156px 156px;
+                grid-row-gap: 25px;
+                grid-column-gap: 21px;    
+                
+                div {
+                    width: inherit;
+
+                    .imgGif {
+                        width: 100%;
+                        height: 120px;
+                        // border: 1px solid;
+                    }
+                }
+            }
+
+            #error {
+                p {
+                    color: #50E3C2;
+                    margin-top: 25px;
+                }
+
+            }
+    
+            button {
+                width: 127px;
+                height: 50px;
+                border: 1px solid #572ee5;
+                border-radius: 25px;
+                font-size: 13px;
+                color: #572ee5;
+                margin: 0 auto;
+                margin-top: 78px;
+                font-weight: 600px;
+            }
+    
+        }
+
+        .error {
+            display: none;
+        }
+        // Estilos de otra seccion
         .caja-off {           
             // display: block;
             width: 100vw;
@@ -106,6 +170,51 @@ body {
     body {
     
         main {
+
+            #line {
+                margin-top: 74px;
+                margin-bottom: 83.9px;
+                width: 334px;
+            }
+        
+            .interactive-search {
+                padding: 0 21px;
+                padding: 0 156px;
+        
+                h2 {
+                    line-height: 30px;
+                    font-size: 30px;
+                    margin-bottom: 109px;
+                }
+        
+                .box-search {
+                grid-template-columns: 260px 260px 260px 260px;
+                grid-row-gap: 29px;
+                grid-column-gap: 28px; 
+                    
+                    div {
+                        // width: inherit;
+    
+                        .imgGif {
+                            width: 100%;
+                            height: 200px;
+                            // border: 1px solid;
+                        }
+                    }
+                }
+    
+                #error {
+                    p {
+                        font-size: 22px;
+                    }
+    
+                }
+        
+                button {
+                    margin-bottom: 62px;
+                }
+        
+            }
     
             .caja-off {
     
