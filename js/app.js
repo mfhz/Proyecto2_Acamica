@@ -4,9 +4,12 @@ let imagen = document.querySelectorAll('.zoom-img');
 let contenedor, contenedor2, contenedor3, contenedor4, contenedor5;
 let text;
 let cerrar, fav, descarga;
+const btnSwitch = document.querySelector('#switch');
+const menuNav = document.querySelector('.menu');
 
-// console.log(imagen);
 
+
+//Ventana Modal
 imagen.forEach(re => {
     re.addEventListener('click', function(ev, index) {
         // var altovent = window.screen.height;
@@ -82,15 +85,7 @@ imagen.forEach(re => {
 
 
 
-
-
-
-
-
-
 // Modo Oscuro
-const btnSwitch = document.querySelector('#switch');
-
 btnSwitch.addEventListener('click', () => {
     document.body.classList.toggle('dark');
     // document.body.style.background = 'red';
@@ -104,7 +99,7 @@ btnSwitch.addEventListener('click', () => {
     }
 })
 
-// Se obtiene el modo actual
+/// Se obtiene el modo actual desde localStorage
 if (localStorage.getItem('dark-mode') === 'true') {
     document.body.classList.add('dark');
     btnSwitch.classList.add('active');
@@ -115,11 +110,18 @@ if (localStorage.getItem('dark-mode') === 'true') {
 
 
 
-
-
-const menuNav = document.querySelector('.menu');
+// Bloqueando scroll al entrar en el menu  hamburguesa.
 menuNav.addEventListener('click', () => {
     // menuNav.style.overflow = 'hidden';
     document.body.classList.toggle('navbar');
 
 })
+
+
+
+// Imprimiendo Gifs si se encuentra en la busqueda principal del proyecto
+const obtenerInput = document.querySelector('#busqueda');
+const imprimirBusqueda = document.querySelector('#btnSearch');
+imprimirBusqueda.addEventListener('click', ev => {
+    console.log('CLICK')
+});
