@@ -195,6 +195,8 @@ body {
       display: flex; }
       body main .gifos .list-gifos .box-gifos {
         display: none; }
+      body main .gifos .list-gifos .box-gifos1 {
+        display: none; }
       body main .gifos .list-gifos .box-zoom-img {
         display: -webkit-box;
         display: -ms-flexbox;

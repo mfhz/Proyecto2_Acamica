@@ -170,6 +170,51 @@ body {
     body {
     
         main {
+
+            #line {
+                margin-top: 74px;
+                margin-bottom: 83.9px;
+                width: 334px;
+            }
+        
+            .interactive-search {
+                padding: 0 21px;
+                padding: 0 156px;
+        
+                h2 {
+                    line-height: 30px;
+                    font-size: 30px;
+                    margin-bottom: 109px;
+                }
+        
+                .box-search {
+                grid-template-columns: 260px 260px 260px 260px;
+                grid-row-gap: 29px;
+                grid-column-gap: 28px; 
+                    
+                    div {
+                        // width: inherit;
+    
+                        .imgGif {
+                            width: 100%;
+                            height: 200px;
+                            // border: 1px solid;
+                        }
+                    }
+                }
+    
+                #error {
+                    p {
+                        font-size: 22px;
+                    }
+    
+                }
+        
+                button {
+                    margin-bottom: 62px;
+                }
+        
+            }
     
             .caja-off {
     

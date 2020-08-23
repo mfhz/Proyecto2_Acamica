@@ -12,6 +12,7 @@ const menuNav = document.querySelector('.menu');
 //Ventana Modal
 imagen.forEach(re => {
     re.addEventListener('click', function(ev, index) {
+        // console.log('click')
         // var altovent = window.screen.height;
         // console.log(altovent);
         console.log(re[0]);
@@ -312,7 +313,7 @@ function obtenerTrending() {
             // console.log(data.data);
 
             data.data.forEach((el) => {
-                console.log(el);                    
+                // console.log(el);                    
                     const image = document.createElement('img');
                     image.src = el.images.downsized.url;
                     image.classList.add('zoom-img');
