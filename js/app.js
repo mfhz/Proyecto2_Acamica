@@ -7,7 +7,16 @@ let cerrar, fav, descarga;
 const btnSwitch = document.querySelector('#switch');
 const menuNav = document.querySelector('.menu');
 const boxtrending = document.querySelector('.box-zoom-img');
+const  span = document.querySelector('#checkbox');
 
+
+
+// Bloqueando scroll al entrar en el menu  hamburguesa.
+menuNav.addEventListener('click', () => {
+    
+    menuNav.style.overflow = 'hidden';
+    document.body.classList.toggle('navbar');
+})
 
 
 
@@ -15,8 +24,11 @@ const boxtrending = document.querySelector('.box-zoom-img');
 
 
 // Modo Oscuro
-btnSwitch.addEventListener('click', () => {
+btnSwitch.addEventListener('click', (e) => {
+    e.preventDefault();
     document.body.classList.toggle('dark');
+    document.body.classList.toggle('navbar');
+    // document.body.classList.add('navbar');
     // document.body.style.background = 'red';
     btnSwitch.classList.toggle('active');
 
@@ -32,6 +44,7 @@ btnSwitch.addEventListener('click', () => {
 if (localStorage.getItem('dark-mode') === 'true') {
     document.body.classList.add('dark');
     btnSwitch.classList.add('active');
+
 } else {
     document.body.classList.remove('dark');    
     btnSwitch.classList.remove('active');
@@ -39,12 +52,7 @@ if (localStorage.getItem('dark-mode') === 'true') {
 
 
 
-// Bloqueando scroll al entrar en el menu  hamburguesa.
-menuNav.addEventListener('click', () => {
-    // menuNav.style.overflow = 'hidden';
-    document.body.classList.toggle('navbar');
 
-})
 
 
 
