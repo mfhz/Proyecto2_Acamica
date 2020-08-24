@@ -306,7 +306,7 @@ function insertarImg(infImg) {
     console.log(infImg.imagen);
     document.getElementsByTagName("html")[0].style.overflow = "hidden";
     // console.log(re.parentNode);
-    caja.style.height = '2000' + "px";
+    caja.style.height = '5000' + "px";
     caja.classList.remove('caja');
     caja.classList.add('caja-off');
     contenedor = document.createElement('div');

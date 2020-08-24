@@ -18,7 +18,10 @@ body main .interactive-search {
     display: grid;
     grid-template-columns: 156px 156px;
     grid-row-gap: 25px;
-    grid-column-gap: 21px; }
+    grid-column-gap: 21px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
     body main .interactive-search .box-search div {
       width: inherit; }
       body main .interactive-search .box-search div .imgGif {
