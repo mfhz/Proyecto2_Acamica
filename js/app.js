@@ -293,7 +293,7 @@ function ventanaModal(e) {
 
 
 function leerDatosCurso(curso) {
-    console.log(curso)
+    // console.log(curso)
     const infoImg = {
         imagen: curso.querySelector('.zoom-img').src
     };
@@ -303,7 +303,7 @@ function leerDatosCurso(curso) {
 }
 
 function insertarImg(infImg) {
-    console.log(infImg.imagen);
+    // console.log(infImg.imagen);
     document.getElementsByTagName("html")[0].style.overflow = "hidden";
     // console.log(re.parentNode);
     caja.style.height = '5000' + "px";
