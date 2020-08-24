@@ -359,7 +359,7 @@ function insertarImg(infImg) {
         // // console.log(this.parentNode);
         // console.log(re);
         // console.log(re.parentNode);
-        document.getElementsByTagName("html")[0].style.overflow = "auto";
+        document.getElementsByTagName("html")[0].style.overflow = "unset";
         caja.classList.remove('caja-off');
         caja.classList.add('caja');
         // re.style.pointerEvents = 'auto';

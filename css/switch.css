@@ -24,6 +24,10 @@
     .dark main .gifos p {
       color: #ffffff;
       font-weight: 300; }
+  .dark main .caja-off {
+    background-color: #37383C; }
+    .dark main .caja-off .container-text {
+      color: #ffffff; }
   .dark footer {
     border-color: #000000; }
     .dark footer .text-one-footer {
