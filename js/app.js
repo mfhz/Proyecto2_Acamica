@@ -23,13 +23,10 @@ menuNav.addEventListener('click', () => {
 })
 
 
-
-
-
-
 // Modo Oscuro
 btnSwitch.addEventListener('click', (e) => {
-    e.preventDefault();
+    // e.preventDefault();
+    console.log('CLICK');
     document.body.classList.toggle('dark');
     document.body.classList.toggle('navbar');
     // document.body.classList.add('navbar');
@@ -70,6 +67,8 @@ const btnMore = document.querySelector('#btnMore');
 btn.addEventListener('click', obtenerUsuario);
 const api_key = 'aSfyIm4TLkXUqhZxWhGqVaDndjyX8PBd';
 const num = 0;
+let totalGifs = [];
+let gifParcial = [];
 function obtenerApi(user) {
     const url = `http://api.giphy.com/v1/gifs/search?q=${user}&api_key=${api_key}&limit=25`;
 
@@ -108,28 +107,6 @@ function obtenerApi(user) {
                     // console.log(caja.childNodes);                        
                 }
 
-                tituloN.classList.remove('error');
-                tituloN.innerText = user;
-
-                
-                data.data.forEach(function(el) {                
-                    // console.log(el.images.downsized.url);          
-                    
-                    // console.log(titulo);
-                    
-                    const image = document.createElement('img');
-                    // const title = document.createElement('h2');
-                    const boxGif = document.createElement('div');
-
-                    image.src = el.images.downsized.url;
-                    image.classList.add('imgGif');
-                    
-                    // title.textContent = el.title;
-                    
-                    boxGif.appendChild(image);
-                    // boxGif.appendChild(title);
-                    caja1.insertAdjacentElement('afterbegin', boxGif);
-                });               
             }
 
         })
@@ -199,6 +176,7 @@ function obtenerApi(user) {
 
         })
 }
+
 
 function obtenerUsuario() {
     // console.log('click imagen')

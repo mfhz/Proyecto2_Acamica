@@ -6,6 +6,8 @@
       background: #000000; }
     .dark header nav .menu span {
       background: #ffffff; }
+    .dark header nav .menu ul .list-button svg {
+      color: #000000; }
   .dark main .title h1 {
     color: #ffffff; }
   .dark main .search .inp-search {

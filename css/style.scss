@@ -11,7 +11,7 @@ body {
      &.navbar {
           overflow: hidden;
      }
-     transition: .3s ease all;
+     transition: .5s ease all;
 
      header {
           position: relative;
@@ -135,7 +135,7 @@ body {
 
                          
                          .list-button {
-                              display: none;
+                              display: none;                              
                          }
                     }
 
@@ -429,9 +429,10 @@ body {
                                    height: 54px;
                                    border: 1px solid #572EE5;
                                    border-radius:50%;
-                                   cursor: pointer;                       
+                                   cursor: pointer;
 
-                                   img {                                    
+                                   svg {  
+                                        color: #572EE5;                                  
                                         margin-top: 50%;
                                         transform: translateY(-50%);
                                    }
