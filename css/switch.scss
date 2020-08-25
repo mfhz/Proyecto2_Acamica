@@ -19,6 +19,16 @@
                 span {
                     background: #ffffff;
                 }
+
+                ul {
+
+                    .list-button {
+                        
+                        svg {
+                            color: #000000;
+                        }
+                    }
+                }
             }
         }
     }
@@ -54,6 +64,13 @@
             }
         }
 
+        .my-gifos {
+            
+            h1 {
+                color: #ffffff;
+            }
+        }
+
         .gifos {
             background: #222326;
 
@@ -64,6 +81,14 @@
             p {
                 color: #ffffff;
                 font-weight: 300;
+            }
+        }
+
+        .caja-off {
+            background-color: #37383C;
+
+            .container-text {
+                color: #ffffff;
             }
         }
     }

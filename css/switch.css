@@ -6,6 +6,8 @@
       background: #000000; }
     .dark header nav .menu span {
       background: #ffffff; }
+    .dark header nav .menu ul .list-button svg {
+      color: #000000; }
   .dark main .title h1 {
     color: #ffffff; }
   .dark main .search .inp-search {
@@ -17,6 +19,8 @@
   .dark main .search .text-search p {
     color: #ffffff;
     font-weight: 300; }
+  .dark main .my-gifos h1 {
+    color: #ffffff; }
   .dark main .gifos {
     background: #222326; }
     .dark main .gifos h2 {
@@ -24,6 +28,10 @@
     .dark main .gifos p {
       color: #ffffff;
       font-weight: 300; }
+  .dark main .caja-off {
+    background-color: #37383C; }
+    .dark main .caja-off .container-text {
+      color: #ffffff; }
   .dark footer {
     border-color: #000000; }
     .dark footer .text-one-footer {

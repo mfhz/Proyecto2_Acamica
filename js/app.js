@@ -6,88 +6,30 @@ let text;
 let cerrar, fav, descarga;
 const btnSwitch = document.querySelector('#switch');
 const menuNav = document.querySelector('.menu');
+const boxtrending = document.querySelector('.box-zoom-img');
+const boxFavoritos = document.querySelector('.card-favoritos');
+const  span = document.querySelector('#checkbox');
 
 
-
-//Ventana Modal
-imagen.forEach(re => {
-    re.addEventListener('click', function(ev, index) {
-        // var altovent = window.screen.height;
-        // console.log(altovent);
-        console.log(re[0]);
-        document.getElementsByTagName("html")[0].style.overflow = "hidden";
-        // console.log(re.parentNode);
-        caja.style.height = '2000' + "px";
-        caja.classList.remove('caja');
-        caja.classList.add('caja-off');
-        contenedor = document.createElement('div');
-        caja.appendChild(contenedor);
-        contenedor.classList.add('zoom');
-        cerrar = document.createElement('img');
-        cerrar.setAttribute('src', './images/close.svg');
-        cerrar.setAttribute('class', 'close');
-        contenedor.appendChild(cerrar);
-        contenedor.appendChild(re);
-        contenedor5 = document.createElement('div');
-        contenedor5.classList.add('container');
-        contenedor.appendChild(contenedor5);
-        contenedor3 = document.createElement('div');
-        contenedor3.classList.add('container-text');
-        contenedor5.appendChild(contenedor3)
-        text = document.createElement('p')
-        contenedor3.appendChild(text);
-        text = document.createElement('h3')
-        contenedor3.appendChild(text);
-        contenedor2 = document.createElement('div');
-        contenedor2.classList.add('container-img');
-        contenedor5.appendChild(contenedor2);
-        fav = document.createElement('img');
-        fav.setAttribute('src', './images/icon-fav-active.svg');
-        fav.setAttribute('class', 'img-fav');
-        contenedor2.appendChild(fav);
-        contenedor4 = document.createElement('div');
-        contenedor4.classList.add('box-img-download');
-        contenedor2.appendChild(contenedor4);
-        descarga = document.createElement('img');
-        descarga.setAttribute('src', './images/icon-download.svg');
-        descarga.setAttribute('class', 'img-download');
-        contenedor4.appendChild(descarga);
+// Al cargar el documento mostrar el localStorage
+document.addEventListener('DOMContentLoaded', leerLocalStorage);
 
 
-
-        re.style.pointerEvents = "none";
-        
-
-        
-        
-        
-        
-
-        cerrar.addEventListener('click', function(ev){
-            ev.preventDefault();
-            // console.log('cerrar');
-            // console.log(this.parentNode.parentNode);
-            // // console.log(this.parentNode);
-            // console.log(re);
-            // console.log(re.parentNode);
-            document.getElementsByTagName("html")[0].style.overflow = "auto";
-            caja.classList.remove('caja-off');
-            caja.classList.add('caja');
-            re.style.pointerEvents = 'auto';
-            padreImg.appendChild(re);
-            // console.log(re);
-            // console.log(re.parentNode);                    
-            this.parentNode.remove();
-        })
-        
-    })    
+// Bloqueando scroll al entrar en el menu  hamburguesa.
+menuNav.addEventListener('click', () => {
+    
+    menuNav.style.overflow = 'hidden';
+    document.body.classList.toggle('navbar');
 })
 
 
-
 // Modo Oscuro
-btnSwitch.addEventListener('click', () => {
+btnSwitch.addEventListener('click', (e) => {
+    // e.preventDefault();
+    console.log('CLICK');
     document.body.classList.toggle('dark');
+    document.body.classList.toggle('navbar');
+    // document.body.classList.add('navbar');
     // document.body.style.background = 'red';
     btnSwitch.classList.toggle('active');
 
@@ -103,32 +45,11 @@ btnSwitch.addEventListener('click', () => {
 if (localStorage.getItem('dark-mode') === 'true') {
     document.body.classList.add('dark');
     btnSwitch.classList.add('active');
+
 } else {
     document.body.classList.remove('dark');    
     btnSwitch.classList.remove('active');
 }
-
-
-
-// Bloqueando scroll al entrar en el menu  hamburguesa.
-menuNav.addEventListener('click', () => {
-    // menuNav.style.overflow = 'hidden';
-    document.body.classList.toggle('navbar');
-
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -146,6 +67,8 @@ const btnMore = document.querySelector('#btnMore');
 btn.addEventListener('click', obtenerUsuario);
 const api_key = 'aSfyIm4TLkXUqhZxWhGqVaDndjyX8PBd';
 const num = 0;
+let totalGifs = [];
+let gifParcial = [];
 function obtenerApi(user) {
     const url = `http://api.giphy.com/v1/gifs/search?q=${user}&api_key=${api_key}&limit=25`;
 
@@ -187,8 +110,14 @@ function obtenerApi(user) {
                 tituloN.classList.remove('error');
                 tituloN.innerText = user;
 
-                
-                data.data.forEach(function(el) {                
+                totalGifs = data.data;
+                // console.log(totalGifs);
+                let posicionStart = 0;
+                let positionEnd = 8;
+                gifParcial = totalGifs.slice(posicionStart , positionEnd);
+                // console.log(gifParcial);
+
+                gifParcial.forEach(function(el) {                
                     // console.log(el.images.downsized.url);          
                     
                     // console.log(titulo);
@@ -205,7 +134,46 @@ function obtenerApi(user) {
                     boxGif.appendChild(image);
                     // boxGif.appendChild(title);
                     caja1.insertAdjacentElement('afterbegin', boxGif);
-                });               
+                });   
+                
+                btnMore.addEventListener('click', (ev)=> {                    
+                    // console.log('click');
+                    // console.log(posicionStart);
+                    // console.log(positionEnd);
+                    console.log(totalGifs.length);
+                    // if (positionEnd + 8 <= totalGifs.length) {
+                        if (posicionStart + 8  <= totalGifs.length || positionEnd + 8 <= totalGifs.length) {
+                        console.log('entra');
+                        // console.log(posicionStart + 8);
+                        console.log(positionEnd + 8);
+                        gifParcial = totalGifs.slice(posicionStart + 8, positionEnd + 8 );
+                        positionEnd += 8;
+                        posicionStart += 8;
+
+                        gifParcial.forEach(function(el) {                
+                            // console.log(el.images.downsized.url);          
+                            
+                            // console.log(titulo);
+                            
+                            const image = document.createElement('img');
+                            // const title = document.createElement('h2');
+                            const boxGif = document.createElement('div');
+        
+                            image.src = el.images.downsized.url;
+                            image.classList.add('imgGif');
+                            
+                            // title.textContent = el.title;
+                            
+                            boxGif.appendChild(image);
+                            // boxGif.appendChild(title);
+                            caja1.appendChild(boxGif);
+                        });   
+                    } else {
+                        console.log(totalGifs);
+                    }
+
+                })
+
             }
 
         })
@@ -276,6 +244,7 @@ function obtenerApi(user) {
         })
 }
 
+
 function obtenerUsuario() {
     // console.log('click imagen')
     const info = document.querySelector('#busqueda').value;
@@ -285,15 +254,9 @@ function obtenerUsuario() {
 
 
 
-
-
-
-
-
-
 // Mostrar Trending en pantalla principal
 document.addEventListener('DOMContentLoaded', obtenerTrending);
-const boxtrending = document.querySelector('.box-zoom-img');
+
 
 
 function obtenerTrending() {
@@ -312,12 +275,15 @@ function obtenerTrending() {
             // console.log(data.data);
 
             data.data.forEach((el) => {
-                console.log(el);                    
-                    const image = document.createElement('img');
-                    image.src = el.images.downsized.url;
-                    image.classList.add('zoom-img');
-                    // boxtrending.insertAdjacentElement('afterbegin', image);
-                    boxtrending.appendChild(image);
+                // console.log(el);                                    
+                const imageBox = document.createElement('div');
+                boxtrending.appendChild(imageBox);
+                const image = document.createElement('img');
+                image.src = el.images.downsized.url;
+                image.classList.add('zoom-img');
+                imageBox.appendChild(image);
+                // imageBox.appendChild(imagen)
+                // boxtrending.insertAdjacentElement('afterbegin', image);
             })
         })
         .catch((err) => {
@@ -325,3 +291,182 @@ function obtenerTrending() {
         })
     
 }
+
+
+//Ventana Modal
+boxtrending.addEventListener('click', ventanaModal);
+
+function ventanaModal(e) {
+    // console.log(e);
+    e.preventDefault();
+
+    // console.log(e.target.classList);
+    if (e.target.classList.contains('zoom-img')) {
+        const test = e.target.parentElement;
+        // console.log(test);
+        leerDatos(test);
+        // re.style.pointerEvents = "none";
+    }
+
+    
+
+
+}
+
+
+function leerDatos(curso) {
+    // console.log(curso)
+    const infoImg = {
+        imagen: curso.querySelector('.zoom-img').src
+    };
+
+    insertarImg(infoImg);
+    
+}
+
+function insertarImg(infImg) {
+    // console.log(infImg);
+    // console.log(infImg.imagen);
+    document.getElementsByTagName("html")[0].style.overflow = "hidden";
+    // console.log(re.parentNode);
+    caja.style.height = '5000' + "px";
+    caja.classList.remove('caja');
+    caja.classList.add('caja-off');
+    contenedor = document.createElement('div');
+    caja.appendChild(contenedor);
+    contenedor.classList.add('zoom');
+    cerrar = document.createElement('img');
+    cerrar.setAttribute('src', './images/close.svg');
+    cerrar.setAttribute('class', 'close');
+    contenedor.appendChild(cerrar);
+
+    let copyImgGif = document.createElement('div');
+    copyImgGif.innerHTML = `
+        <img src="${infImg.imagen}" class="zoom-img">
+    `
+    contenedor.appendChild(copyImgGif);
+
+
+
+
+    contenedor5 = document.createElement('div');
+    contenedor5.classList.add('container');
+    contenedor.appendChild(contenedor5);
+    contenedor3 = document.createElement('div');
+    contenedor3.classList.add('container-text');
+    contenedor5.appendChild(contenedor3)
+    text = document.createElement('p')
+    contenedor3.appendChild(text);
+    text = document.createElement('h3')
+    contenedor3.appendChild(text);
+    contenedor2 = document.createElement('div');
+    contenedor2.classList.add('container-img');
+    contenedor5.appendChild(contenedor2);
+    fav = document.createElement('img');
+    fav.setAttribute('src', './images/icon-fav-active.svg');
+    fav.setAttribute('class', 'img-fav');
+    contenedor2.appendChild(fav);
+    contenedor4 = document.createElement('div');
+    contenedor4.classList.add('box-img-download');
+    contenedor2.appendChild(contenedor4);
+    descarga = document.createElement('img');
+    descarga.setAttribute('src', './images/icon-download.svg');
+    descarga.setAttribute('class', 'img-download');
+    contenedor4.appendChild(descarga);
+
+    cerrar.addEventListener('click', function(ev){
+        // console.log(contenedor);
+        ev.preventDefault();
+        // console.log('cerrar');
+        // console.log(this.parentNode.parentNode);
+        // // console.log(this.parentNode);
+        // console.log(re);
+        // console.log(re.parentNode);
+        document.getElementsByTagName("html")[0].style.overflow = "unset";
+        caja.classList.remove('caja-off');
+        caja.classList.add('caja');
+        // re.style.pointerEvents = 'auto';
+        // padreImg.appendChild(re);
+        // console.log(re);
+        // console.log(re.parentNode);                    
+        this.parentNode.remove();
+        // contenedor.classList.add('error');
+        
+    })
+
+
+    // Seccion Favoritos
+    
+
+    fav.addEventListener('click', imprimirFav);
+
+    function imprimirFav(e) {
+        let element = document.createElement('div');
+        element.style.height = '120px'
+        let elementImg = document.createElement('img');
+        // console.log(copyImgGif.firstElementChild); 
+        elementImg.src = copyImgGif.firstElementChild.getAttribute('src');
+        element.appendChild(elementImg);
+        boxFavoritos.appendChild(element);
+
+        // console.log(elementImg);
+        guardarCursoLocalStorage(infImg);
+
+    }
+
+
+}
+
+
+//Almacena un favorito en LocalStorage
+function guardarCursoLocalStorage(ls) {
+    // console.log(ls);
+    let favoritos;
+    // Toma el valor de una arreglo con datos de LS o vacio
+    favoritos = obtenerCursosLocalStorage();
+    // console.log(favoritos);
+
+    // El git favorito seleccionado se agrega al arreglo (LS)
+    // console.log(typeof(favoritos));
+    // console.log(favoritos);
+    favoritos.push(ls);
+
+    localStorage.setItem('fav', JSON.stringify(favoritos));
+}
+
+function obtenerCursosLocalStorage() {
+    let favoritosLS;
+
+    //Comprobamos si hay algo en localStorage
+    if (localStorage.getItem('fav') === null) {
+        favoritosLS = [];
+    } else {
+        favoritosLS = JSON.parse(localStorage.getItem('fav'));
+    }
+    return favoritosLS;
+}
+
+
+// Imprime los gif seleccionados del local storage en el pagina de favoritos
+function leerLocalStorage() {
+    let favoritosLS;
+
+    favoritosLS = obtenerCursosLocalStorage();
+    // console.log(favoritosLS);
+
+    favoritosLS.forEach(function(infoFav){
+        // console.log(infoFav.imagen);
+        // Construir el template
+        const box = document.createElement('div');
+        box.innerHTML = `
+            <img src="${infoFav.imagen}">        
+        `;
+        boxFavoritos.appendChild(box);
+    })
+
+}
+
+
+
+
+

@@ -27,7 +27,8 @@ body {
                 display: grid;
                 grid-template-columns: 156px 156px;
                 grid-row-gap: 25px;
-                grid-column-gap: 21px;    
+                grid-column-gap: 21px;                
+                justify-content: center;   
                 
                 div {
                     width: inherit;
@@ -69,7 +70,6 @@ body {
         .caja-off {           
             // display: block;
             width: 100vw;
-            // height: 100vh;
             position: absolute;
             top: 0;
             z-index: 10;
@@ -190,7 +190,8 @@ body {
                 .box-search {
                 grid-template-columns: 260px 260px 260px 260px;
                 grid-row-gap: 29px;
-                grid-column-gap: 28px; 
+                grid-column-gap: 28px;
+
                     
                     div {
                         // width: inherit;

@@ -7,8 +7,8 @@
   font-family: 'Montserrat'; }
 
 body {
-  -webkit-transition: .3s ease all;
-  transition: .3s ease all; }
+  -webkit-transition: .5s ease all;
+  transition: .5s ease all; }
   body.navbar {
     overflow: hidden; }
   body header {
@@ -195,6 +195,8 @@ body {
       display: flex; }
       body main .gifos .list-gifos .box-gifos {
         display: none; }
+      body main .gifos .list-gifos .box-gifos1 {
+        display: none; }
       body main .gifos .list-gifos .box-zoom-img {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -329,7 +331,8 @@ body {
         border: 1px solid #572EE5;
         border-radius: 50%;
         cursor: pointer; }
-        body header nav .menu ul .list-button img {
+        body header nav .menu ul .list-button svg {
+          color: #572EE5;
           margin-top: 50%;
           -webkit-transform: translateY(-50%);
                   transform: translateY(-50%); }
