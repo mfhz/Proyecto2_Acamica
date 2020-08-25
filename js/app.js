@@ -7,8 +7,12 @@ let cerrar, fav, descarga;
 const btnSwitch = document.querySelector('#switch');
 const menuNav = document.querySelector('.menu');
 const boxtrending = document.querySelector('.box-zoom-img');
+const boxFavoritos = document.querySelector('.card-favoritos');
 const  span = document.querySelector('#checkbox');
 
+
+// Al cargar el documento mostrar el localStorage
+document.addEventListener('DOMContentLoaded', leerLocalStorage);
 
 
 // Bloqueando scroll al entrar en el menu  hamburguesa.
@@ -49,23 +53,6 @@ if (localStorage.getItem('dark-mode') === 'true') {
     document.body.classList.remove('dark');    
     btnSwitch.classList.remove('active');
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -222,12 +209,6 @@ function obtenerUsuario() {
 
 
 
-
-
-
-
-
-
 // Mostrar Trending en pantalla principal
 document.addEventListener('DOMContentLoaded', obtenerTrending);
 
@@ -267,10 +248,6 @@ function obtenerTrending() {
 }
 
 
-
-
-
-
 //Ventana Modal
 boxtrending.addEventListener('click', ventanaModal);
 
@@ -282,7 +259,7 @@ function ventanaModal(e) {
     if (e.target.classList.contains('zoom-img')) {
         const test = e.target.parentElement;
         // console.log(test);
-        leerDatosCurso(test);
+        leerDatos(test);
         // re.style.pointerEvents = "none";
     }
 
@@ -292,7 +269,7 @@ function ventanaModal(e) {
 }
 
 
-function leerDatosCurso(curso) {
+function leerDatos(curso) {
     // console.log(curso)
     const infoImg = {
         imagen: curso.querySelector('.zoom-img').src
@@ -303,6 +280,7 @@ function leerDatosCurso(curso) {
 }
 
 function insertarImg(infImg) {
+    // console.log(infImg);
     // console.log(infImg.imagen);
     document.getElementsByTagName("html")[0].style.overflow = "hidden";
     // console.log(re.parentNode);
@@ -370,4 +348,80 @@ function insertarImg(infImg) {
         // contenedor.classList.add('error');
         
     })
+
+
+    // Seccion Favoritos
+    
+
+    fav.addEventListener('click', imprimirFav);
+
+    function imprimirFav(e) {
+        let element = document.createElement('div');
+        element.style.height = '120px'
+        let elementImg = document.createElement('img');
+        // console.log(copyImgGif.firstElementChild); 
+        elementImg.src = copyImgGif.firstElementChild.getAttribute('src');
+        element.appendChild(elementImg);
+        boxFavoritos.appendChild(element);
+
+        // console.log(elementImg);
+        guardarCursoLocalStorage(infImg);
+
+    }
+
+
 }
+
+
+//Almacena un favorito en LocalStorage
+function guardarCursoLocalStorage(ls) {
+    // console.log(ls);
+    let favoritos;
+    // Toma el valor de una arreglo con datos de LS o vacio
+    favoritos = obtenerCursosLocalStorage();
+    // console.log(favoritos);
+
+    // El git favorito seleccionado se agrega al arreglo (LS)
+    // console.log(typeof(favoritos));
+    // console.log(favoritos);
+    favoritos.push(ls);
+
+    localStorage.setItem('fav', JSON.stringify(favoritos));
+}
+
+function obtenerCursosLocalStorage() {
+    let favoritosLS;
+
+    //Comprobamos si hay algo en localStorage
+    if (localStorage.getItem('fav') === null) {
+        favoritosLS = [];
+    } else {
+        favoritosLS = JSON.parse(localStorage.getItem('fav'));
+    }
+    return favoritosLS;
+}
+
+
+// Imprime los gif seleccionados del local storage en el pagina de favoritos
+function leerLocalStorage() {
+    let favoritosLS;
+
+    favoritosLS = obtenerCursosLocalStorage();
+    // console.log(favoritosLS);
+
+    favoritosLS.forEach(function(infoFav){
+        // console.log(infoFav.imagen);
+        // Construir el template
+        const box = document.createElement('div');
+        box.innerHTML = `
+            <img src="${infoFav.imagen}">        
+        `;
+        boxFavoritos.appendChild(box);
+    })
+
+}
+
+
+
+
+

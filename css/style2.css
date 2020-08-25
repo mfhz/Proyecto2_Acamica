@@ -31,6 +31,16 @@ body main .my-gifos {
       width: 100%;
       height: 120px;
       margin-right: 21px; }
+  body main .my-gifos .card-favoritos {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 156px 156px;
+    grid-row-gap: 25px;
+    grid-column-gap: 21px; }
+    body main .my-gifos .card-favoritos img {
+      width: 100%;
+      height: 120px;
+      margin-right: 21px; }
   body main .my-gifos button {
     width: 127px;
     height: 50px;
