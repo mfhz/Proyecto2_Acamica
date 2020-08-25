@@ -107,6 +107,73 @@ function obtenerApi(user) {
                     // console.log(caja.childNodes);                        
                 }
 
+                tituloN.classList.remove('error');
+                tituloN.innerText = user;
+
+                totalGifs = data.data;
+                // console.log(totalGifs);
+                let posicionStart = 0;
+                let positionEnd = 8;
+                gifParcial = totalGifs.slice(posicionStart , positionEnd);
+                // console.log(gifParcial);
+
+                gifParcial.forEach(function(el) {                
+                    // console.log(el.images.downsized.url);          
+                    
+                    // console.log(titulo);
+                    
+                    const image = document.createElement('img');
+                    // const title = document.createElement('h2');
+                    const boxGif = document.createElement('div');
+
+                    image.src = el.images.downsized.url;
+                    image.classList.add('imgGif');
+                    
+                    // title.textContent = el.title;
+                    
+                    boxGif.appendChild(image);
+                    // boxGif.appendChild(title);
+                    caja1.insertAdjacentElement('afterbegin', boxGif);
+                });   
+                
+                btnMore.addEventListener('click', (ev)=> {                    
+                    // console.log('click');
+                    // console.log(posicionStart);
+                    // console.log(positionEnd);
+                    console.log(totalGifs.length);
+                    // if (positionEnd + 8 <= totalGifs.length) {
+                        if (posicionStart + 8  <= totalGifs.length || positionEnd + 8 <= totalGifs.length) {
+                        console.log('entra');
+                        // console.log(posicionStart + 8);
+                        console.log(positionEnd + 8);
+                        gifParcial = totalGifs.slice(posicionStart + 8, positionEnd + 8 );
+                        positionEnd += 8;
+                        posicionStart += 8;
+
+                        gifParcial.forEach(function(el) {                
+                            // console.log(el.images.downsized.url);          
+                            
+                            // console.log(titulo);
+                            
+                            const image = document.createElement('img');
+                            // const title = document.createElement('h2');
+                            const boxGif = document.createElement('div');
+        
+                            image.src = el.images.downsized.url;
+                            image.classList.add('imgGif');
+                            
+                            // title.textContent = el.title;
+                            
+                            boxGif.appendChild(image);
+                            // boxGif.appendChild(title);
+                            caja1.appendChild(boxGif);
+                        });   
+                    } else {
+                        console.log(totalGifs);
+                    }
+
+                })
+
             }
 
         })
