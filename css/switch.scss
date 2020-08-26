@@ -20,15 +20,6 @@
                     background: #ffffff;
                 }
 
-                ul {
-
-                    .list-button {
-                        
-                        svg {
-                            color: #000000;
-                        }
-                    }
-                }
             }
         }
     }
@@ -121,16 +112,29 @@
     
                 .menu {
 
-                    li {
+                    ul {
+                        
+                        li {
 
-                        a {
-                            color: #ffffff;
+                            a {
+                                color: #ffffff;
+                            }
                         }
-                    }
 
-                    .list-button {
-                        border-color: #ffffff;
-                        background: #ffffff;
+                        .list-button {
+                            border-color: #ffffff;
+                            background: #ffffff;
+                            
+                            a {                                
+                                height: inherit;
+
+                                svg {  
+                                     color: #000000;                                  
+                                    //  margin-top: 50%;
+                                    //  transform: translateY(-50%);
+                                }
+                            }
+                        }
                     }
                 }
             }
