@@ -70,7 +70,7 @@ const num = 0;
 let totalGifs = [];
 let gifParcial = [];
 function obtenerApi(user) {
-    const url = `http://api.giphy.com/v1/gifs/search?q=${user}&api_key=${api_key}&limit=25`;
+    const url = `https://api.giphy.com/v1/gifs/search?q=${user}&api_key=${api_key}&limit=25`;
 
     fetch(url)
         .then((success) => {
@@ -260,7 +260,7 @@ document.addEventListener('DOMContentLoaded', obtenerTrending);
 
 
 function obtenerTrending() {
-    const url = `http://api.giphy.com/v1/gifs/trending?&api_key=${api_key}&limit=20`;
+    const url = `https://api.giphy.com/v1/gifs/trending?&api_key=${api_key}&limit=20`;
     fetch(url)
         .then((success) => {
             // console.log(success);
