@@ -431,11 +431,16 @@ body {
                                    border-radius:50%;
                                    cursor: pointer;
 
-                                   svg {  
-                                        color: #572EE5;                                  
-                                        margin-top: 50%;
-                                        transform: translateY(-50%);
+                                   a {
+                                        height: inherit;
+                                        svg {  
+                                             color: #572EE5;                                  
+                                             margin-top: 50%;
+                                             transform: translateY(-50%);
+                                        }
                                    }
+
+
                                    &:hover {
                                         border-bottom: 1px solid #572EE5;;
                                    }
