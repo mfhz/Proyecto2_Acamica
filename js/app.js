@@ -64,11 +64,12 @@ const impresionError = document.querySelector('#error');
 const titulo = document.querySelector('#titleError');
 const tituloN = document.querySelector('#titleNoError');
 const btnMore = document.querySelector('#btnMore');
-btn.addEventListener('click', obtenerUsuario);
 const api_key = 'aSfyIm4TLkXUqhZxWhGqVaDndjyX8PBd';
 const num = 0;
 let totalGifs = [];
 let gifParcial = [];
+btn.addEventListener('click', obtenerUsuario);
+
 function obtenerApi(user) {
     const url = `https://api.giphy.com/v1/gifs/search?q=${user}&api_key=${api_key}&limit=25`;
 
@@ -465,8 +466,3 @@ function leerLocalStorage() {
     })
 
 }
-
-
-
-
-
