@@ -50,6 +50,8 @@
             body .camera .container-camera .box-camera .container-photo .box-photo p {
               line-height: 28px;
               font-size: 16px; }
+            body .camera .container-camera .box-camera .container-photo .box-photo video {
+              margin-top: 44px; }
           body .camera .container-camera .box-camera .container-photo .box-items {
             display: -webkit-box;
             display: -ms-flexbox;
@@ -73,6 +75,16 @@
                 margin-top: 50%;
                 -webkit-transform: translateY(-10px);
                         transform: translateY(-10px); }
+          body .camera .container-camera .box-camera .container-photo .text-repeat {
+            position: relative;
+            width: 131px;
+            height: 16px;
+            color: #572EE5;
+            font-size: 13px;
+            left: 558px;
+            top: -50px;
+            font-weight: bold;
+            cursor: pointer; }
       body .camera .container-camera .box-tape {
         height: 88px;
         -ms-flex-item-align: end;
@@ -83,8 +95,13 @@
         width: 795.9px;
         border: 2.9px solid #572EE5;
         border-radius: 7px;
-        margin: 0 auto; }
-      body .camera .container-interaction button {
+        margin: 0 auto;
+        background: #572EE5; }
+      body .camera .container-interaction #btnRecord {
+        display: none; }
+      body .camera .container-interaction #btnStopRecord {
+        display: none; }
+      body .camera .container-interaction .btnStyle {
         width: 127px;
         height: 50px;
         background-color: #ffffff;
@@ -95,7 +112,7 @@
         margin-top: 20.1px;
         font-weight: bold;
         cursor: pointer; }
-        body .camera .container-interaction button:focus {
+        body .camera .container-interaction .btnStyle:focus {
           outline: none; } }
 
 /*# sourceMappingURL=camera.css.map */

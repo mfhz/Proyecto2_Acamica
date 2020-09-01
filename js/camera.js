@@ -1,28 +1,43 @@
 const btnStart = document.querySelector('#btnStart');
+const btnGif = document.querySelector('#btnGif');
+const filling = document.querySelector('.item1');
+const textColor = document.querySelector('.colorP1');
+const repeat = document.querySelector('.container-photo');
+
+btnGif.style.display = 'none';
 
 btnStart.addEventListener('click', item1);
 
-function item1() {
-     const filling = document.querySelector('.item1');
-     const textColor = document.querySelector('.colorP');
+function item1() {     
+     btnGif.style.display = 'none';
      const textP = document.querySelector('#textP');
      const title = document.querySelector('#title');
      filling.style.background = '#572EE5';
      textColor.style.color = '#FFFFFF';
      title.innerText = '¿Nos das acceso \n a tu cámara?';
      textP.innerText = 'El acceso a tu camara será válido sólo \n  por el tiempo en el que estés creando el GIFO.';
+     btnStart.style.display = 'none';
      accederCamara();
 }
 
 
 
-function accederCamara() {  
+function accederCamara() {
+     filling.style.background = '#FFFFFF';
+     textColor.style.color = '#572EE5';
+     const containerVideo = document.querySelector('.box-photo');  
+     const btnRecord = document.querySelector('#btnRecord');
+     const btnStopRecord = document.querySelector('#btnStopRecord');
+     
+
      let constraintObj = { 
           audio: false, 
           video: { 
               facingMode: "user", 
-              width: { min: 640, ideal: 1280, max: 1920 },
-              height: { min: 480, ideal: 720, max: 1080 } 
+          //     width: { min: 640, ideal: 1280, max: 1920 },
+              width: 488,
+              height: 300 
+          //     height: { min: 480, ideal: 720, max: 1080 } 
           } 
       }; 
       // width: 1280, height: 720  -- preference only
@@ -57,9 +72,21 @@ function accederCamara() {
      }
 
      navigator.mediaDevices.getUserMedia(constraintObj)
-     .then(function(mediaStreamObj) {
+     .then(function(mediaStreamObj) {          
           //connect the media stream to the first video element
-          let video = document.querySelector('video');
+          let video = document.createElement('video');
+          const filling2 = document.querySelector('.item2');
+          const textColor2 = document.querySelector('.colorP2')
+          // video.setAttribute('controls', "");
+          containerVideo.appendChild(video);
+          title.style.display = 'none';
+          textP.style.display = 'none';
+          btnStart.style.display = 'none';
+          btnRecord.style.display = 'inline-block';
+          filling2.style.background = '#572EE5';
+          textColor2.style.color = '#FFFFFF'; 
+          btnRecord.classList.add('btnStyle');
+
           if ("srcObject" in video) {
               video.srcObject = mediaStreamObj;
           } else {
@@ -73,17 +100,24 @@ function accederCamara() {
           };
           
           //add listeners for saving video/audio
-          let start = document.getElementById('btnStart');
-          let stop = document.getElementById('btnStop');
-          let vidSave = document.getElementById('vid2');
+          // let start = document.getElementById('btnRecord');
+          // let stop = document.getElementById('btnStopRecord');
+
+          const textRepeat = document.createElement('p');
+
+          let vidSave = document.createElement('video');
           let mediaRecorder = new MediaRecorder(mediaStreamObj);
           let chunks = [];
+
           
-          start.addEventListener('click', (ev)=>{
-              mediaRecorder.start();
-              console.log(mediaRecorder.state);
+          btnRecord.addEventListener('click', (ev)=>{
+               btnRecord.style.display = 'none';
+               btnStopRecord.style.display = 'inline-block';
+               btnStopRecord.classList.add('btnStyle');
+               mediaRecorder.start();
+               console.log(mediaRecorder.state);
           })
-          stop.addEventListener('click', (ev)=>{
+          btnStopRecord.addEventListener('click', (ev)=>{
               mediaRecorder.stop();
               console.log(mediaRecorder.state);
           });
@@ -95,6 +129,22 @@ function accederCamara() {
               chunks = [];
               let videoURL = window.URL.createObjectURL(blob);
               vidSave.src = videoURL;
+              vidSave.setAttribute('controls', "");
+              vidSave.setAttribute('width', "488");
+              video.style.display = 'none';
+              containerVideo.appendChild(vidSave);
+              btnStopRecord.style.display = 'none';
+              btnGif.style.display = 'inline-block';
+              btnGif.classList.add('btnStyle');
+              textRepeat.innerText = 'REPETIR CAPTURA'
+              textRepeat.classList.add('text-repeat');
+              repeat.appendChild(textRepeat);
+
+              textRepeat.addEventListener('click', ev => {
+                   vidSave.style.display = 'none';
+                   textRepeat.style.display = 'none';
+                   item1();
+              })
           }
      })
      .catch(function(err) {           
