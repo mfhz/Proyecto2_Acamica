@@ -3,6 +3,7 @@ const btnGif = document.querySelector('#btnGif');
 const filling = document.querySelector('.item1');
 const textColor = document.querySelector('.colorP1');
 const repeat = document.querySelector('.container-photo');
+const api_key = 'aSfyIm4TLkXUqhZxWhGqVaDndjyX8PBd';
 
 btnGif.style.display = 'none';
 
@@ -144,6 +145,33 @@ function accederCamara() {
                    vidSave.style.display = 'none';
                    textRepeat.style.display = 'none';
                    item1();
+              })
+
+              btnGif.addEventListener('click' , ev => {                   
+               //     let form = new FormData();
+               //     console.log(videoURL.srcObject);
+               //     form.append('file', mediaStreamObj.getBlob());
+               //     console.log(form.get('file'));
+
+                   let upload = new FormData();
+                   upload.append("file", blob, "usergif.gif");
+                   console.log(upload.get("file"));
+
+                   fetch("https://upload.giphy.com/v1/gifs?file=" + upload + "&api_key=" + api_key, { method: "POST" })
+                   .then((success) => {
+                         if (success.ok) {
+                              return success.json();
+                         } else {
+                              throw new Error(('success') + ' no comunica con la API');
+                         }                         
+                   })
+                   .then((data) => {                        
+                        console.log(data.data);
+                        console.log(data.meta);
+                   })
+                   .catch((err) => {
+                        console.log(`Error: ${err}`);
+                   })
               })
           }
      })
