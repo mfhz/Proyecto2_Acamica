@@ -51,6 +51,10 @@
                                         line-height: 28px;
                                         font-size: 16px;
                                    }
+
+                                   video {
+                                        margin-top: 44px;
+                                   }
                               }
 
                               .box-items {
@@ -75,6 +79,20 @@
                                             transform: translateY(-10px);
                                        }
                                    }
+
+                                   
+                              }
+
+                              .text-repeat {
+                                   position: relative;
+                                   width: 131px;
+                                   height: 16px;
+                                   color: #572EE5;
+                                   font-size: 13px;
+                                   left: 558px;
+                                   top: -50px;
+                                   font-weight: bold;
+                                   cursor: pointer;
                               }
                          }
                     }
@@ -93,9 +111,18 @@
                          border: 2.9px solid #572EE5;
                          border-radius: 7px;
                          margin: 0 auto;
+                         background: #572EE5;
                     }
 
-                    button {
+                    #btnRecord {
+                         display: none;
+                    }
+
+                    #btnStopRecord {
+                         display: none;
+                    }
+
+                    .btnStyle {
                          width: 127px;
                          height: 50px;
                          background-color: #ffffff;
@@ -110,6 +137,7 @@
                               outline:none;
                          }
                     }
+
                }
 
 
