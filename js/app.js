@@ -65,6 +65,7 @@ const titulo = document.querySelector('#titleError');
 const tituloN = document.querySelector('#titleNoError');
 const btnMore = document.querySelector('#btnMore');
 const api_key = 'aSfyIm4TLkXUqhZxWhGqVaDndjyX8PBd';
+const btnFavorites = document.querySelector('#btnFavorites');
 const num = 0;
 let totalGifs = [];
 let gifParcial = [];
@@ -364,7 +365,7 @@ function insertarImg(infImg) {
     contenedor2.classList.add('container-img');
     contenedor5.appendChild(contenedor2);
     fav = document.createElement('img');
-    fav.setAttribute('src', './images/icon-fav-active.svg');
+    fav.setAttribute('src', './images/icon-fav-hover.svg');
     fav.setAttribute('class', 'img-fav');
     contenedor2.appendChild(fav);
     contenedor4 = document.createElement('div');
@@ -373,8 +374,10 @@ function insertarImg(infImg) {
     descarga = document.createElement('img');
     descarga.setAttribute('src', './images/icon-download.svg');
     descarga.setAttribute('class', 'img-download');
-    contenedor4.appendChild(descarga);
+    contenedor4.appendChild(descarga);   
 
+
+    //Cerrar ventana modal
     cerrar.addEventListener('click', function(ev){
         // console.log(contenedor);
         ev.preventDefault();
@@ -392,16 +395,19 @@ function insertarImg(infImg) {
         // console.log(re.parentNode);                    
         this.parentNode.remove();
         // contenedor.classList.add('error');
+
+        location.reload();
         
     })
 
 
-    // Seccion Favoritos
-    
+    // Al presionar como favorito Guardar en LS y recargar web    
 
     fav.addEventListener('click', imprimirFav);
 
     function imprimirFav(e) {
+        // console.log(e);
+        fav.style.background = 'url(./images/icon-fav-active.svg)';
         let element = document.createElement('div');
         element.style.height = '120px'
         let elementImg = document.createElement('img');
@@ -411,8 +417,7 @@ function insertarImg(infImg) {
         boxFavoritos.appendChild(element);
 
         // console.log(elementImg);
-        guardarCursoLocalStorage(infImg);
-
+        guardarCursoLocalStorage(infImg);        
     }
 
 
@@ -435,6 +440,7 @@ function guardarCursoLocalStorage(ls) {
     localStorage.setItem('fav', JSON.stringify(favoritos));
 }
 
+//Obtiene Gifs del LS
 function obtenerCursosLocalStorage() {
     let favoritosLS;
 
@@ -455,14 +461,62 @@ function leerLocalStorage() {
     favoritosLS = obtenerCursosLocalStorage();
     // console.log(favoritosLS);
 
-    favoritosLS.forEach(function(infoFav){
-        // console.log(infoFav.imagen);
-        // Construir el template
-        const box = document.createElement('div');
-        box.innerHTML = `
-            <img src="${infoFav.imagen}">        
-        `;
-        boxFavoritos.appendChild(box);
-    })
+    //Si no hay gifs favortios se implementa vista default
+    if (favoritosLS.length != 0) {  
+        btnFavorites.classList.remove('error');      
+        boxFavoritos.classList.add('card-favoritos');
+        boxFavoritos.classList.remove('card-Sinfavoritos');
+        favoritosLS.forEach(function(infoFav){
+            // console.log(infoFav.imagen);
+            // Construir el template
+            const box = document.createElement('div');
+            box.innerHTML = `
+                <img src="${infoFav.imagen}">        
+            `;
+            boxFavoritos.appendChild(box);
+        })
+    } else {
+        // console.log('Esta Vaciooo'); 
+        const errorBox = document.createElement('div');
+        const errorImg = document.createElement('img');
+        const errorText = document.createElement('p');
+
+        btnFavorites.classList.add('error');
+
+
+        errorImg.setAttribute('src', './images/icon-fav-sin-contenido.svg');
+        errorText.innerText = '"¡Guarda tu primer GIFO en Favoritos para que se muestre aquí!"';
+        
+        
+        boxFavoritos.appendChild(errorBox);
+        errorBox.appendChild(errorImg);
+        errorBox.appendChild(errorText);
+        boxFavoritos.classList.remove('card-favoritos');
+        boxFavoritos.classList.add('card-Sinfavoritos');
+    }
 
 }
+
+
+// Pagina mis Gifos
+const boxGifos = document.querySelector('.card-gifos');
+const btnGifos = document.querySelector('#btnGifos');
+
+//Si no hay Gifos grabados se implementa vista default
+const errorBox = document.createElement('div');
+const errorImg = document.createElement('img');
+const errorText = document.createElement('p');
+
+btnGifos.classList.add('error');
+
+
+errorImg.setAttribute('src', './images/icon-mis-gifos-sin-contenido.svg');
+errorImg.style.margin = '0';
+errorText.innerText = '¡Anímate a crear tu primer GIFO!';
+
+
+boxGifos.appendChild(errorBox);
+errorBox.appendChild(errorImg);
+errorBox.appendChild(errorText);
+boxGifos.classList.remove('card-favoritos');
+boxGifos.classList.add('card-Sinfavoritos');

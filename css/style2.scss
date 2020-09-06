@@ -60,6 +60,26 @@ body {
                 }
             }
 
+            .card-Sinfavoritos {
+                display: inline-block;
+                width: 100%;
+                margin-top: 23.3px;
+
+                div {
+                    img {
+                        width: 130px;
+                        height: 131px;
+                    }
+
+                    p {                        
+                        margin-top: 15px;
+                        line-height: 23px;
+                        font-size: 16px;
+                        color: #50E3C2;
+                    }
+                }
+            }
+
             button {
                 width: 127px;
                 height: 50px;
@@ -71,6 +91,10 @@ body {
                 margin-top: 78px;
                 margin-bottom: 31px;
                 font-weight: 600px;
+            }
+            
+            .error {
+                display: none;
             }
         }
     }
@@ -100,12 +124,46 @@ body {
                 .card-gifos {
                     grid-template-columns: 260px 260px 260px 260px;
                     grid-row-gap: 29px;
+                    grid-column-gap: 35px;    
+
+                }
+
+                .card-favoritos {
+                    grid-template-columns: 260px 260px 260px 260px;
+                    grid-row-gap: 29px;
                     grid-column-gap: 35px;
-    
-                    img {
-                        width: 100%;
+
+                    div {
+                        width: 260px;
                         height: 200px;
-                        margin-right: 0;
+                        margin-right: 21px; 
+
+                        img {
+                            width: inherit;
+                            height: inherit;
+                            margin-right: 0;                            
+                        }
+                    }
+    
+
+                }
+
+                .card-Sinfavoritos {                    
+                    margin-top: 63.3px;
+
+                    div {
+                        img {
+                            width: 150px;
+                            height: 151px;
+                        }
+    
+                        p {                            
+                            line-height: 33px;
+                            margin: 0 auto;                            
+                            margin-top: 23.7px;              
+                            width: 431px;
+                            font-size: 22px;
+                        }
                     }
                 }
     
@@ -113,6 +171,7 @@ body {
                     margin-top: 78px;
                     margin-bottom: 52px;
                 }
+
             }
         }
     }
