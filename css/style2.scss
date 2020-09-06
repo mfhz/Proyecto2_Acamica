@@ -100,7 +100,25 @@ body {
                 .card-gifos {
                     grid-template-columns: 260px 260px 260px 260px;
                     grid-row-gap: 29px;
+                    grid-column-gap: 35px;    
+
+                }
+
+                .card-favoritos {
+                    grid-template-columns: 260px 260px 260px 260px;
+                    grid-row-gap: 29px;
                     grid-column-gap: 35px;
+
+                    div {
+                        width: 260px;
+                        margin-right: 21px; 
+
+                        img {
+                            width: inherit;
+                            height: 200px;
+                            margin-right: 0;                            
+                        }
+                    }
     
 
                 }

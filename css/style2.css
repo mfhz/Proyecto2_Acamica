@@ -68,6 +68,17 @@ body main .my-gifos {
       grid-template-columns: 260px 260px 260px 260px;
       grid-row-gap: 29px;
       grid-column-gap: 35px; }
+    body main .my-gifos .card-favoritos {
+      grid-template-columns: 260px 260px 260px 260px;
+      grid-row-gap: 29px;
+      grid-column-gap: 35px; }
+      body main .my-gifos .card-favoritos div {
+        width: 260px;
+        margin-right: 21px; }
+        body main .my-gifos .card-favoritos div img {
+          width: inherit;
+          height: 200px;
+          margin-right: 0; }
     body main .my-gifos button {
       margin-top: 78px;
       margin-bottom: 52px; } }
