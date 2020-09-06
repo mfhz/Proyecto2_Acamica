@@ -127,6 +127,7 @@ function accederCamara() {
           }
           mediaRecorder.onstop = (ev)=>{
               let blob = new Blob(chunks, { 'type' : 'video/mp4;' });
+            //   let blob = new Blob(chunks, { 'type' : 'video/mp4;' });
               chunks = [];
               let videoURL = window.URL.createObjectURL(blob);
               vidSave.src = videoURL;
@@ -149,21 +150,30 @@ function accederCamara() {
 
               btnGif.addEventListener('click' , ev => {                   
                //     let form = new FormData();
-               //     console.log(videoURL.srcObject);
+                //    console.log(videoURL);
                //     form.append('file', mediaStreamObj.getBlob());
                //     console.log(form.get('file'));
 
                    let upload = new FormData();
                    upload.append("file", blob, "usergif.gif");
-                   console.log(upload.get("file"));
+                //    console.log(upload);
+                //    console.log(upload.get("file"));
 
-                   fetch("https://upload.giphy.com/v1/gifs?file=" + upload + "&api_key=" + api_key, { method: "POST" })
+                    
+                   fetch(`https://upload.giphy.com/v1/gifs&api_key=${api_key}`, {
+                       method: "post",
+                       body: upload,
+                       mode: 'no-cors'
+                   })
                    .then((success) => {
-                         if (success.ok) {
-                              return success.json();
-                         } else {
-                              throw new Error(('success') + ' no comunica con la API');
-                         }                         
+                       console.log('ACA');
+                       console.log(videoURL);
+                       console.log(success);
+                       if (success.ok) {
+                           return success.json();
+                       } else {
+                           throw new Error(('success') + ' no comunica con la API');
+                       }                         
                    })
                    .then((data) => {                        
                         console.log(data.data);
