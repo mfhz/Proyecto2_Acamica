@@ -65,6 +65,7 @@ const titulo = document.querySelector('#titleError');
 const tituloN = document.querySelector('#titleNoError');
 const btnMore = document.querySelector('#btnMore');
 const api_key = 'aSfyIm4TLkXUqhZxWhGqVaDndjyX8PBd';
+const btnFavorites = document.querySelector('#btnFavorites');
 const num = 0;
 let totalGifs = [];
 let gifParcial = [];
@@ -455,14 +456,36 @@ function leerLocalStorage() {
     favoritosLS = obtenerCursosLocalStorage();
     // console.log(favoritosLS);
 
-    favoritosLS.forEach(function(infoFav){
-        // console.log(infoFav.imagen);
-        // Construir el template
-        const box = document.createElement('div');
-        box.innerHTML = `
-            <img src="${infoFav.imagen}">        
-        `;
-        boxFavoritos.appendChild(box);
-    })
+    if (favoritosLS.length != 0) {        
+        boxFavoritos.classList.add('card-favoritos');
+        boxFavoritos.classList.remove('card-Sinfavoritos');
+        favoritosLS.forEach(function(infoFav){
+            // console.log(infoFav.imagen);
+            // Construir el template
+            const box = document.createElement('div');
+            box.innerHTML = `
+                <img src="${infoFav.imagen}">        
+            `;
+            boxFavoritos.appendChild(box);
+        })
+    } else {
+        // console.log('Esta Vaciooo'); 
+        const errorBox = document.createElement('div');
+        const errorImg = document.createElement('img');
+        const errorText = document.createElement('p');
+
+        btnFavorites.classList.add('error');
+
+
+        errorImg.setAttribute('src', './images/icon-fav-sin-contenido.svg');
+        errorText.innerText = '"¡Guarda tu primer GIFO en Favoritos para que se muestre aquí!"';
+        
+        
+        boxFavoritos.appendChild(errorBox);
+        errorBox.appendChild(errorImg);
+        errorBox.appendChild(errorText);
+        boxFavoritos.classList.remove('card-favoritos');
+        boxFavoritos.classList.add('card-Sinfavoritos');
+    }
 
 }
