@@ -365,7 +365,7 @@ function insertarImg(infImg) {
     contenedor2.classList.add('container-img');
     contenedor5.appendChild(contenedor2);
     fav = document.createElement('img');
-    fav.setAttribute('src', './images/icon-fav-active.svg');
+    fav.setAttribute('src', './images/icon-fav-hover.svg');
     fav.setAttribute('class', 'img-fav');
     contenedor2.appendChild(fav);
     contenedor4 = document.createElement('div');
@@ -374,8 +374,10 @@ function insertarImg(infImg) {
     descarga = document.createElement('img');
     descarga.setAttribute('src', './images/icon-download.svg');
     descarga.setAttribute('class', 'img-download');
-    contenedor4.appendChild(descarga);
+    contenedor4.appendChild(descarga);   
 
+
+    //Cerrar ventana modal
     cerrar.addEventListener('click', function(ev){
         // console.log(contenedor);
         ev.preventDefault();
@@ -393,16 +395,19 @@ function insertarImg(infImg) {
         // console.log(re.parentNode);                    
         this.parentNode.remove();
         // contenedor.classList.add('error');
+
+        location.reload();
         
     })
 
 
-    // Seccion Favoritos
-    
+    // Al presionar como favorito Guardar en LS y recargar web    
 
     fav.addEventListener('click', imprimirFav);
 
     function imprimirFav(e) {
+        // console.log(e);
+        fav.style.background = 'url(./images/icon-fav-active.svg)';
         let element = document.createElement('div');
         element.style.height = '120px'
         let elementImg = document.createElement('img');
@@ -412,8 +417,7 @@ function insertarImg(infImg) {
         boxFavoritos.appendChild(element);
 
         // console.log(elementImg);
-        guardarCursoLocalStorage(infImg);
-
+        guardarCursoLocalStorage(infImg);        
     }
 
 
@@ -456,7 +460,9 @@ function leerLocalStorage() {
     favoritosLS = obtenerCursosLocalStorage();
     // console.log(favoritosLS);
 
-    if (favoritosLS.length != 0) {        
+    //Si no hay gifs favortios se implementa vista default
+    if (favoritosLS.length != 0) {  
+        btnFavorites.classList.remove('error');      
         boxFavoritos.classList.add('card-favoritos');
         boxFavoritos.classList.remove('card-Sinfavoritos');
         favoritosLS.forEach(function(infoFav){
