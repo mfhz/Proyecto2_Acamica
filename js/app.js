@@ -440,6 +440,7 @@ function guardarCursoLocalStorage(ls) {
     localStorage.setItem('fav', JSON.stringify(favoritos));
 }
 
+//Obtiene Gifs del LS
 function obtenerCursosLocalStorage() {
     let favoritosLS;
 
@@ -495,3 +496,27 @@ function leerLocalStorage() {
     }
 
 }
+
+
+// Pagina mis Gifos
+const boxGifos = document.querySelector('.card-gifos');
+const btnGifos = document.querySelector('#btnGifos');
+
+//Si no hay Gifos grabados se implementa vista default
+const errorBox = document.createElement('div');
+const errorImg = document.createElement('img');
+const errorText = document.createElement('p');
+
+btnGifos.classList.add('error');
+
+
+errorImg.setAttribute('src', './images/icon-mis-gifos-sin-contenido.svg');
+errorImg.style.margin = '0';
+errorText.innerText = '¡Anímate a crear tu primer GIFO!';
+
+
+boxGifos.appendChild(errorBox);
+errorBox.appendChild(errorImg);
+errorBox.appendChild(errorText);
+boxGifos.classList.remove('card-favoritos');
+boxGifos.classList.add('card-Sinfavoritos');

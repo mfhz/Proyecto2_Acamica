@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./css/app.css">
     <title>Document</title>
 </head>
-<body>
+<body>     
      <header>
           <div class="logo">
                <a href="./index.html">
@@ -29,13 +29,32 @@
                          <div class="line"></div>
                          <li><a class="text3" href="./gifos.html">Mis GIFOS</a></li>
                          <li class="list-button">
-                              <img src="images/button-crear-gifo.svg" alt="">
+                              <a href="./camera.html">
+                                   <svg  width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+                                        <title>button-crear-gifo</title>
+                                        <desc>Created with Sketch.</desc>
+                                        <defs>
+                                            <path d="M8,0 C8.55228475,0 9,0.44771525 9,1 L9,1 L9,7 L15,7 C15.5128358,7 15.9355072,7.38604019 15.9932723,7.88337887 L16,8 C16,8.55228475 15.5522847,9 15,9 L15,9 L9,9 L9,15 C9,15.5128358 8.61395981,15.9355072 8.11662113,15.9932723 L8,16 C7.44771525,16 7,15.5522847 7,15 L7,15 L7,9 L1,9 C0.487164161,9 0.0644928393,8.61395981 0.00672773133,8.11662113 L0,8 C0,7.44771525 0.44771525,7 1,7 L1,7 L7,7 L7,1 C7,0.487164161 7.38604019,0.0644928393 7.88337887,0.00672773133 Z" id="path-1"></path>
+                                        </defs>
+                                        <g id="GIFOS" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g id="00-UI-Kit" transform="translate(-188.000000, -2784.000000)">
+                                                <g id="button-crear-gifo" transform="translate(188.000000, 2784.000000)">
+                                                    <mask id="mask-2" fill="white">
+                                                        <use xlink:href="#path-1"></use>
+                                                    </mask>
+                                                    <use fill="currentColor" fill-rule="nonzero" xlink:href="#path-1"></use>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                              </a>
                          </li>    
                     </ul>
                </div>
           </nav>
      </header>
-    <main>
+     <main>
           <section class="search error">
                <div class="img-search">
                     <img src="./images/ilustra_header.svg" alt="">
@@ -52,21 +71,16 @@
                </div>
           </section>
           <section class="my-gifos">
-            <div class="icon-gifos">
+               <div class="icon-gifos">
                 <img src="./images/icon-mis-gifos.svg" alt="">
-            </div>
-            <h1>Mis GIFOS</h1>   
-            <div class="card-gifos">
-                <img src="./images/cat-test.jpg" alt="">
-                <img src="./images/cat-test.jpg" alt="">
-                <img src="./images/cat-test.jpg" alt="">
-                <img src="./images/cat-test.jpg" alt="">
-                <img src="./images/cat-test.jpg" alt="">
-                <img src="./images/cat-test.jpg" alt="">
-                <img src="./images/cat-test.jpg" alt="">
-                <img src="./images/cat-test.jpg" alt="">
-            </div>
-            <button type="submit">VER MÁS</button>
+               </div>            
+               <h1>Mis GIFOS</h1>   
+               <div class="card-gifos">
+               </div>
+               <button id="btnGifos" type="submit">VER MÁS</button>
+               <div class="card-favoritos error">
+               </div>
+               <button id="btnFavorites" type="submit" style="display: none;">VER MÁS</button>
           </section>
           <section class="gifos">
           <h2>Trending GIFOS</h2>
@@ -87,8 +101,8 @@
           </div>
           </section>
           <section class="caja caja-off"></section>
-    </main>
-    <footer>
+     </main>
+     <footer>
     <p class="text-one-footer">Compartir en:</p>
     <div class="social-networks">
          <a href="">
@@ -102,7 +116,7 @@
          </a>
     </div>
     <p class="text-two-footer">© GIFOS 2020 All Rights Reserved.</p>
-    </footer>
+     </footer>
 
     <script src="./js/app.js"></script>
     

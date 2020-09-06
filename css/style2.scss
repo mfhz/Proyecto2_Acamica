@@ -92,6 +92,10 @@ body {
                 margin-bottom: 31px;
                 font-weight: 600px;
             }
+            
+            .error {
+                display: none;
+            }
         }
     }
 }
@@ -167,6 +171,7 @@ body {
                     margin-top: 78px;
                     margin-bottom: 52px;
                 }
+
             }
         }
     }

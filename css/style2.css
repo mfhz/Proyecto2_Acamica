@@ -64,6 +64,8 @@ body main .my-gifos {
     margin-top: 78px;
     margin-bottom: 31px;
     font-weight: 600px; }
+  body main .my-gifos .error {
+    display: none; }
 
 @media screen and (min-width: 1440px) {
   body main .my-gifos {
