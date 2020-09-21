@@ -1,0 +1,146 @@
+@media screen and (min-width: 1440px){
+     body {
+          .camera {
+               display: flex;
+               flex-direction: column;
+               padding-left: 156px;
+               padding-right: 167px;
+
+               .container-camera {
+                    display: flex;
+                    // border: 1px solid;
+
+                    .box-camera {                         
+                         display: flex;
+                         align-items: center;
+                         width: 90%;
+                         margin-left: 22px;
+
+                         .img-camera {
+                               
+                              svg {
+                                   position: relative;
+                                   top: -15px;
+                              }
+                         }
+
+                         .container-photo {
+                              display: flex;
+                              flex-direction: column;
+
+                              .box-photo {
+                                   width: 688px;
+                                   height: 390px;
+                                   border: 1px solid #572EE5;
+                                   padding: 0 69px;
+                                   text-align: center;
+
+                                   h2 {
+                                        color: #572EE5;
+                                        font-size: 25px;
+                                        line-height: 35px;
+                                        margin-top: 134px;
+                                        margin-bottom: 3px;
+
+                                        span {
+                                             color: #50E3C2;
+                                        }
+                                   }
+
+                                   p{
+                                        line-height: 28px;
+                                        font-size: 16px;
+                                   }
+
+                                   video {
+                                        margin-top: 44px;
+                                   }
+                              }
+
+                              .box-items {
+                                   display: flex;
+                                   justify-content: center;
+                                   height: 57px;
+                                   margin-top: 24px;
+     
+                                   .items {
+                                       width: 32px;
+                                       height: 32px;
+                                       border: 1px solid #572EE5;
+                                       border-radius: 50%;
+                                       margin-right: 26px;
+                                       
+                                       p {
+                                            color: #572EE5;
+                                            height: inherit;
+                                            border-radius: 50%;
+                                            text-align: center;
+                                            margin-top: 50%;
+                                            transform: translateY(-10px);
+                                       }
+                                   }
+
+                                   
+                              }
+
+                              .text-repeat {
+                                   position: relative;
+                                   width: 131px;
+                                   height: 16px;
+                                   color: #572EE5;
+                                   font-size: 13px;
+                                   left: 558px;
+                                   top: -50px;
+                                   font-weight: bold;
+                                   cursor: pointer;
+                              }
+                         }
+                    }
+
+                    .box-tape {
+                         height: 88px;
+                         align-self: flex-end;
+                    }
+               }
+
+               .container-interaction {
+                    text-align: center;
+
+                    .line-interaction {
+                         width: 795.9px;
+                         border: 2.9px solid #572EE5;
+                         border-radius: 7px;
+                         margin: 0 auto;
+                         background: #572EE5;
+                    }
+
+                    #btnRecord {
+                         display: none;
+                    }
+
+                    #btnStopRecord {
+                         display: none;
+                    }
+
+                    .btnStyle {
+                         width: 127px;
+                         height: 50px;
+                         background-color: #ffffff;
+                         color: #572EE5;
+                         font-size: 13px;
+                         border: 1px solid #572EE5;
+                         border-radius: 25px;
+                         margin-top: 20.1px;
+                         font-weight: bold;
+                         cursor: pointer;
+                         &:focus { 
+                              outline:none;
+                         }
+                    }
+
+               }
+
+
+          }
+     }
+}

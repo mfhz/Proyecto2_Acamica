@@ -1,0 +1,157 @@
+.dark {
+    background: #37383C;
+
+    header {
+        border-color: #000000;
+        // background: #37383C;
+
+        nav {
+
+            .menu {
+
+                #checkbox {
+
+                    &[type="checkbox"]:checked ~ ul {
+                        background: #000000;
+                    }
+                }
+
+                span {
+                    background: #ffffff;
+                }
+
+            }
+        }
+    }
+
+    main {
+
+        .title {
+            
+            h1 {
+                color: #ffffff;
+            }
+        }
+
+        .search {
+
+            .inp-search {
+                border-color: #ffffff;
+
+                input {
+                    background: #37383C;
+                }
+            }
+
+            .text-search {
+                h3 {
+                    color: #ffffff;
+                }
+
+                p {
+                    color: #ffffff;
+                    font-weight: 300;
+                }
+            }
+        }
+
+        .my-gifos {
+            
+            h1 {
+                color: #ffffff;
+            }
+        }
+
+        .gifos {
+            background: #222326;
+
+            h2 {
+                color: #ffffff;
+            }
+
+            p {
+                color: #ffffff;
+                font-weight: 300;
+            }
+        }
+
+        .caja-off {
+            background-color: #37383C;
+
+            .container-text {
+                color: #ffffff;
+            }
+        }
+    }
+
+    footer {
+        border-color: #000000;
+
+        .text-one-footer {
+            color: #ffffff;
+            font-weight: 100;
+        }
+
+        .text-two-footer {
+            color: #ffffff;
+            font-weight: 100;
+        }
+    }
+    
+}
+
+
+@media screen and (min-width: 1440px) {
+    .dark {
+    
+        header {
+            border-color: #000000;
+            // background: #37383C;
+    
+            nav {
+    
+                .menu {
+
+                    ul {
+                        
+                        li {
+
+                            a {
+                                color: #ffffff;
+                            }
+                        }
+
+                        .list-button {
+                            border-color: #ffffff;
+                            background: #ffffff;
+                            
+                            a {                                
+                                height: inherit;
+
+                                svg {  
+                                     color: #000000;                                  
+                                    //  margin-top: 50%;
+                                    //  transform: translateY(-50%);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    
+        main {
+    
+            .gifos {
+
+                .list-gifos {
+
+                    .box-gifos {
+                        border-color: #ffffff;
+                    }
+                }
+
+            }
+        }       
+    }
+}

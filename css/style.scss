@@ -1,0 +1,621 @@
+* {
+     margin: 0;
+     padding: 0;
+     border: 0;
+     box-sizing: border-box;     
+     font-family: 'Montserrat';
+}
+
+
+body {
+     &.navbar {
+          overflow: hidden;
+     }
+     transition: .5s ease all;
+
+     header {
+          position: relative;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding-left: 22px;
+          padding-right: 26px;
+          height: 95px;
+          border-top: 5px solid #572EE5;
+          box-sizing: content-box;
+
+          .logo {
+               width: 56px;
+               height: 49px;
+
+               a {
+                    display: block;
+                    width: inherit;
+                    height: inherit;
+
+                    img {
+                         width: 100%;
+                         height: 100%;
+                    }
+               }
+          }
+
+          nav {
+
+               .menu {
+
+
+                    #checkbox {                         
+                         display: flex;
+                         width: 20px;
+                         height: 20px;
+                         opacity: 0;
+                         z-index: 2;
+                         position: absolute;
+                         margin-right: 12px;
+                         &[type="checkbox"]:checked ~ ul {
+                              display: block;
+                              height: 100vh;
+                              padding-top: 30px;
+                              background: rgba(87,46,229,0.90);
+                          }
+                          /*movimiento a cruz*/
+                          &:checked ~ span {
+                              opacity: 1;
+                              transform: rotate(45deg) translate(2px, 1px);
+                          }
+                          &:checked ~ span:nth-last-child(3) {
+                              opacity: 0;
+                              transform: rotate(0deg) scale(0.2, 0.2);
+                          }
+                          &:checked ~ span:nth-last-child(2) {
+                              transform: rotate(-45deg) translate(1px, 0px);
+                          }
+                    }
+
+                    .menu-span {
+                         display: block;
+                         width: 19.23px;
+                         height: 2px;
+                         margin-bottom: 5px;
+                         position: relative;
+                         background: #572EE5;
+                         z-index: 1;
+                         transform-origin: 3px 0px;
+                         margin-right: 12px;
+                         &:first-child {
+                              transform-origin: 0% 0%;
+                          }
+                         &:nth-last-child(2) {                              
+                              transform-origin: 0% 100%;
+                         }
+                    }
+
+                    ul {
+                         width: 100%;
+                         height: 0;
+                         display: none;
+                         flex-direction: column;
+                         position: absolute;
+                         top: 95px;
+                         left: 0;
+                         text-align: center;
+
+                         li { 
+                              margin-bottom: 13px;
+
+                              a {
+                                   display: block;
+                                   width: 100%;
+                                   line-height: 30px;
+                                   color: #ffffff;
+                                   font-size: 20px;
+                                   text-decoration: none;
+                                   &.active {
+                                        // visibility: hidden;
+                                        font-size:  0;
+                                        height: 30px;
+                                        &::before {
+                                             content: "Modo Diurno";
+                                             // margin-left: 22%;
+                                             font-size: 20px;
+                                             // visibility: visible;
+                                        }
+                                   }
+                              }
+                         }
+
+                         .line {
+                              width: 41px;
+                              border: 1px solid #ffffff;
+                              opacity: .5;
+                              margin: 0 auto;
+                              margin-bottom: 11.9px;
+                         }
+
+                         
+                         .list-button {
+                              display: none;                              
+                         }
+                    }
+
+               }
+          }
+     }
+
+     main {
+
+          .title {
+               text-align: center;
+               padding: 0 4em;
+               margin-top: 7px;
+
+               h1 {
+                    color: #572EE5;
+
+                    span {
+                         color:#4fe3c1;
+                    }
+               }
+          }
+
+          .search {
+
+               .img-search {
+
+                    width: 273px;
+                    height: 130px;
+                    margin: 0 auto;
+                    margin-top: 31px;
+
+                    img {
+                         width: 100%;
+                         height: 100%;
+                    }
+               }
+
+               .inp-search {
+
+                    display: flex;   
+                    justify-content: space-between;
+                    align-items: center;
+                    padding-left: 55px;
+                    padding-right: 25px;    
+                    width: 334px;
+                    height: 50px;
+                    margin: 0 auto;
+                    margin-bottom: 31px;
+                    border: 1px solid #572EE5;
+                    border-radius: 27px;
+
+                    input {
+                         width: 220px;
+                         height: 40px;
+                         font-size: 16px;
+                         font-family: 'Roboto';
+                         outline: none;
+                    }
+
+                    #btnSearch {
+                         cursor: pointer;
+                    }
+               }
+
+               .text-search {
+
+                    text-align: center;
+                    padding: 0 20%;
+
+                    h3 {                         
+                         color: #572EE5;
+                         font-size: 16px;
+                         font-weight: bold;
+                    }
+
+                    p {
+                         color: #572EE5;
+                         font-size: 14px;
+                         margin-top: 2px;
+                         line-height: 25px;
+                    }
+               }
+          }
+
+          .gifos {
+               background: #F3F5F8;
+               margin-top: 45px;
+               padding: 0 5.6%;
+               padding-top: 46px;
+               text-align: center;
+               height: 430px;
+               overflow: hidden;
+
+               h2 {
+                    color: #572EE5;
+                    font-size: 20px;
+                    margin-bottom: 7px;
+               }
+
+               p {
+                    line-height: 23px;
+                    font-family: 'Roboto';
+               }
+
+               .list-gifos {
+                    margin-top: 32px;
+                    width: 100%;
+                    height: 187px;
+                    display: flex;                    
+                    
+                    .box-gifos {
+                         display: none;
+                    }
+
+                    .box-gifos1 {
+                         display: none;
+                    }
+
+                    .box-zoom-img {
+                         // width: 100vw;
+                         display: flex;
+                         overflow-x: auto; 
+                         justify-content: start;
+
+                         .zoom-img {
+                              width: 243px;
+                              height: 187px;
+                              margin-right: 22px;
+                         }
+                    }
+                    
+               }
+          }
+
+          .caja {
+               display: none;
+          }
+     }
+
+     footer {
+          height: 196px;
+          // padding-top: 47px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          border-bottom: 5px solid #572EE5;
+          box-sizing: content-box;
+
+          .text-one-footer {
+               margin-top: 47px;
+               font-size: 15px;
+               margin-bottom: 24px;
+               font-family: 'Roboto';
+          }
+
+          .social-networks {
+               width: 100%;
+               display: flex;
+               justify-content: center;
+
+               a {
+                    width: 20px;
+                    height: 20px;
+                    margin-right: 19px;
+                    margin-bottom: 47.8px;
+
+                    img {
+                         width: 100%;
+                         height: 100%;
+                    }
+               }
+
+               .social-right {
+                    margin-right: 0;
+               }
+          }
+
+          .text-two-footer {
+               font-size: 14px;
+               font-family: 'Roboto';
+          }
+
+     }
+
+
+}
+
+
+
+
+
+@media screen and (min-width: 1440px) {
+     body {
+
+          header {
+               height: 90px;
+               padding: 0 156px;
+
+               .logo {
+                    width: 71px;
+                    height: 59.1px;
+               }
+
+               nav {
+
+                    .menu {
+
+                         #checkbox {
+                              display: none;
+                         }
+
+                         .menu-span {
+                              display: none;
+                         }
+
+                         ul {
+                              position: unset;
+                              width: 500px;
+                              display: flex;
+                              flex-direction: row;
+                              justify-content: space-between;
+                              align-items: center;
+                              height: auto;
+                              background: none;
+
+                              li {
+                                   margin: 0;
+                                   list-style: none;
+
+                                   a {                                        
+                                        font-size: 14px;
+                                        color: #572EE5;
+                                        line-height: 0;
+                                        
+                                   }&:hover {
+                                        border-bottom: 2px solid #5ED7C6;
+                                   }
+
+                                   .text1 {                                        
+                                        visibility: hidden;     
+                                        &::before {
+                                             display: block;
+                                             width: 100%;
+                                             line-height: 32px;
+                                             content: 'MODO NOCTURNO';
+                                             visibility: visible;
+                                                              
+                                        }
+                                        &.active {
+                                             visibility: hidden;
+                                             margin-left: 0;
+                                             &::before {
+                                                  content: 'MODO DIURNO';
+                                                  visibility: visible;
+                                                  font-size: 14px;  
+                                             }
+                                        }                                      
+                                   }
+
+                                   .text2 {
+                                        visibility: hidden;
+                                        &::before {
+                                             display: block;
+                                             width: 100%;
+                                             line-height: 32px;
+                                             content: 'FAVORITOS';
+                                             visibility: visible;
+                                        }
+                                   }
+
+                                   .text3 {
+                                        visibility: hidden;
+                                         &::before {
+                                              display: block;
+                                              width: 100%;
+                                              line-height: 32px;
+                                              content: 'MIS GIFOS';
+                                              visibility: visible;
+                                         }
+                                   }
+                              }
+
+                              .line {
+                                   display: none;
+                              }
+
+                              .list-button {
+                                   display: block;
+                                   width: 54px;
+                                   height: 54px;
+                                   border: 1px solid #572EE5;
+                                   border-radius:50%;
+                                   cursor: pointer;
+
+                                   a {
+                                        height: inherit;
+                                        svg {  
+                                             color: #572EE5;                                  
+                                             margin-top: 50%;
+                                             transform: translateY(-50%);
+                                        }
+                                   }
+
+
+                                   &:hover {
+                                        border-bottom: 1px solid #572EE5;;
+                                   }
+
+                              }
+                         }
+                    }
+               }
+          }
+
+          main {
+               margin-top: 5%;
+
+               .title {
+                    
+                    padding: 0 17.6%;
+
+                    h1 {
+                         width: 64.9%;
+                         margin: 0 auto;
+                         font-size: 35px;
+                    }
+               }
+
+               .search {
+
+                    .img-search {
+                         margin-top: 24px;                         
+                         width: 399px;
+                         height: 190px;
+                    }
+
+                    .inp-search {
+                         width: 551px;
+                         margin-bottom: 73px;
+
+                         input {
+                              width: 430px;
+                              color: #9CAFC3;                              
+                         }
+                    }
+
+                    .text-search {
+
+                         h3 {
+                              font-size: 18px;
+                         }
+
+                         p {
+                              font-size: 16px;
+                              margin-top: 7px;
+                              margin-bottom: 50px;
+                         }
+                    }
+               }
+
+               .gifos {
+                    height: 640px;
+                    padding-top: 67px;
+                    margin-top: 95px;
+                    overflow: unset;
+     
+                    h2 {
+                         font-size: 25px;
+
+                    }
+     
+                    p {
+                         font-size: 18px;
+
+                         br {
+                              display: none;
+                         } 
+                    }
+     
+                    .list-gifos {                   
+                         width: 100%;
+                         margin-top: 53px;
+                         width: 100%;
+                         height: 275px;
+                         align-items: center;
+                         justify-content: center;
+
+                         .box-gifos{
+                              display: block;     
+                              width: 40px;
+                              height: 40px;                         
+                              border: 1px solid #572EE5;
+                              margin-right: 22px;
+                              // margin-left: 22px;
+
+                              .left-gifos {
+                                   width: inherit;
+                                   height: inherit;                                   
+     
+                                   img {
+                                        width: 8px;
+                                        height: 14px;      
+                                        margin: 0 auto;                                  
+                                        position: relative;
+                                        top: 50%;
+                                        transform: translateY(-50%);
+                                   }
+                              }
+
+                              .rigth-gifos {
+                                   width: inherit;
+                                   height: inherit;                                   
+     
+                                   img {
+                                        width: 8px;
+                                        height: 14px;      
+                                        margin: 0 auto;                                  
+                                        position: relative;
+                                        top: 50%;
+                                        transform: translateY(-50%);
+                                   }
+                              }
+                         }
+
+                         .box-gifos1{
+                              display: block;     
+                              width: 40px;
+                              height: 40px;                         
+                              border: 1px solid #572EE5;
+                              margin-left: 25px;
+
+                              .rigth-gifos {
+                                   width: inherit;
+                                   height: inherit;                                   
+     
+                                   img {
+                                        width: 8px;
+                                        height: 14px;      
+                                        margin: 0 auto;                                  
+                                        position: relative;
+                                        top: 50%;
+                                        transform: translateY(-50%);
+                                   }
+                              }
+                         }
+
+                         .box-zoom-img {
+                              width: 1121px;
+                              overflow: hidden;
+
+                              .zoom-img {
+                                   width: 357px;
+                              }
+                         }
+                         
+                    }
+               }
+          }
+
+          footer {
+               height: 116px;
+               flex-direction: row;  
+               padding-left: 156px;
+               padding-right: 158px;  
+
+               .text-one-footer {
+                    margin: 0;
+                    margin-right: 17px;
+               }
+
+               .social-networks {
+                    width: unset;
+                    height: 20.2px;
+               }
+
+               .text-two-footer {
+                    margin: 0;
+                    margin-left: auto;
+               }
+          }
+     }
+}
