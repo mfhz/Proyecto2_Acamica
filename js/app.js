@@ -338,10 +338,10 @@ function ventanaModal(e) {
 }
 
 
-function leerDatos(curso) {
-    // console.log(curso)
+function leerDatos(gif) {
+    // console.log(gif)
     const infoImg = {
-        imagen: curso.querySelector('.zoom-img').src
+        imagen: gif.querySelector('.zoom-img').src
     };
     // console.log(infoImg);
     insertarImg(infoImg);
@@ -399,7 +399,7 @@ function insertarImg(infImg) {
     contenedor4.appendChild(descarga);   
 
 
-    //Cerrar ventana modal
+    //Cerrar ventana modal y recarga web
     cerrar.addEventListener('click', function(ev){
         // console.log(contenedor);
         ev.preventDefault();
@@ -423,7 +423,7 @@ function insertarImg(infImg) {
     })
 
 
-    // Al presionar como favorito Guardar en LS y recargar web    
+    // Al presionar como favorito Guardar en LS  
 
     fav.addEventListener('click', imprimirFav);
 
