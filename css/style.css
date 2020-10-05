@@ -358,6 +358,25 @@ body {
       body main .search .inp-search input {
         width: 430px;
         color: #9CAFC3; }
+    body main .search .inp-search-active {
+      height: 200px;
+      padding-top: 2px;
+      -ms-flex-align: unset;
+          align-items: unset;
+      -webkit-box-align: unset;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
+      body main .search .inp-search-active input {
+        width: 449px;
+        border-bottom: 1px solid #9CAFC3;
+        margin-bottom: 14px; }
+      body main .search .inp-search-active #btnSearch img {
+        width: 20px;
+        height: 40px;
+        line-height: 50px;
+        border-bottom: 1px solid #9cafc3; }
+    body main .search .inp-search-inactive .list-search {
+      display: none; }
     body main .search .text-search h3 {
       font-size: 18px; }
     body main .search .text-search p {
