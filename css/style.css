@@ -451,10 +451,10 @@ body {
               -webkit-transform: translateY(-50%);
                       transform: translateY(-50%); }
         body main .gifos .list-gifos .box-zoom-img {
-          width: 1121px;
-          overflow: hidden; }
-          body main .gifos .list-gifos .box-zoom-img .zoom-img {
-            width: 357px; }
+          width: 1121px; }
+          body main .gifos .list-gifos .box-zoom-img .trending .zoom-img {
+            width: 357px;
+            opacity: .4; }
   body footer {
     height: 116px;
     -webkit-box-orient: horizontal;

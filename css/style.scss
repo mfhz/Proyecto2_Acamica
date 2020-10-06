@@ -522,7 +522,7 @@ body {
                     }
 
                     .inp-search-inactive {
-                         
+
                          .list-search {
                               display: none;
                          }
@@ -630,10 +630,17 @@ body {
 
                          .box-zoom-img {
                               width: 1121px;
-                              overflow: hidden;
+                              // overflow: hidden;
 
-                              .zoom-img {
-                                   width: 357px;
+                              .trending {
+                                   
+                                   // background-color: red;
+                                   // z-index: 1; 
+                                   
+                                   .zoom-img {
+                                        width: 357px;
+                                        opacity: .4;
+                                   }
                               }
                          }
                          

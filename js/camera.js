@@ -234,5 +234,6 @@ function obtenerCursosLocalStorage() {
 }
 
 
+// let favoritosLS = JSON.parse(localStorage.getItem('fav'));
 
-
+// console.log(favoritosLS);

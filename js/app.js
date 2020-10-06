@@ -10,31 +10,17 @@ const boxtrending = document.querySelector('.box-zoom-img');
 const boxFavoritos = document.querySelector('.card-favoritos');
 const boxGif = document.querySelector('.card-gifos');
 const  span = document.querySelector('#checkbox');
-let x = window.matchMedia("(min-width: 1440px)");
 
 // Al cargar el documento mostrar el localStorage
 document.addEventListener('DOMContentLoaded', leerLocalStorage);
 document.addEventListener('DOMContentLoaded', leerLocalStorage1);
 
+// Mostrar Trending en pantalla principal
+document.addEventListener('DOMContentLoaded', obtenerTrending);
 
-// Hover a los Gifs-Trending
 
 
-// Media query 1440
-function hover(x) {
-    // console.log(x);
-    // console.log(x.matches);
-    if (x.matches) {
-        // console.log('entra acá 1440');
-        // document.body.style.backgroundColor = "yellow";
-    } else {
-        // console.log('entra 375');
-        // document.body.style.backgroundColor = "PINK";
-    }
-    
-}
 
-hover(x);
 
 // Bloqueando scroll al entrar en el menu  hamburguesa.
 menuNav.addEventListener('click', () => {
@@ -297,8 +283,8 @@ function eventoClick() {
 
     })
     .then((data) => {
-        // console.log(data.data);
-        // console.log(data.data.length);
+        console.log(data.data);
+        console.log(data.data.length);
         // console.log(data.data[0].name);
         const boxInp = document.querySelector('.inp-search');
         const boxComplete = document.createElement('div');
@@ -367,10 +353,9 @@ function eventoClick() {
 
 
 
-// Mostrar Trending en pantalla principal
-document.addEventListener('DOMContentLoaded', obtenerTrending);
 
 
+//Imprimir Trending
 
 function obtenerTrending() {
     const url = `https://api.giphy.com/v1/gifs/trending?&api_key=${api_key}&limit=20`;
@@ -399,13 +384,293 @@ function obtenerTrending() {
                 // imageBox.appendChild(imagen)
                 // boxtrending.insertAdjacentElement('afterbegin', image);
             })
+
+            // Hover a los Gifs-Trending
+            const gifs = document.querySelectorAll('.zoom-img');
+            // console.log(gifs);
+            // Media query 1440
+            let x = window.matchMedia("(min-width: 1440px)");
+            // console.log(x);
+            // console.log(x.matches);
+            if (x.matches) {
+                console.log('entra acá 1440');
+                // gifs[0].addEventListener("mouseover",accion0);
+                // gifs[1].addEventListener("mouseover",accion1);
+                // gifs[2].addEventListener("mouseover",accion2);
+                // gifs[3].addEventListener("mouseover",accion3);
+                // gifs[4].addEventListener("mouseover",accion4);
+                // gifs[5].addEventListener("mouseover",accion5);
+                // gifs[6].addEventListener("mouseover",accion6);
+                // gifs[7].addEventListener("mouseover",accion7);
+                // gifs[8].addEventListener("mouseover",accion8);
+                // gifs[9].addEventListener("mouseover",accion9);
+                // gifs[10].addEventListener("mouseover",accion10);
+                // gifs[11].addEventListener("mouseover",accion11);
+                // gifs[12].addEventListener("mouseover",accion12);
+                // gifs[13].addEventListener("mouseover",accion13);
+                // gifs[14].addEventListener("mouseover",accion14);
+                // gifs[15].addEventListener("mouseover",accion15);
+                // document.body.style.backgroundColor = "yellow";
+            } else {
+                // console.log('entra 375');
+                // document.body.style.backgroundColor = "PINK";
+            }
+
+            function accion0(e) {
+                // console.log(e);
+                e.preventDefault();
+                        
+                console.log(e.target.classList);
+                if (e.target.classList.contains('zoom-img')) {
+                    // console.log(e.target.parentElement);
+
+                    const test = e.target.parentElement.children[0];
+                    console.log(test);
+                    imprimir(test);
+                    // re.style.pointerEvents = "none";
+                }
+                        
+            } 
+            function accion1(e) {
+                // console.log(e);
+                e.preventDefault();
+                        
+                console.log(e.target.classList);
+                if (e.target.classList.contains('zoom-img')) {
+                    // console.log(e.target.parentElement);
+
+                    const test = e.target.parentElement.children[0];
+                    console.log(test);
+                    imprimir(test);
+                    // re.style.pointerEvents = "none";
+                }
+                        
+            } 
+            function accion2(e) {
+                // console.log(e);
+                e.preventDefault();
+                        
+                console.log(e.target.classList);
+                if (e.target.classList.contains('zoom-img')) {
+                    // console.log(e.target.parentElement);
+
+                    const test = e.target.parentElement.children[0];
+                    console.log(test);
+                    imprimir(test);
+                    // re.style.pointerEvents = "none";
+                }
+                        
+            } 
+            function accion3(e) {
+                // console.log(e);
+                e.preventDefault();
+                        
+                console.log(e.target.classList);
+                if (e.target.classList.contains('zoom-img')) {
+                    // console.log(e.target.parentElement);
+
+                    const test = e.target.parentElement.children[0];
+                    console.log(test);
+                    imprimir(test);
+                    // re.style.pointerEvents = "none";
+                }
+                        
+            } 
+            function accion4(e) {
+                // console.log(e);
+                e.preventDefault();
+                        
+                console.log(e.target.classList);
+                if (e.target.classList.contains('zoom-img')) {
+                    // console.log(e.target.parentElement);
+
+                    const test = e.target.parentElement.children[0];
+                    console.log(test);
+                    imprimir(test);
+                    // re.style.pointerEvents = "none";
+                }
+                        
+            } 
+            function accion5(e) {
+                // console.log(e);
+                e.preventDefault();
+                        
+                console.log(e.target.classList);
+                if (e.target.classList.contains('zoom-img')) {
+                    // console.log(e.target.parentElement);
+
+                    const test = e.target.parentElement.children[0];
+                    console.log(test);
+                    imprimir(test);
+                    // re.style.pointerEvents = "none";
+                }
+                        
+            } 
+            function accion6(e) {
+                // console.log(e);
+                e.preventDefault();
+                        
+                console.log(e.target.classList);
+                if (e.target.classList.contains('zoom-img')) {
+                    // console.log(e.target.parentElement);
+
+                    const test = e.target.parentElement.children[0];
+                    console.log(test);
+                    imprimir(test);
+                    // re.style.pointerEvents = "none";
+                }
+                        
+            } 
+            function accion7(e) {
+                // console.log(e);
+                e.preventDefault();
+                        
+                console.log(e.target.classList);
+                if (e.target.classList.contains('zoom-img')) {
+                    // console.log(e.target.parentElement);
+
+                    const test = e.target.parentElement.children[0];
+                    console.log(test);
+                    imprimir(test);
+                    // re.style.pointerEvents = "none";
+                }
+                        
+            } 
+            function accion8(e) {
+                // console.log(e);
+                e.preventDefault();
+                        
+                console.log(e.target.classList);
+                if (e.target.classList.contains('zoom-img')) {
+                    // console.log(e.target.parentElement);
+
+                    const test = e.target.parentElement.children[0];
+                    console.log(test);
+                    imprimir(test);
+                    // re.style.pointerEvents = "none";
+                }
+                        
+            } 
+            function accion9(e) {
+                // console.log(e);
+                e.preventDefault();
+                        
+                console.log(e.target.classList);
+                if (e.target.classList.contains('zoom-img')) {
+                    // console.log(e.target.parentElement);
+
+                    const test = e.target.parentElement.children[0];
+                    console.log(test);
+                    imprimir(test);
+                    // re.style.pointerEvents = "none";
+                }
+                        
+            } 
+            function accion10(e) {
+                // console.log(e);
+                e.preventDefault();
+                        
+                console.log(e.target.classList);
+                if (e.target.classList.contains('zoom-img')) {
+                    // console.log(e.target.parentElement);
+
+                    const test = e.target.parentElement.children[0];
+                    console.log(test);
+                    imprimir(test);
+                    // re.style.pointerEvents = "none";
+                }
+                        
+            } 
+            function accion11(e) {
+                // console.log(e);
+                e.preventDefault();
+                        
+                console.log(e.target.classList);
+                if (e.target.classList.contains('zoom-img')) {
+                    // console.log(e.target.parentElement);
+
+                    const test = e.target.parentElement.children[0];
+                    console.log(test);
+                    imprimir(test);
+                    // re.style.pointerEvents = "none";
+                }
+                        
+            } 
+            function accion12(e) {
+                // console.log(e);
+                e.preventDefault();
+                        
+                console.log(e.target.classList);
+                if (e.target.classList.contains('zoom-img')) {
+                    // console.log(e.target.parentElement);
+
+                    const test = e.target.parentElement.children[0];
+                    console.log(test);
+                    imprimir(test);
+                    // re.style.pointerEvents = "none";
+                }
+                        
+            } 
+            function accion13(e) {
+                // console.log(e);
+                e.preventDefault();
+                        
+                console.log(e.target.classList);
+                if (e.target.classList.contains('zoom-img')) {
+                    // console.log(e.target.parentElement);
+
+                    const test = e.target.parentElement.children[0];
+                    console.log(test);
+                    imprimir(test);
+                    // re.style.pointerEvents = "none";
+                }
+                        
+            } 
+            function accion14(e) {
+                // console.log(e);
+                e.preventDefault();
+                        
+                console.log(e.target.classList);
+                if (e.target.classList.contains('zoom-img')) {
+                    // console.log(e.target.parentElement);
+
+                    const test = e.target.parentElement.children[0];
+                    console.log(test);
+                    imprimir(test);
+                    // re.style.pointerEvents = "none";
+                }
+                        
+            } 
+            function accion15(e) {
+                // console.log(e);
+                e.preventDefault();
+                        
+                console.log(e.target.classList);
+                if (e.target.classList.contains('zoom-img')) {
+                    // console.log(e.target.parentElement);
+
+                    const test = e.target.parentElement.children[0];
+                    console.log(test);
+                    imprimir(test);
+                    // re.style.pointerEvents = "none";
+                }
+                        
+            } 
+
+
+            function imprimir(gif) {       
+                // gif.style.display = 'block';         
+                // gif.style.transition = '.5s ease';         
+                // gif.style.backfaceVisibility = 'hidden';
+                // gif.style.backgroundColor = '#008CBA'        
+            }
+
         })
         .catch((err) => {
             console.log(`${err}`);
         })
     
 }
-
 
 //Ventana Modal
 boxtrending.addEventListener('click', ventanaModal);
@@ -414,10 +679,10 @@ function ventanaModal(e) {
     // console.log(e);
     e.preventDefault();
 
-    // console.log(e.target.classList);
+    console.log(e.target.classList);
     if (e.target.classList.contains('zoom-img')) {
         const test = e.target.parentElement;
-        // console.log(test);
+        console.log(test);
         leerDatos(test);
         // re.style.pointerEvents = "none";
     }
@@ -433,7 +698,7 @@ function leerDatos(gif) {
     const infoImg = {
         imagen: gif.querySelector('.zoom-img').src
     };
-    // console.log(infoImg);
+    console.log(infoImg);
     insertarImg(infoImg);
     
 }
@@ -677,6 +942,7 @@ function leerLocalStorage1() {
     }
 
 }
+
 
 
 
