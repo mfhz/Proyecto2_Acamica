@@ -275,11 +275,18 @@ body {
                          overflow-x: auto; 
                          justify-content: start;
 
-                         .zoom-img {
+                         .trending {
                               width: 243px;
                               height: 187px;
                               margin-right: 22px;
+
+                              .zoom-img {
+                                   width: inherit;
+                                   height: inherit;
+                              }
                          }
+
+
                     }
                     
                }
@@ -630,16 +637,14 @@ body {
 
                          .box-zoom-img {
                               width: 1121px;
-                              // overflow: hidden;
+                              overflow: hidden;
 
                               .trending {
-                                   
-                                   // background-color: red;
-                                   // z-index: 1; 
+                                   width: 357px;
+                                   // background-color: #572EE5; 
                                    
                                    .zoom-img {
-                                        width: 357px;
-                                        opacity: .4;
+                                        // opacity: .4;
                                    }
                               }
                          }

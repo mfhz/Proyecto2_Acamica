@@ -394,9 +394,9 @@ function obtenerTrending() {
             // console.log(x.matches);
             if (x.matches) {
                 console.log('entra acá 1440');
-                // gifs[0].addEventListener("mouseover",accion0);
-                // gifs[1].addEventListener("mouseover",accion1);
-                // gifs[2].addEventListener("mouseover",accion2);
+                gifs[0].addEventListener("mouseover",accion0);
+                gifs[1].addEventListener("mouseover",accion1);
+                gifs[2].addEventListener("mouseover",accion2);
                 // gifs[3].addEventListener("mouseover",accion3);
                 // gifs[4].addEventListener("mouseover",accion4);
                 // gifs[5].addEventListener("mouseover",accion5);
@@ -424,9 +424,12 @@ function obtenerTrending() {
                 if (e.target.classList.contains('zoom-img')) {
                     // console.log(e.target.parentElement);
 
-                    const test = e.target.parentElement.children[0];
-                    console.log(test);
-                    imprimir(test);
+                    const childGif = e.target.parentElement.children[0];
+                    console.log(childGif);
+                    // const parentGif = document.querySelector('.trending');
+                    const parentGif = e.target.parentElement;
+                    console.log(parentGif);
+                    imprimir(childGif, parentGif);
                     // re.style.pointerEvents = "none";
                 }
                         
@@ -439,9 +442,12 @@ function obtenerTrending() {
                 if (e.target.classList.contains('zoom-img')) {
                     // console.log(e.target.parentElement);
 
-                    const test = e.target.parentElement.children[0];
-                    console.log(test);
-                    imprimir(test);
+                    const childGif = e.target.parentElement.children[0];
+                    console.log(childGif);
+                    // const parentGif = document.querySelector('.trending');
+                    const parentGif = e.target.parentElement;
+                    console.log(parentGif);
+                    imprimir(childGif, parentGif);
                     // re.style.pointerEvents = "none";
                 }
                         
@@ -454,215 +460,25 @@ function obtenerTrending() {
                 if (e.target.classList.contains('zoom-img')) {
                     // console.log(e.target.parentElement);
 
-                    const test = e.target.parentElement.children[0];
-                    console.log(test);
-                    imprimir(test);
+                    const childGif = e.target.parentElement.children[0];
+                    console.log(childGif);
+                    // const parentGif = document.querySelector('.trending');
+                    const parentGif = e.target.parentElement;
+                    console.log(parentGif);
+                    imprimir(childGif, parentGif);
                     // re.style.pointerEvents = "none";
                 }
                         
-            } 
-            function accion3(e) {
-                // console.log(e);
-                e.preventDefault();
-                        
-                console.log(e.target.classList);
-                if (e.target.classList.contains('zoom-img')) {
-                    // console.log(e.target.parentElement);
-
-                    const test = e.target.parentElement.children[0];
-                    console.log(test);
-                    imprimir(test);
-                    // re.style.pointerEvents = "none";
-                }
-                        
-            } 
-            function accion4(e) {
-                // console.log(e);
-                e.preventDefault();
-                        
-                console.log(e.target.classList);
-                if (e.target.classList.contains('zoom-img')) {
-                    // console.log(e.target.parentElement);
-
-                    const test = e.target.parentElement.children[0];
-                    console.log(test);
-                    imprimir(test);
-                    // re.style.pointerEvents = "none";
-                }
-                        
-            } 
-            function accion5(e) {
-                // console.log(e);
-                e.preventDefault();
-                        
-                console.log(e.target.classList);
-                if (e.target.classList.contains('zoom-img')) {
-                    // console.log(e.target.parentElement);
-
-                    const test = e.target.parentElement.children[0];
-                    console.log(test);
-                    imprimir(test);
-                    // re.style.pointerEvents = "none";
-                }
-                        
-            } 
-            function accion6(e) {
-                // console.log(e);
-                e.preventDefault();
-                        
-                console.log(e.target.classList);
-                if (e.target.classList.contains('zoom-img')) {
-                    // console.log(e.target.parentElement);
-
-                    const test = e.target.parentElement.children[0];
-                    console.log(test);
-                    imprimir(test);
-                    // re.style.pointerEvents = "none";
-                }
-                        
-            } 
-            function accion7(e) {
-                // console.log(e);
-                e.preventDefault();
-                        
-                console.log(e.target.classList);
-                if (e.target.classList.contains('zoom-img')) {
-                    // console.log(e.target.parentElement);
-
-                    const test = e.target.parentElement.children[0];
-                    console.log(test);
-                    imprimir(test);
-                    // re.style.pointerEvents = "none";
-                }
-                        
-            } 
-            function accion8(e) {
-                // console.log(e);
-                e.preventDefault();
-                        
-                console.log(e.target.classList);
-                if (e.target.classList.contains('zoom-img')) {
-                    // console.log(e.target.parentElement);
-
-                    const test = e.target.parentElement.children[0];
-                    console.log(test);
-                    imprimir(test);
-                    // re.style.pointerEvents = "none";
-                }
-                        
-            } 
-            function accion9(e) {
-                // console.log(e);
-                e.preventDefault();
-                        
-                console.log(e.target.classList);
-                if (e.target.classList.contains('zoom-img')) {
-                    // console.log(e.target.parentElement);
-
-                    const test = e.target.parentElement.children[0];
-                    console.log(test);
-                    imprimir(test);
-                    // re.style.pointerEvents = "none";
-                }
-                        
-            } 
-            function accion10(e) {
-                // console.log(e);
-                e.preventDefault();
-                        
-                console.log(e.target.classList);
-                if (e.target.classList.contains('zoom-img')) {
-                    // console.log(e.target.parentElement);
-
-                    const test = e.target.parentElement.children[0];
-                    console.log(test);
-                    imprimir(test);
-                    // re.style.pointerEvents = "none";
-                }
-                        
-            } 
-            function accion11(e) {
-                // console.log(e);
-                e.preventDefault();
-                        
-                console.log(e.target.classList);
-                if (e.target.classList.contains('zoom-img')) {
-                    // console.log(e.target.parentElement);
-
-                    const test = e.target.parentElement.children[0];
-                    console.log(test);
-                    imprimir(test);
-                    // re.style.pointerEvents = "none";
-                }
-                        
-            } 
-            function accion12(e) {
-                // console.log(e);
-                e.preventDefault();
-                        
-                console.log(e.target.classList);
-                if (e.target.classList.contains('zoom-img')) {
-                    // console.log(e.target.parentElement);
-
-                    const test = e.target.parentElement.children[0];
-                    console.log(test);
-                    imprimir(test);
-                    // re.style.pointerEvents = "none";
-                }
-                        
-            } 
-            function accion13(e) {
-                // console.log(e);
-                e.preventDefault();
-                        
-                console.log(e.target.classList);
-                if (e.target.classList.contains('zoom-img')) {
-                    // console.log(e.target.parentElement);
-
-                    const test = e.target.parentElement.children[0];
-                    console.log(test);
-                    imprimir(test);
-                    // re.style.pointerEvents = "none";
-                }
-                        
-            } 
-            function accion14(e) {
-                // console.log(e);
-                e.preventDefault();
-                        
-                console.log(e.target.classList);
-                if (e.target.classList.contains('zoom-img')) {
-                    // console.log(e.target.parentElement);
-
-                    const test = e.target.parentElement.children[0];
-                    console.log(test);
-                    imprimir(test);
-                    // re.style.pointerEvents = "none";
-                }
-                        
-            } 
-            function accion15(e) {
-                // console.log(e);
-                e.preventDefault();
-                        
-                console.log(e.target.classList);
-                if (e.target.classList.contains('zoom-img')) {
-                    // console.log(e.target.parentElement);
-
-                    const test = e.target.parentElement.children[0];
-                    console.log(test);
-                    imprimir(test);
-                    // re.style.pointerEvents = "none";
-                }
-                        
-            } 
+            }   
 
 
-            function imprimir(gif) {       
-                // gif.style.display = 'block';         
+
+            function imprimir(child, parent) {       
+                
+                parent.style.backgroundColor = '#572EE5';        
+                child.style.opacity = '.6';         
                 // gif.style.transition = '.5s ease';         
                 // gif.style.backfaceVisibility = 'hidden';
-                // gif.style.backgroundColor = '#008CBA'        
             }
 
         })
