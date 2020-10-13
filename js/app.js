@@ -393,10 +393,12 @@ function obtenerTrending() {
             // console.log(x);
             // console.log(x.matches);
             if (x.matches) {
-                console.log('entra acá 1440');
+                // console.log('entra acá 1440');
                 gifs[0].addEventListener("mouseover",accion0);
+                // gifs[0].addEventListener("mouseout",eliminar);
                 gifs[1].addEventListener("mouseover",accion1);
-                gifs[2].addEventListener("mouseover",accion2);
+                gifs[1].addEventListener("mouseout",eliminar);
+                // gifs[2].addEventListener("mouseover",accion2);
                 // gifs[3].addEventListener("mouseover",accion3);
                 // gifs[4].addEventListener("mouseover",accion4);
                 // gifs[5].addEventListener("mouseover",accion5);
@@ -420,65 +422,90 @@ function obtenerTrending() {
                 // console.log(e);
                 e.preventDefault();
                         
-                console.log(e.target.classList);
+                // console.log(e.target.classList);
                 if (e.target.classList.contains('zoom-img')) {
                     // console.log(e.target.parentElement);
 
                     const childGif = e.target.parentElement.children[0];
-                    console.log(childGif);
+                    // console.log(childGif);
                     // const parentGif = document.querySelector('.trending');
                     const parentGif = e.target.parentElement;
-                    console.log(parentGif);
+                    // console.log(parentGif);
                     imprimir(childGif, parentGif);
                     // re.style.pointerEvents = "none";
                 }
                         
             } 
+
             function accion1(e) {
                 // console.log(e);
                 e.preventDefault();
                         
-                console.log(e.target.classList);
+                // console.log(e.target.classList);
                 if (e.target.classList.contains('zoom-img')) {
                     // console.log(e.target.parentElement);
 
                     const childGif = e.target.parentElement.children[0];
-                    console.log(childGif);
+                    // console.log(childGif);
                     // const parentGif = document.querySelector('.trending');
                     const parentGif = e.target.parentElement;
-                    console.log(parentGif);
+                    // console.log(parentGif);
                     imprimir(childGif, parentGif);
                     // re.style.pointerEvents = "none";
                 }
                         
-            } 
-            function accion2(e) {
-                // console.log(e);
+            }
+
+            function eliminar(e) {
                 e.preventDefault();
-                        
                 console.log(e.target.classList);
                 if (e.target.classList.contains('zoom-img')) {
-                    // console.log(e.target.parentElement);
-
-                    const childGif = e.target.parentElement.children[0];
-                    console.log(childGif);
-                    // const parentGif = document.querySelector('.trending');
+                    const childGif = e.target.parentElement.children[1];
+                    // console.log(childGif);
                     const parentGif = e.target.parentElement;
-                    console.log(parentGif);
-                    imprimir(childGif, parentGif);
-                    // re.style.pointerEvents = "none";
+                    // console.log(parentGif);
+                    parentGif.classList.remove('trendingHov');
+                    parentGif.removeChild(childGif);
                 }
-                        
-            }   
-
-
+            }
 
             function imprimir(child, parent) {       
                 
-                parent.style.backgroundColor = '#572EE5';        
-                child.style.opacity = '.6';         
-                // gif.style.transition = '.5s ease';         
-                // gif.style.backfaceVisibility = 'hidden';
+                parent.classList.add('trendingHov');
+                child.classList.add('zoom-imgHov');
+                const container = document.createElement('div');
+                parent.appendChild(container);
+                const box1 = document.createElement('div');
+                const img1 = document.createElement('img');
+                const box2 = document.createElement('div');
+                const img2 = document.createElement('img');
+                const box3 = document.createElement('div');
+                const img3 = document.createElement('img');
+
+                img1.setAttribute('src', '../images/icon-fav-hover.svg');
+                img1.classList.add('boxImg');
+                box1.appendChild(img1);                
+                box1.classList.add('containImg');
+                container.appendChild(box1);
+
+
+                
+                img2.setAttribute('src', '../images/icon-download.svg');
+                img2.classList.add('boxImg');
+                box2.appendChild(img2);
+                box2.classList.add('containImg');
+                box2.classList.add('containImg2');
+                container.appendChild(box2);
+
+
+                img3.setAttribute('src', '../images/icon-max.svg');
+                img3.classList.add('boxImg');
+                box3.appendChild(img3);
+                box3.classList.add('containImg');
+                box3.classList.add('containImg3');
+                container.appendChild(box3);
+
+                
             }
 
         })
@@ -495,12 +522,20 @@ function ventanaModal(e) {
     // console.log(e);
     e.preventDefault();
 
-    console.log(e.target.classList);
+    // console.log(e.target.classList);
     if (e.target.classList.contains('zoom-img')) {
         const test = e.target.parentElement;
         console.log(test);
         leerDatos(test);
         // re.style.pointerEvents = "none";
+    } else if (e.target.classList.contains('boxImg')) {
+        // console.log(e.target.parentElement.parentElement.parentElement);
+        const test = e.target.parentElement.parentElement.parentElement;
+        leerDatos(test);
+    } else if (e.target.classList.contains('containImg')) {
+        // console.log(e.target.parentElement.parentElement);
+        const test = e.target.parentElement.parentElement.parentElement;
+        leerDatos(test);
     }
 
     

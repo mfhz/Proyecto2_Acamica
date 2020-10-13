@@ -641,12 +641,51 @@ body {
 
                               .trending {
                                    width: 357px;
-                                   // background-color: #572EE5; 
+                                    
                                    
                                    .zoom-img {
                                         // opacity: .4;
                                    }
                               }
+
+                              .trendingHov {
+                                   background-color: #572EE5;
+                                   position: relative;
+
+                                   .zoom-imgHov {
+                                        opacity: .6;
+                                   }
+
+                                   .containImg {
+                                        width: 32px;
+                                        height: 32px;
+                                        background-color: #ffffff;
+                                        position: absolute;
+                                        opacity: .7;
+                                        border-radius: 6px;
+                                        top: 0;
+                                        right: 97px;
+                                        margin-top: 10px;
+                                        cursor: pointer;
+
+                                        .boxImg {
+                                             width: 18px;
+                                             height: 15.9px;
+                                             margin-top: 8.1px;
+                                             
+                                        }
+                                   }
+
+                                   .containImg2 {
+                                        right: 54px;      
+                                   }
+
+                                   .containImg3 {
+                                        right: 11px;      
+                                   }
+
+                              }
+
                          }
                          
                     }
