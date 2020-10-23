@@ -52,6 +52,8 @@
               font-size: 16px; }
             body .camera .container-camera .box-camera .container-photo .box-photo video {
               margin-top: 44px; }
+            body .camera .container-camera .box-camera .container-photo .box-photo img {
+              margin-top: 44px; }
           body .camera .container-camera .box-camera .container-photo .box-items {
             display: -webkit-box;
             display: -ms-flexbox;

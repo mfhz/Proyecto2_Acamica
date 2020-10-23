@@ -10,26 +10,17 @@ const boxtrending = document.querySelector('.box-zoom-img');
 const boxFavoritos = document.querySelector('.card-favoritos');
 const boxGif = document.querySelector('.card-gifos');
 const  span = document.querySelector('#checkbox');
-let x = window.matchMedia("(min-width: 1440px)");
 
 // Al cargar el documento mostrar el localStorage
 document.addEventListener('DOMContentLoaded', leerLocalStorage);
 document.addEventListener('DOMContentLoaded', leerLocalStorage1);
 
-// Media query 1440
-// function myFunction(x) {
-//     // console.log(x);
-//     // console.log(x.matches);
-//     if (x.matches) {
-//         // console.log('entra acá 1440');
-//     } else {
-//         // console.log('entra 375');
-//         // document.body.style.backgroundColor = "pink";
-//         menuNav.style.overflow = 'hidden';
-//         document.body.classList.toggle('navbar');
-//     }
-    
-// }
+// Mostrar Trending en pantalla principal
+document.addEventListener('DOMContentLoaded', obtenerTrending);
+
+
+
+
 
 // Bloqueando scroll al entrar en el menu  hamburguesa.
 menuNav.addEventListener('click', () => {
@@ -80,7 +71,7 @@ if (localStorage.getItem('dark-mode') === 'true') {
 const line = document.querySelector('#line');
 const sectionGifs = document.querySelector('.interactive-search')
 const caja1 = document.querySelector('#box-search');
-const btn =document.querySelector('#btnSearch');
+const btn = document.querySelector('#btnSearch');
 const impresionError = document.querySelector('#error');
 const titulo = document.querySelector('#titleError');
 const tituloN = document.querySelector('#titleNoError');
@@ -91,7 +82,9 @@ const btnGifGra = document.querySelector('#btnGifos');
 const num = 0;
 let totalGifs = [];
 let gifParcial = [];
+const info = document.querySelector('#busqueda');
 btn.addEventListener('click', obtenerUsuario);
+info.addEventListener('keyup', eventoClick);
 
 function obtenerApi(user) {
     const url = `https://api.giphy.com/v1/gifs/search?q=${user}&api_key=${api_key}&limit=25`;
@@ -268,20 +261,101 @@ function obtenerApi(user) {
         })
 }
 
-
 function obtenerUsuario() {
-    // console.log('click imagen')
-    const info = document.querySelector('#busqueda').value;
+    obtenerApi(info.value);
+}
+
+function eventoClick() {
+    
+    console.log(info.value);
     // console.log(info);
-    obtenerApi(info);
+    const url = `https://api.giphy.com/v1/gifs/search/tags?api_key=${api_key}&q=${info.value}`;
+
+    fetch(url)
+    .then((success) => {
+        // console.log(success);
+        if (success.ok) {
+            return success.json();
+        } else {
+            throw new Error(('success') + ' no comunica con la API');
+        }
+        
+
+    })
+    .then((data) => {
+        console.log(data.data);
+        console.log(data.data.length);
+        // console.log(data.data[0].name);
+        const boxInp = document.querySelector('.inp-search');
+        const boxComplete = document.createElement('div');
+        const imgBoxSearch = document.createElement('div');
+        const imgSearch = document.createElement('img');
+        if (data.data.length != 0 ) {
+            console.log('No vacio');   
+            
+            // imgBoxSearch.setAttribute('id', 'btnSearch');
+            // boxInp.appendChild(imgBoxSearch);            
+            const element = document.querySelector('#btnSearch');
+            // if (typeof(element) == 'undefined' || element == null) {
+            //     console.log('SI');
+            //     imgBoxSearch.setAttribute('id', 'btnSearch');
+            //     boxInp.appendChild(imgBoxSearch);
+            //     imgSearch.setAttribute('src', './images/icon-search.svg')
+            //     imgBoxSearch.appendChild(imgSearch);
+            // }
+
+            boxInp.classList.remove('inp-search-inactive');
+            boxInp.classList.add('inp-search-active');            
+            boxComplete.classList.add('list-search');
+            
+            boxInp.removeChild(boxInp.lastElementChild);            
+            boxInp.appendChild(boxComplete);
+            // boxComplete.parentNode.removeChild(boxComplete);
+
+
+
+            for (let i = 0; i < data.data.length - 1; i++) {
+                const boxList = document.createElement('li');                
+                boxList.innerText = data.data[i].name;
+                boxList.style.width = '210px';
+                boxList.style.height = '22px';
+                boxList.style.color = '#9CAFC3';
+                boxList.style.fontSize = '16px';
+                boxList.style.marginBottom = '10px';
+                boxList.style.opacity = '.5';
+                boxList.style.listStyle = 'none';
+                boxList.style.cursor = 'pointer';
+                boxComplete.appendChild(boxList);
+            
+            }
+            
+            
+        } else {
+            console.log('Si vacio');
+            boxInp.classList.remove('inp-search-active');
+            boxInp.classList.add('inp-search-inactive');
+
+            // imgBoxSearch.setAttribute('id', 'btnSearch');
+            // boxInp.appendChild(imgBoxSearch);
+            // imgSearch.setAttribute('src', './images/icon-search.svg')
+            // imgBoxSearch.appendChild(imgSearch);
+        }
+
+
+
+    })
+    .catch((err) => {
+        console.log(`${err}`);
+    })
+    
+
 }
 
 
 
-// Mostrar Trending en pantalla principal
-document.addEventListener('DOMContentLoaded', obtenerTrending);
 
 
+//Imprimir Trending
 
 function obtenerTrending() {
     const url = `https://api.giphy.com/v1/gifs/trending?&api_key=${api_key}&limit=20`;
@@ -301,6 +375,7 @@ function obtenerTrending() {
             data.data.forEach((el) => {
                 // console.log(el);                                    
                 const imageBox = document.createElement('div');
+                imageBox.classList.add('trending');
                 boxtrending.appendChild(imageBox);
                 const image = document.createElement('img');
                 image.src = el.images.downsized.url;
@@ -309,13 +384,109 @@ function obtenerTrending() {
                 // imageBox.appendChild(imagen)
                 // boxtrending.insertAdjacentElement('afterbegin', image);
             })
+
+            // Hover a los Gifs-Trending
+            const gifs = document.querySelectorAll('.zoom-img');
+            // console.log(gifs);
+            // Media query 1440
+            let x = window.matchMedia("(min-width: 1440px)");
+            // console.log(x);
+            // console.log(x.matches);
+            if (x.matches) {
+                console.log('entra acá 1440');
+                gifs[0].addEventListener("mouseover",accion0);
+                gifs[1].addEventListener("mouseover",accion1);
+                gifs[2].addEventListener("mouseover",accion2);
+                // gifs[3].addEventListener("mouseover",accion3);
+                // gifs[4].addEventListener("mouseover",accion4);
+                // gifs[5].addEventListener("mouseover",accion5);
+                // gifs[6].addEventListener("mouseover",accion6);
+                // gifs[7].addEventListener("mouseover",accion7);
+                // gifs[8].addEventListener("mouseover",accion8);
+                // gifs[9].addEventListener("mouseover",accion9);
+                // gifs[10].addEventListener("mouseover",accion10);
+                // gifs[11].addEventListener("mouseover",accion11);
+                // gifs[12].addEventListener("mouseover",accion12);
+                // gifs[13].addEventListener("mouseover",accion13);
+                // gifs[14].addEventListener("mouseover",accion14);
+                // gifs[15].addEventListener("mouseover",accion15);
+                // document.body.style.backgroundColor = "yellow";
+            } else {
+                // console.log('entra 375');
+                // document.body.style.backgroundColor = "PINK";
+            }
+
+            function accion0(e) {
+                // console.log(e);
+                e.preventDefault();
+                        
+                console.log(e.target.classList);
+                if (e.target.classList.contains('zoom-img')) {
+                    // console.log(e.target.parentElement);
+
+                    const childGif = e.target.parentElement.children[0];
+                    console.log(childGif);
+                    // const parentGif = document.querySelector('.trending');
+                    const parentGif = e.target.parentElement;
+                    console.log(parentGif);
+                    imprimir(childGif, parentGif);
+                    // re.style.pointerEvents = "none";
+                }
+                        
+            } 
+            function accion1(e) {
+                // console.log(e);
+                e.preventDefault();
+                        
+                console.log(e.target.classList);
+                if (e.target.classList.contains('zoom-img')) {
+                    // console.log(e.target.parentElement);
+
+                    const childGif = e.target.parentElement.children[0];
+                    console.log(childGif);
+                    // const parentGif = document.querySelector('.trending');
+                    const parentGif = e.target.parentElement;
+                    console.log(parentGif);
+                    imprimir(childGif, parentGif);
+                    // re.style.pointerEvents = "none";
+                }
+                        
+            } 
+            function accion2(e) {
+                // console.log(e);
+                e.preventDefault();
+                        
+                console.log(e.target.classList);
+                if (e.target.classList.contains('zoom-img')) {
+                    // console.log(e.target.parentElement);
+
+                    const childGif = e.target.parentElement.children[0];
+                    console.log(childGif);
+                    // const parentGif = document.querySelector('.trending');
+                    const parentGif = e.target.parentElement;
+                    console.log(parentGif);
+                    imprimir(childGif, parentGif);
+                    // re.style.pointerEvents = "none";
+                }
+                        
+            }   
+
+
+
+            function imprimir(child, parent) {       
+                
+                parent.style.backgroundColor = '#572EE5';        
+                child.style.opacity = '.6';         
+                // gif.style.transition = '.5s ease';         
+                // gif.style.backfaceVisibility = 'hidden';
+            }
+
         })
         .catch((err) => {
             console.log(`${err}`);
         })
     
 }
-
 
 //Ventana Modal
 boxtrending.addEventListener('click', ventanaModal);
@@ -324,10 +495,10 @@ function ventanaModal(e) {
     // console.log(e);
     e.preventDefault();
 
-    // console.log(e.target.classList);
+    console.log(e.target.classList);
     if (e.target.classList.contains('zoom-img')) {
         const test = e.target.parentElement;
-        // console.log(test);
+        console.log(test);
         leerDatos(test);
         // re.style.pointerEvents = "none";
     }
@@ -338,12 +509,12 @@ function ventanaModal(e) {
 }
 
 
-function leerDatos(curso) {
-    // console.log(curso)
+function leerDatos(gif) {
+    // console.log(gif)
     const infoImg = {
-        imagen: curso.querySelector('.zoom-img').src
+        imagen: gif.querySelector('.zoom-img').src
     };
-    // console.log(infoImg);
+    console.log(infoImg);
     insertarImg(infoImg);
     
 }
@@ -399,7 +570,7 @@ function insertarImg(infImg) {
     contenedor4.appendChild(descarga);   
 
 
-    //Cerrar ventana modal
+    //Cerrar ventana modal y recarga web
     cerrar.addEventListener('click', function(ev){
         // console.log(contenedor);
         ev.preventDefault();
@@ -423,7 +594,7 @@ function insertarImg(infImg) {
     })
 
 
-    // Al presionar como favorito Guardar en LS y recargar web    
+    // Al presionar como favorito Guardar en LS  
 
     fav.addEventListener('click', imprimirFav);
 
@@ -542,7 +713,7 @@ function obtenerCursosLocalStorage1() {
     return gifosLS;
 }
 
-// Imprime los gif seleccionados del local storage en el pagina de favoritos
+// Imprime los gif seleccionados del local storage en el pagina de MisGifos
 function leerLocalStorage1() {
     let gifosLS;
 
@@ -587,6 +758,7 @@ function leerLocalStorage1() {
     }
 
 }
+
 
 
 

@@ -48,7 +48,7 @@ function accederCamara() {
      .then(function(camera) {  
          console.log('ENTRA');
         const textRepeat = document.createElement('p');
-        let vidSave = document.createElement('video'); 
+        let vidSave = document.createElement('img'); 
         let video = document.createElement('video');
         const filling2 = document.querySelector('.item2');
         const textColor2 = document.querySelector('.colorP2')
@@ -81,12 +81,15 @@ function accederCamara() {
                 width: 360,
                 hidden: 240,
                 onGifRecordingStarted: function() {
-                    console.log('Inicia grabacion')
+                    console.log('Inicia grabacion');
                 },
-                onGifPreview: function(gifURL) {
-                    video.src = gifURL;
-                }
+                // onGifPreview: function(gifURL) {
+                //     video.src = gifURL;
+                // }
             });
+
+
+            // recorderUser.record().saveAs({'video': 'vid.webn'});
 
             recorder.startRecording();
 
@@ -100,6 +103,7 @@ function accederCamara() {
         function stopRecordingCallback() {
             console.log('Gif recording stopped: ' + bytesToSize(recorder.getBlob().size));
             let blob = recorder.getBlob();
+            // let blobUser = recorderUser.getBlob();
             video.src = URL.createObjectURL(blob);
             
             // invokeSaveAsDialog(blob);
@@ -107,8 +111,10 @@ function accederCamara() {
             console.log(recorder.getBlob());
             console.log(video.src);
             vidSave.setAttribute('src', video.src);
-            vidSave.setAttribute('controls', "");
+            // vidSave.setAttribute('controls', "");
             vidSave.setAttribute('width', "488");
+            vidSave.setAttribute('height', "300");
+            // containerVideo.removeChild(video);
             video.style.display = 'none';
             containerVideo.appendChild(vidSave);
             btnStopRecord.style.display = 'none';
@@ -121,11 +127,7 @@ function accederCamara() {
             recorder.destroy();
             recorder.camera.stop();
             recorder = null;
-            textRepeat.addEventListener('click', ev => {
-                 vidSave.style.display = 'none';
-                 textRepeat.style.display = 'none';
-                 item1();
-            })
+            
 
             btnGif.addEventListener('click' , ev => {
                 uploadGif();
@@ -173,9 +175,15 @@ function accederCamara() {
             }
         }
 
-        btnStopRecord.addEventListener('click', (ev)=>{
+        btnStopRecord.addEventListener('click', ev => {
             recorder.stopRecording(stopRecordingCallback);
         });
+        textRepeat.addEventListener('click', ev => {
+            // containerVideo.removeChild(vidSave);
+             vidSave.style.display = 'none';
+             textRepeat.style.display = 'none';
+             item1();
+        })
      })
      .catch(function(err) {           
           console.log(err.name, err.message); 
@@ -226,5 +234,6 @@ function obtenerCursosLocalStorage() {
 }
 
 
+// let favoritosLS = JSON.parse(localStorage.getItem('fav'));
 
-
+// console.log(favoritosLS);

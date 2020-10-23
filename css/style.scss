@@ -201,6 +201,20 @@ body {
                     }
                }
 
+               // .inp-search-active {
+               //      height: 200px;
+               //      padding-top: 2px;
+               //      align-items: unset;
+               //      -webkit-box-align: unset;
+               //      flex-wrap: wrap;
+
+               //      input {
+               //           width: 449px;
+               //           border-bottom: 1px solid #9CAFC3;
+               //           margin-bottom: 14px;     
+               //      }
+               // }
+
                .text-search {
 
                     text-align: center;
@@ -261,11 +275,18 @@ body {
                          overflow-x: auto; 
                          justify-content: start;
 
-                         .zoom-img {
+                         .trending {
                               width: 243px;
                               height: 187px;
                               margin-right: 22px;
+
+                              .zoom-img {
+                                   width: inherit;
+                                   height: inherit;
+                              }
                          }
+
+
                     }
                     
                }
@@ -483,6 +504,37 @@ body {
                          }
                     }
 
+                    .inp-search-active {
+                         height: 200px;
+                         padding-top: 2px;
+                         align-items: unset;
+                         -webkit-box-align: unset;
+                         flex-wrap: wrap;
+     
+                         input {
+                              width: 449px;
+                              border-bottom: 1px solid #9CAFC3;
+                              margin-bottom: 14px;     
+                         }
+
+                         #btnSearch {
+
+                              img {
+                                   width: 20px;
+                                   height: 40px;
+                                   line-height: 50px;
+                                   border-bottom: 1px solid rgb(156, 175, 195);
+                              }
+                         }
+                    }
+
+                    .inp-search-inactive {
+
+                         .list-search {
+                              display: none;
+                         }
+                    }
+
                     .text-search {
 
                          h3 {
@@ -587,8 +639,13 @@ body {
                               width: 1121px;
                               overflow: hidden;
 
-                              .zoom-img {
+                              .trending {
                                    width: 357px;
+                                   // background-color: #572EE5; 
+                                   
+                                   .zoom-img {
+                                        // opacity: .4;
+                                   }
                               }
                          }
                          
