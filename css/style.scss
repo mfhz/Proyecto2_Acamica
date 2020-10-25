@@ -8,6 +8,7 @@
 
 
 body {
+     // background-color: red;
      &.navbar {
           overflow: hidden;
      }
@@ -641,48 +642,128 @@ body {
 
                               .trending {
                                    width: 357px;
-                                    
-                                   
-                                   .zoom-img {
-                                        // opacity: .4;
-                                   }
-                              }
-
-                              .trendingHov {
-                                   background-color: #572EE5;
+                                   height: 275px;
                                    position: relative;
 
-                                   .zoom-imgHov {
-                                        opacity: .6;
-                                   }
+                                   &:hover {
 
-                                   .containImg {
+                                        .hover {
+                                             width:  inherit;
+                                             height: inherit;
+                                             position: absolute;
+                                             top: 0;
+                                             background-color: #572EE5;
+                                             opacity: .6;                                    
+                                             
+                                        }
+                                        .containImg {
+                                             width: 32px;
+                                             height: 32px;
+                                             background-color: #ffffff;
+                                             position: absolute;
+                                             top: 0;
+                                             opacity: .7;
+                                             border-radius: 6px;
+                                             right: 97px;
+                                             margin-top: 10px;
+                                             z-index: 10;
+                                             cursor: pointer;
+                                             .boxImg {
+                                                  width: 18px;
+                                                  height: 15.9px;
+                                                  margin-top: 8.1px;
+                                                  cursor: pointer;
+                                                  
+                                             }
+                                        }
+                                        .containImg2 {
+                                             right: 54px;      
+                                        }     
+                                        .containImg3 {
+                                             right: 11px;      
+                                        } 
+                                        .text-gif {
+                                             position: absolute;
+                                             bottom: 0;
+                                             left: 18px;
+                                             width: 100%;
+                                             text-align: left;
+                                             margin-bottom: 76px;
+                                             font-size: 15px;
+                                             color: #ffffff;
+                                        }
+                                        .title-gif {
+                                             position: absolute;
+                                             bottom: 0;
+                                             width: 90%;
+                                             height: 19px;
+                                             text-align: left;
+                                             left: 18.5px;
+                                             margin-bottom: 51px;
+                                             font-size: 16px;
+                                             color: #ffffff;
+                                        }                             
+                                   }    
+
+                                   .hoverActive {
+                                        width:  inherit;
+                                        height: inherit;
+                                        position: absolute;
+                                        top: 0;
+                                        background-color: #572EE5;
+                                        opacity: .6;
+                                        
+                                        
+                                        
+                                   }
+                                   .containImgActive {
                                         width: 32px;
                                         height: 32px;
                                         background-color: #ffffff;
                                         position: absolute;
+                                        top: 0;
                                         opacity: .7;
                                         border-radius: 6px;
-                                        top: 0;
                                         right: 97px;
                                         margin-top: 10px;
+                                        z-index: 10;
                                         cursor: pointer;
-
                                         .boxImg {
                                              width: 18px;
                                              height: 15.9px;
                                              margin-top: 8.1px;
+                                             cursor: pointer;
                                              
                                         }
                                    }
-
-                                   .containImg2 {
+                                   .containImg2Active {
                                         right: 54px;      
-                                   }
-
-                                   .containImg3 {
+                                   }     
+                                   .containImg3Active {
                                         right: 11px;      
+                                   } 
+                                   .text-gifActive {
+                                        position: absolute;
+                                        bottom: 0;
+                                        left: 18px;
+                                        width: 100%;
+                                        text-align: left;
+                                        margin-bottom: 76px;
+                                        font-size: 15px;
+                                        color: #ffffff;
                                    }
+                                   .title-gifActive {
+                                        position: absolute;
+                                        bottom: 0;
+                                        width: 90%;
+                                        height: 19px;
+                                        text-align: left;
+                                        left: 18.5px;
+                                        margin-bottom: 51px;
+                                        font-size: 16px;
+                                        color: #ffffff;
+                                   }      
+                                   
 
                               }
 

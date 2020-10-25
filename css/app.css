@@ -92,16 +92,12 @@ body main .caja-off {
         margin-top: 14px;
         margin-left: 35px;
         font-size: 15px; }
-        body main .caja-off .zoom .container .container-text p::before {
-          content: 'Usuario'; }
       body main .caja-off .zoom .container .container-text h3 {
         -ms-flex-item-align: start;
             align-self: flex-start;
         margin-top: 6px;
         margin-left: 29.5px;
         font-size: 16px; }
-        body main .caja-off .zoom .container .container-text h3::before {
-          content: 'Titulo 2'; }
       body main .caja-off .zoom .container .container-img {
         display: -webkit-box;
         display: -ms-flexbox;
