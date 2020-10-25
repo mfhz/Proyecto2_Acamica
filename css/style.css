@@ -480,8 +480,8 @@ body {
               z-index: 10;
               cursor: pointer; }
               body main .gifos .list-gifos .box-zoom-img .trending:hover .containImg .boxImg {
-                width: 18px;
-                height: 15.9px;
+                width: 20px;
+                height: 18px;
                 margin-top: 8.1px;
                 cursor: pointer; }
             body main .gifos .list-gifos .box-zoom-img .trending:hover .containImg2 {
@@ -527,10 +527,14 @@ body {
               z-index: 10;
               cursor: pointer; }
               body main .gifos .list-gifos .box-zoom-img .trending .containImgActive .boxImg {
-                width: 18px;
-                height: 15.9px;
+                width: 20px;
+                height: 18px;
                 margin-top: 8.1px;
                 cursor: pointer; }
+              body main .gifos .list-gifos .box-zoom-img .trending .containImgActive .imgActive {
+                background: url("../images/icon-fav-active.svg");
+                width: 20px;
+                height: 18px; }
             body main .gifos .list-gifos .box-zoom-img .trending .containImg2Active {
               right: 54px; }
             body main .gifos .list-gifos .box-zoom-img .trending .containImg3Active {

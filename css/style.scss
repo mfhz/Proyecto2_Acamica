@@ -669,8 +669,8 @@ body {
                                              z-index: 10;
                                              cursor: pointer;
                                              .boxImg {
-                                                  width: 18px;
-                                                  height: 15.9px;
+                                                  width: 20px;
+                                                  height: 18px;
                                                   margin-top: 8.1px;
                                                   cursor: pointer;
                                                   
@@ -716,7 +716,7 @@ body {
                                         
                                         
                                    }
-                                   .containImgActive {
+                                   .containImgActive {                                        
                                         width: 32px;
                                         height: 32px;
                                         background-color: #ffffff;
@@ -728,13 +728,19 @@ body {
                                         margin-top: 10px;
                                         z-index: 10;
                                         cursor: pointer;
-                                        .boxImg {
-                                             width: 18px;
-                                             height: 15.9px;
+                                        .boxImg {                                             
+                                             width: 20px;
+                                             height: 18px;
                                              margin-top: 8.1px;
                                              cursor: pointer;
                                              
                                         }
+                                        .imgActive {
+                                             background: url('../images/icon-fav-active.svg');
+                                             // background-repeat: no-repeat;
+                                             // background-position: center;
+                                             width: 20px;
+                                             height: 18px;                                        }
                                    }
                                    .containImg2Active {
                                         right: 54px;      
