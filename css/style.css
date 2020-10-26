@@ -416,7 +416,8 @@ body {
           margin-right: 22px; }
           body main .gifos .list-gifos .box-gifos .left-gifos {
             width: inherit;
-            height: inherit; }
+            height: inherit;
+            cursor: pointer; }
             body main .gifos .list-gifos .box-gifos .left-gifos img {
               width: 8px;
               height: 14px;
@@ -427,7 +428,8 @@ body {
                       transform: translateY(-50%); }
           body main .gifos .list-gifos .box-gifos .rigth-gifos {
             width: inherit;
-            height: inherit; }
+            height: inherit;
+            cursor: pointer; }
             body main .gifos .list-gifos .box-gifos .rigth-gifos img {
               width: 8px;
               height: 14px;
@@ -441,7 +443,8 @@ body {
           width: 40px;
           height: 40px;
           border: 1px solid #572EE5;
-          margin-left: 25px; }
+          margin-left: 25px;
+          cursor: pointer; }
           body main .gifos .list-gifos .box-gifos1 .rigth-gifos {
             width: inherit;
             height: inherit; }
@@ -455,7 +458,8 @@ body {
                       transform: translateY(-50%); }
         body main .gifos .list-gifos .box-zoom-img {
           width: 1121px;
-          overflow: hidden; }
+          overflow: hidden;
+          scroll-behavior: smooth; }
           body main .gifos .list-gifos .box-zoom-img .trending {
             width: 357px;
             height: 275px;

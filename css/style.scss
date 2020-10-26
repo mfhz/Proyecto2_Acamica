@@ -587,9 +587,11 @@ body {
 
                               .left-gifos {
                                    width: inherit;
-                                   height: inherit;                                   
+                                   height: inherit;
+                                   cursor: pointer;                                   
      
                                    img {
+                                        // color: #572EE5;
                                         width: 8px;
                                         height: 14px;      
                                         margin: 0 auto;                                  
@@ -597,12 +599,16 @@ body {
                                         top: 50%;
                                         transform: translateY(-50%);
                                    }
+                                   &:hover {
+                                        // background-color: #572EE5;
+                                   }
                               }
 
                               .rigth-gifos {
                                    width: inherit;
                                    height: inherit;                                   
-     
+                                   cursor: pointer;
+
                                    img {
                                         width: 8px;
                                         height: 14px;      
@@ -620,6 +626,7 @@ body {
                               height: 40px;                         
                               border: 1px solid #572EE5;
                               margin-left: 25px;
+                              cursor: pointer; 
 
                               .rigth-gifos {
                                    width: inherit;
@@ -639,6 +646,7 @@ body {
                          .box-zoom-img {
                               width: 1121px;
                               overflow: hidden;
+                              scroll-behavior: smooth;
 
                               .trending {
                                    width: 357px;

@@ -1107,6 +1107,14 @@ function leerLocalStorage1() {
 }
 
 
+//Carousel
+const flechaIzquierda = document.querySelector('.left-gifos');
+const flechaDerecha = document.querySelector('.rigth-gifos');
 
+flechaDerecha.addEventListener('click', () => {
+    padreImg.scrollLeft += padreImg.offsetWidth = 379;
+})
 
-
+flechaIzquierda.addEventListener('click', () => {
+    padreImg.scrollLeft -= padreImg.offsetWidth = 379;
+})
