@@ -416,7 +416,8 @@ body {
           margin-right: 22px; }
           body main .gifos .list-gifos .box-gifos .left-gifos {
             width: inherit;
-            height: inherit; }
+            height: inherit;
+            cursor: pointer; }
             body main .gifos .list-gifos .box-gifos .left-gifos img {
               width: 8px;
               height: 14px;
@@ -427,7 +428,8 @@ body {
                       transform: translateY(-50%); }
           body main .gifos .list-gifos .box-gifos .rigth-gifos {
             width: inherit;
-            height: inherit; }
+            height: inherit;
+            cursor: pointer; }
             body main .gifos .list-gifos .box-gifos .rigth-gifos img {
               width: 8px;
               height: 14px;
@@ -441,7 +443,8 @@ body {
           width: 40px;
           height: 40px;
           border: 1px solid #572EE5;
-          margin-left: 25px; }
+          margin-left: 25px;
+          cursor: pointer; }
           body main .gifos .list-gifos .box-gifos1 .rigth-gifos {
             width: inherit;
             height: inherit; }
@@ -455,9 +458,110 @@ body {
                       transform: translateY(-50%); }
         body main .gifos .list-gifos .box-zoom-img {
           width: 1121px;
-          overflow: hidden; }
+          overflow: hidden;
+          scroll-behavior: smooth; }
           body main .gifos .list-gifos .box-zoom-img .trending {
-            width: 357px; }
+            width: 357px;
+            height: 275px;
+            position: relative; }
+            body main .gifos .list-gifos .box-zoom-img .trending:hover .hover {
+              width: inherit;
+              height: inherit;
+              position: absolute;
+              top: 0;
+              background-color: #572EE5;
+              opacity: .6; }
+            body main .gifos .list-gifos .box-zoom-img .trending:hover .containImg {
+              width: 32px;
+              height: 32px;
+              background-color: #ffffff;
+              position: absolute;
+              top: 0;
+              opacity: .7;
+              border-radius: 6px;
+              right: 97px;
+              margin-top: 10px;
+              z-index: 10;
+              cursor: pointer; }
+              body main .gifos .list-gifos .box-zoom-img .trending:hover .containImg .boxImg {
+                width: 20px;
+                height: 18px;
+                margin-top: 8.1px;
+                cursor: pointer; }
+            body main .gifos .list-gifos .box-zoom-img .trending:hover .containImg2 {
+              right: 54px; }
+            body main .gifos .list-gifos .box-zoom-img .trending:hover .containImg3 {
+              right: 11px; }
+            body main .gifos .list-gifos .box-zoom-img .trending:hover .text-gif {
+              position: absolute;
+              bottom: 0;
+              left: 18px;
+              width: 100%;
+              text-align: left;
+              margin-bottom: 76px;
+              font-size: 15px;
+              color: #ffffff; }
+            body main .gifos .list-gifos .box-zoom-img .trending:hover .title-gif {
+              position: absolute;
+              bottom: 0;
+              width: 90%;
+              height: 19px;
+              text-align: left;
+              left: 18.5px;
+              margin-bottom: 51px;
+              font-size: 16px;
+              color: #ffffff; }
+            body main .gifos .list-gifos .box-zoom-img .trending .hoverActive {
+              width: inherit;
+              height: inherit;
+              position: absolute;
+              top: 0;
+              background-color: #572EE5;
+              opacity: .6; }
+            body main .gifos .list-gifos .box-zoom-img .trending .containImgActive {
+              width: 32px;
+              height: 32px;
+              background-color: #ffffff;
+              position: absolute;
+              top: 0;
+              opacity: .7;
+              border-radius: 6px;
+              right: 97px;
+              margin-top: 10px;
+              z-index: 10;
+              cursor: pointer; }
+              body main .gifos .list-gifos .box-zoom-img .trending .containImgActive .boxImg {
+                width: 20px;
+                height: 18px;
+                margin-top: 8.1px;
+                cursor: pointer; }
+              body main .gifos .list-gifos .box-zoom-img .trending .containImgActive .imgActive {
+                background: url("../images/icon-fav-active.svg");
+                width: 20px;
+                height: 18px; }
+            body main .gifos .list-gifos .box-zoom-img .trending .containImg2Active {
+              right: 54px; }
+            body main .gifos .list-gifos .box-zoom-img .trending .containImg3Active {
+              right: 11px; }
+            body main .gifos .list-gifos .box-zoom-img .trending .text-gifActive {
+              position: absolute;
+              bottom: 0;
+              left: 18px;
+              width: 100%;
+              text-align: left;
+              margin-bottom: 76px;
+              font-size: 15px;
+              color: #ffffff; }
+            body main .gifos .list-gifos .box-zoom-img .trending .title-gifActive {
+              position: absolute;
+              bottom: 0;
+              width: 90%;
+              height: 19px;
+              text-align: left;
+              left: 18.5px;
+              margin-bottom: 51px;
+              font-size: 16px;
+              color: #ffffff; }
   body footer {
     height: 116px;
     -webkit-box-orient: horizontal;

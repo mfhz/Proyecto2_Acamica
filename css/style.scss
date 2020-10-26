@@ -8,6 +8,7 @@
 
 
 body {
+     // background-color: red;
      &.navbar {
           overflow: hidden;
      }
@@ -586,9 +587,11 @@ body {
 
                               .left-gifos {
                                    width: inherit;
-                                   height: inherit;                                   
+                                   height: inherit;
+                                   cursor: pointer;                                   
      
                                    img {
+                                        // color: #572EE5;
                                         width: 8px;
                                         height: 14px;      
                                         margin: 0 auto;                                  
@@ -596,12 +599,16 @@ body {
                                         top: 50%;
                                         transform: translateY(-50%);
                                    }
+                                   &:hover {
+                                        // background-color: #572EE5;
+                                   }
                               }
 
                               .rigth-gifos {
                                    width: inherit;
                                    height: inherit;                                   
-     
+                                   cursor: pointer;
+
                                    img {
                                         width: 8px;
                                         height: 14px;      
@@ -619,6 +626,7 @@ body {
                               height: 40px;                         
                               border: 1px solid #572EE5;
                               margin-left: 25px;
+                              cursor: pointer; 
 
                               .rigth-gifos {
                                    width: inherit;
@@ -638,15 +646,141 @@ body {
                          .box-zoom-img {
                               width: 1121px;
                               overflow: hidden;
+                              scroll-behavior: smooth;
 
                               .trending {
                                    width: 357px;
-                                   // background-color: #572EE5; 
-                                   
-                                   .zoom-img {
-                                        // opacity: .4;
+                                   height: 275px;
+                                   position: relative;
+
+                                   &:hover {
+
+                                        .hover {
+                                             width:  inherit;
+                                             height: inherit;
+                                             position: absolute;
+                                             top: 0;
+                                             background-color: #572EE5;
+                                             opacity: .6;                                    
+                                             
+                                        }
+                                        .containImg {
+                                             width: 32px;
+                                             height: 32px;
+                                             background-color: #ffffff;
+                                             position: absolute;
+                                             top: 0;
+                                             opacity: .7;
+                                             border-radius: 6px;
+                                             right: 97px;
+                                             margin-top: 10px;
+                                             z-index: 10;
+                                             cursor: pointer;
+                                             .boxImg {
+                                                  width: 20px;
+                                                  height: 18px;
+                                                  margin-top: 8.1px;
+                                                  cursor: pointer;
+                                                  
+                                             }
+                                        }
+                                        .containImg2 {
+                                             right: 54px;      
+                                        }     
+                                        .containImg3 {
+                                             right: 11px;      
+                                        } 
+                                        .text-gif {
+                                             position: absolute;
+                                             bottom: 0;
+                                             left: 18px;
+                                             width: 100%;
+                                             text-align: left;
+                                             margin-bottom: 76px;
+                                             font-size: 15px;
+                                             color: #ffffff;
+                                        }
+                                        .title-gif {
+                                             position: absolute;
+                                             bottom: 0;
+                                             width: 90%;
+                                             height: 19px;
+                                             text-align: left;
+                                             left: 18.5px;
+                                             margin-bottom: 51px;
+                                             font-size: 16px;
+                                             color: #ffffff;
+                                        }                             
+                                   }    
+
+                                   .hoverActive {
+                                        width:  inherit;
+                                        height: inherit;
+                                        position: absolute;
+                                        top: 0;
+                                        background-color: #572EE5;
+                                        opacity: .6;
+                                        
+                                        
+                                        
                                    }
+                                   .containImgActive {                                        
+                                        width: 32px;
+                                        height: 32px;
+                                        background-color: #ffffff;
+                                        position: absolute;
+                                        top: 0;
+                                        opacity: .7;
+                                        border-radius: 6px;
+                                        right: 97px;
+                                        margin-top: 10px;
+                                        z-index: 10;
+                                        cursor: pointer;
+                                        .boxImg {                                             
+                                             width: 20px;
+                                             height: 18px;
+                                             margin-top: 8.1px;
+                                             cursor: pointer;
+                                             
+                                        }
+                                        .imgActive {
+                                             background: url('../images/icon-fav-active.svg');
+                                             // background-repeat: no-repeat;
+                                             // background-position: center;
+                                             width: 20px;
+                                             height: 18px;                                        }
+                                   }
+                                   .containImg2Active {
+                                        right: 54px;      
+                                   }     
+                                   .containImg3Active {
+                                        right: 11px;      
+                                   } 
+                                   .text-gifActive {
+                                        position: absolute;
+                                        bottom: 0;
+                                        left: 18px;
+                                        width: 100%;
+                                        text-align: left;
+                                        margin-bottom: 76px;
+                                        font-size: 15px;
+                                        color: #ffffff;
+                                   }
+                                   .title-gifActive {
+                                        position: absolute;
+                                        bottom: 0;
+                                        width: 90%;
+                                        height: 19px;
+                                        text-align: left;
+                                        left: 18.5px;
+                                        margin-bottom: 51px;
+                                        font-size: 16px;
+                                        color: #ffffff;
+                                   }      
+                                   
+
                               }
+
                          }
                          
                     }

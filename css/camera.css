@@ -1,38 +1,22 @@
 @media screen and (min-width: 1440px) {
   body .camera {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     padding-left: 156px;
     padding-right: 167px; }
     body .camera .container-camera {
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex; }
       body .camera .container-camera .box-camera {
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
+        align-items: center;
         width: 90%;
         margin-left: 22px; }
         body .camera .container-camera .box-camera .img-camera svg {
           position: relative;
           top: -15px; }
         body .camera .container-camera .box-camera .container-photo {
-          display: -webkit-box;
-          display: -ms-flexbox;
           display: flex;
-          -webkit-box-orient: vertical;
-          -webkit-box-direction: normal;
-              -ms-flex-direction: column;
-                  flex-direction: column; }
+          flex-direction: column; }
           body .camera .container-camera .box-camera .container-photo .box-photo {
             width: 688px;
             height: 390px;
@@ -55,12 +39,8 @@
             body .camera .container-camera .box-camera .container-photo .box-photo img {
               margin-top: 44px; }
           body .camera .container-camera .box-camera .container-photo .box-items {
-            display: -webkit-box;
-            display: -ms-flexbox;
             display: flex;
-            -webkit-box-pack: center;
-                -ms-flex-pack: center;
-                    justify-content: center;
+            justify-content: center;
             height: 57px;
             margin-top: 24px; }
             body .camera .container-camera .box-camera .container-photo .box-items .items {
@@ -75,8 +55,7 @@
                 border-radius: 50%;
                 text-align: center;
                 margin-top: 50%;
-                -webkit-transform: translateY(-10px);
-                        transform: translateY(-10px); }
+                transform: translateY(-10px); }
           body .camera .container-camera .box-camera .container-photo .text-repeat {
             position: relative;
             width: 131px;
@@ -89,8 +68,7 @@
             cursor: pointer; }
       body .camera .container-camera .box-tape {
         height: 88px;
-        -ms-flex-item-align: end;
-            align-self: flex-end; }
+        align-self: flex-end; }
     body .camera .container-interaction {
       text-align: center; }
       body .camera .container-interaction .line-interaction {
