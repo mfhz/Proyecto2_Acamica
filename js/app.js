@@ -437,12 +437,15 @@ async function obtenerTrending() {
 
 
             // Al presionar como favorito Guardar en LS 
-            box1.onclick = imprimirFav;
+            img1.onclick = imprimirFav;
             function imprimirFav(e) {
+                // e.preventDefault();
                 const validar = e.target
+                // console.log(validar)
+                // console.log(!validar.classList.contains('containImgActive'))
+                // console.log(!validar.classList.contains('imgActive'))
                 // console.log(validar.getAttribute('class'));
-                if (!validar.classList.contains('imgActive')) {
-                    
+                if (!validar.classList.contains('imgActive')) {                    
                     console.log('entra');
                     // img1.setAttribute('src', '');
                     img1.classList.add('imgActive');
@@ -458,6 +461,7 @@ async function obtenerTrending() {
 
                     hover.classList.add('hoverActive');
                     box1.classList.add('containImgActive');
+                    box1.classList.add('hov-ls');
                     box2.classList.add('containImgActive');
                     box2.classList.add('containImg2Active');
                     box3.classList.add('containImgActive');
@@ -495,6 +499,7 @@ async function obtenerTrending() {
                     img1.classList.remove('imgActive');
                     hover.classList.remove('hoverActive');
                     box1.classList.remove('containImgActive');
+                    box1.classList.remove('hov-ls');
                     box2.classList.remove('containImgActive');
                     box2.classList.remove('containImg2Active');
                     box3.classList.remove('containImgActive');
@@ -996,6 +1001,7 @@ function leerLocalStorage() {
                             hovDiv.classList.add('hoverActive');
                             const hovContain = domTrending.parentElement.children[2];
                             hovContain.classList.add('containImgActive');
+                            hovContain.classList.add('hov-ls');
                             const hovImg = domTrending.parentElement.children[2].children[0];
                             hovImg.classList.add('imgActive');
                             const hovContain2 = domTrending.parentElement.children[3];

@@ -697,6 +697,7 @@ body {
                                              margin-top: 10px;
                                              z-index: 10;
                                              cursor: pointer;
+
                                              .boxImg {
                                                   width: 20px;
                                                   height: 18px;
@@ -704,6 +705,12 @@ body {
                                                   cursor: pointer;
                                                   
                                              }
+                                             &:hover {
+                                                  opacity: 1;
+                                             }
+                                        }
+                                        .hov-ls {
+                                             opacity: 1;
                                         }
                                         .containImg2 {
                                              right: 54px;      
@@ -743,7 +750,6 @@ body {
                                         opacity: .6;
                                         
                                         
-                                        
                                    }
                                    .containImgActive {                                        
                                         width: 32px;
@@ -765,11 +771,20 @@ body {
                                              
                                         }
                                         .imgActive {
-                                             background: url('../images/icon-fav-active.svg');
+                                             content: url('../images/icon-fav-active.svg');
                                              // background-repeat: no-repeat;
                                              // background-position: center;
                                              width: 20px;
-                                             height: 18px;                                        }
+                                             height: 18px; 
+                                                                     
+                                        }
+                                        &:hover {
+                                             opacity: 1;
+                                        }
+                                        
+                                   }
+                                   .hov-ls {
+                                        opacity: 1;
                                    }
                                    .containImg2Active {
                                         right: 54px;      

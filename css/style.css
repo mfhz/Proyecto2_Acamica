@@ -469,6 +469,10 @@ body {
                 height: 18px;
                 margin-top: 8.1px;
                 cursor: pointer; }
+              body main .gifos .list-gifos .box-zoom-img .trending:hover .containImg:hover {
+                opacity: 1; }
+            body main .gifos .list-gifos .box-zoom-img .trending:hover .hov-ls {
+              opacity: 1; }
             body main .gifos .list-gifos .box-zoom-img .trending:hover .containImg2 {
               right: 54px; }
             body main .gifos .list-gifos .box-zoom-img .trending:hover .containImg3 {
@@ -517,9 +521,13 @@ body {
                 margin-top: 8.1px;
                 cursor: pointer; }
               body main .gifos .list-gifos .box-zoom-img .trending .containImgActive .imgActive {
-                background: url("../images/icon-fav-active.svg");
+                content: url("../images/icon-fav-active.svg");
                 width: 20px;
                 height: 18px; }
+              body main .gifos .list-gifos .box-zoom-img .trending .containImgActive:hover {
+                opacity: 1; }
+            body main .gifos .list-gifos .box-zoom-img .trending .hov-ls {
+              opacity: 1; }
             body main .gifos .list-gifos .box-zoom-img .trending .containImg2Active {
               right: 54px; }
             body main .gifos .list-gifos .box-zoom-img .trending .containImg3Active {
