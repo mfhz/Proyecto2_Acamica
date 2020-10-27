@@ -193,9 +193,9 @@ body {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex; }
-      body main .gifos .list-gifos .box-gifos {
+      body main .gifos .list-gifos .left-gifos {
         display: none; }
-      body main .gifos .list-gifos .box-gifos1 {
+      body main .gifos .list-gifos .rigth-gifos {
         display: none; }
       body main .gifos .list-gifos .box-zoom-img {
         display: -webkit-box;
@@ -250,8 +250,14 @@ body {
         body footer .social-networks a img {
           width: 100%;
           height: 100%; }
+      body footer .social-networks .social-fb:hover {
+        content: url("../images/icon_facebook_hover.svg"); }
+      body footer .social-networks .social-tt:hover {
+        content: url("../images/icon-twitter-hover.svg"); }
       body footer .social-networks .social-right {
         margin-right: 0; }
+        body footer .social-networks .social-right:hover {
+          content: url("../images/icon_instagram-hover.svg"); }
     body footer .text-two-footer {
       font-size: 14px;
       font-family: 'Roboto'; }

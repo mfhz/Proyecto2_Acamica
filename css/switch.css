@@ -39,6 +39,14 @@
     .dark footer .text-one-footer {
       color: #ffffff;
       font-weight: 100; }
+    .dark footer .social-networks .social-fb:hover {
+      content: url("../images/icon_facebook_noc.svg"); }
+    .dark footer .social-networks .social-tt:hover {
+      content: url("../images/icon_twitter_noc.svg"); }
+    .dark footer .social-networks .social-right {
+      margin-right: 0; }
+      .dark footer .social-networks .social-right:hover {
+        content: url("../images/icon_instagram_noc.svg"); }
     .dark footer .text-two-footer {
       color: #ffffff;
       font-weight: 100; }

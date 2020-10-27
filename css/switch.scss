@@ -110,6 +110,30 @@
             font-weight: 100;
         }
 
+        .social-networks {
+
+            .social-fb {
+
+                 &:hover {
+                      content: url('../images/icon_facebook_noc.svg');
+                 }
+            }
+
+            .social-tt {
+
+                 &:hover {
+                      content: url('../images/icon_twitter_noc.svg');
+                 }
+            }
+
+            .social-right {
+                 margin-right: 0;
+                 &:hover {
+                      content: url('../images/icon_instagram_noc.svg');
+                 }
+            }
+       } 
+
         .text-two-footer {
             color: #ffffff;
             font-weight: 100;

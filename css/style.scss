@@ -262,11 +262,11 @@ body {
                     height: 187px;
                     display: flex;                    
                     
-                    .box-gifos {
+                    .left-gifos {
                          display: none;
                     }
 
-                    .box-gifos1 {
+                    .rigth-gifos {
                          display: none;
                     }
 
@@ -331,10 +331,27 @@ body {
                     }
                }
 
+               .social-fb {
+
+                    &:hover {
+                         content: url('../images/icon_facebook_hover.svg');
+                    }
+               }
+
+               .social-tt {
+
+                    &:hover {
+                         content: url('../images/icon-twitter-hover.svg');
+                    }
+               }
+
                .social-right {
                     margin-right: 0;
+                    &:hover {
+                         content: url('../images/icon_instagram-hover.svg');
+                    }
                }
-          }
+          }          
 
           .text-two-footer {
                font-size: 14px;
