@@ -4,6 +4,35 @@ const filling = document.querySelector('.item1');
 const textColor = document.querySelector('.colorP1');
 const repeat = document.querySelector('.container-photo');
 const api_key1 = 'aSfyIm4TLkXUqhZxWhGqVaDndjyX8PBd';
+const btnSwitch = document.querySelector('#switch');
+
+// Modo Oscuro
+btnSwitch.addEventListener('click', (e) => {
+    e.preventDefault();
+    // console.log('CLICK');
+    document.body.classList.toggle('dark');
+    // document.body.classList.toggle('navbar');
+    // document.body.classList.add('navbar');
+    // document.body.style.background = 'red';
+    btnSwitch.classList.toggle('active');
+
+    //Guardar el modo en LocalStorage
+    if (document.body.classList.contains('dark')) {
+        localStorage.setItem('dark-mode', 'true');
+    } else {
+        localStorage.setItem('dark-mode', 'false');        
+    }
+})
+
+/// Se obtiene el modo actual desde localStorage
+if (localStorage.getItem('dark-mode') === 'true') {
+    document.body.classList.add('dark');
+    btnSwitch.classList.add('active');
+
+} else {
+    document.body.classList.remove('dark');    
+    btnSwitch.classList.remove('active');
+}
 
 btnGif.style.display = 'none';
 

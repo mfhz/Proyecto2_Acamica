@@ -263,6 +263,8 @@ body {
     body header .logo {
       width: 71px;
       height: 59.1px; }
+      body header .logo a img {
+        content: url("../images/logo-desktop.svg"); }
     body header nav .menu #checkbox {
       display: none; }
     body header nav .menu .menu-span {
@@ -285,41 +287,41 @@ body {
               align-items: center;
       height: auto;
       background: none; }
-      body header nav .menu ul li {
+      body header nav .menu ul .hov-list {
         margin: 0;
         list-style: none; }
-        body header nav .menu ul li a {
+        body header nav .menu ul .hov-list a {
           font-size: 14px;
           color: #572EE5;
           line-height: 0; }
-        body header nav .menu ul li:hover {
+        body header nav .menu ul .hov-list:hover {
           border-bottom: 2px solid #5ED7C6; }
-        body header nav .menu ul li .text1 {
+        body header nav .menu ul .hov-list .text1 {
           visibility: hidden; }
-          body header nav .menu ul li .text1::before {
+          body header nav .menu ul .hov-list .text1::before {
             display: block;
             width: 100%;
             line-height: 32px;
             content: 'MODO NOCTURNO';
             visibility: visible; }
-          body header nav .menu ul li .text1.active {
+          body header nav .menu ul .hov-list .text1.active {
             visibility: hidden;
             margin-left: 0; }
-            body header nav .menu ul li .text1.active::before {
+            body header nav .menu ul .hov-list .text1.active::before {
               content: 'MODO DIURNO';
               visibility: visible;
               font-size: 14px; }
-        body header nav .menu ul li .text2 {
+        body header nav .menu ul .hov-list .text2 {
           visibility: hidden; }
-          body header nav .menu ul li .text2::before {
+          body header nav .menu ul .hov-list .text2::before {
             display: block;
             width: 100%;
             line-height: 32px;
             content: 'FAVORITOS';
             visibility: visible; }
-        body header nav .menu ul li .text3 {
+        body header nav .menu ul .hov-list .text3 {
           visibility: hidden; }
-          body header nav .menu ul li .text3::before {
+          body header nav .menu ul .hov-list .text3::before {
             display: block;
             width: 100%;
             line-height: 32px;
@@ -329,20 +331,25 @@ body {
         display: none; }
       body header nav .menu ul .list-button {
         display: block;
-        width: 54px;
-        height: 54px;
-        border: 1px solid #572EE5;
-        border-radius: 50%;
+        margin-top: 18px;
         cursor: pointer; }
-        body header nav .menu ul .list-button a {
-          height: inherit; }
-          body header nav .menu ul .list-button a svg {
-            color: #572EE5;
-            margin-top: 50%;
-            -webkit-transform: translateY(-50%);
-                    transform: translateY(-50%); }
-        body header nav .menu ul .list-button:hover {
-          border-bottom: 1px solid #572EE5; }
+        body header nav .menu ul .list-button .recordBtn {
+          width: 56px;
+          height: 56px;
+          border: 1px solid #572EE5;
+          border-radius: 50%; }
+          body header nav .menu ul .list-button .recordBtn svg g g g circle {
+            fill: #ffffff; }
+          body header nav .menu ul .list-button .recordBtn svg g g g g g {
+            fill: #572EE5; }
+          body header nav .menu ul .list-button .recordBtn svg:hover g g g circle {
+            fill: #572EE5; }
+          body header nav .menu ul .list-button .recordBtn svg:hover g g g g g {
+            fill: #ffffff; }
+          body header nav .menu ul .list-button .recordBtn:hover {
+            border: unset; }
+      body header nav .menu ul .record {
+        cursor: pointer; }
   body main {
     margin-top: 5%; }
     body main .title {
@@ -408,54 +415,22 @@ body {
         -webkit-box-pack: center;
             -ms-flex-pack: center;
                 justify-content: center; }
-        body main .gifos .list-gifos .box-gifos {
+        body main .gifos .list-gifos .left-gifos {
           display: block;
           width: 40px;
           height: 40px;
-          border: 1px solid #572EE5;
-          margin-right: 22px; }
-          body main .gifos .list-gifos .box-gifos .left-gifos {
-            width: inherit;
-            height: inherit;
-            cursor: pointer; }
-            body main .gifos .list-gifos .box-gifos .left-gifos img {
-              width: 8px;
-              height: 14px;
-              margin: 0 auto;
-              position: relative;
-              top: 50%;
-              -webkit-transform: translateY(-50%);
-                      transform: translateY(-50%); }
-          body main .gifos .list-gifos .box-gifos .rigth-gifos {
-            width: inherit;
-            height: inherit;
-            cursor: pointer; }
-            body main .gifos .list-gifos .box-gifos .rigth-gifos img {
-              width: 8px;
-              height: 14px;
-              margin: 0 auto;
-              position: relative;
-              top: 50%;
-              -webkit-transform: translateY(-50%);
-                      transform: translateY(-50%); }
-        body main .gifos .list-gifos .box-gifos1 {
+          margin-right: 22px;
+          cursor: pointer; }
+          body main .gifos .list-gifos .left-gifos:hover {
+            content: url("../images/button-slider-left-hover.svg"); }
+        body main .gifos .list-gifos .rigth-gifos {
           display: block;
           width: 40px;
           height: 40px;
-          border: 1px solid #572EE5;
           margin-left: 25px;
           cursor: pointer; }
-          body main .gifos .list-gifos .box-gifos1 .rigth-gifos {
-            width: inherit;
-            height: inherit; }
-            body main .gifos .list-gifos .box-gifos1 .rigth-gifos img {
-              width: 8px;
-              height: 14px;
-              margin: 0 auto;
-              position: relative;
-              top: 50%;
-              -webkit-transform: translateY(-50%);
-                      transform: translateY(-50%); }
+          body main .gifos .list-gifos .rigth-gifos:hover {
+            content: url("../images/button-slider-right-hover.svg"); }
         body main .gifos .list-gifos .box-zoom-img {
           width: 1121px;
           overflow: hidden;

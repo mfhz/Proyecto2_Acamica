@@ -2,6 +2,8 @@
   background: #37383C; }
   .dark header {
     border-color: #000000; }
+    .dark header .logo a img {
+      content: url("../images/logo-mobile-modo-noct.svg"); }
     .dark header nav .menu #checkbox[type="checkbox"]:checked ~ ul {
       background: #000000; }
     .dark header nav .menu span {
@@ -12,6 +14,8 @@
     border-color: #ffffff; }
     .dark main .search .inp-search input {
       background: #37383C; }
+    .dark main .search .inp-search #btnSearch img {
+      content: url("../images/icon-search-modo-noct.svg"); }
   .dark main .search .text-search h3 {
     color: #ffffff; }
   .dark main .search .text-search p {
@@ -42,16 +46,33 @@
 @media screen and (min-width: 1440px) {
   .dark header {
     border-color: #000000; }
+    .dark header .logo a img {
+      content: url("../images/logo-desktop-modo-noc.svg"); }
     .dark header nav .menu ul li a {
       color: #ffffff; }
-    .dark header nav .menu ul .list-button {
-      border-color: #ffffff;
-      background: #ffffff; }
-      .dark header nav .menu ul .list-button a {
-        height: inherit; }
-        .dark header nav .menu ul .list-button a svg {
-          color: #000000; }
-  .dark main .gifos .list-gifos .box-gifos {
-    border-color: #ffffff; } }
+    .dark header nav .menu ul .list-button .recordBtn {
+      border: 1px solid #ffffff; }
+      .dark header nav .menu ul .list-button .recordBtn svg g g g circle {
+        fill: rgba(255, 0, 0, 0); }
+      .dark header nav .menu ul .list-button .recordBtn svg g g g g g {
+        fill: #ffffff; }
+      .dark header nav .menu ul .list-button .recordBtn svg:hover g g g circle {
+        fill: #ffffff; }
+      .dark header nav .menu ul .list-button .recordBtn svg:hover g g g g g {
+        fill: #000000; }
+      .dark header nav .menu ul .list-button .recordBtn:hover {
+        border: 1px solid #000000; }
+  .dark main .gifos .list-gifos .left-gifos {
+    content: url("../images/button-slider-left-md-noct.svg"); }
+  .dark main .gifos .list-gifos .rigth-gifos {
+    content: url("../images/button-slider-right-md-noct.svg"); }
+  .dark main .camera .container-camera .box-camera .img-camera img {
+    content: url("../images/camara-modo-noc.svg"); }
+  .dark main .camera .container-camera .box-camera .container-photo .box-photo h2 {
+    color: #ffffff; }
+  .dark main .camera .container-camera .box-camera .container-photo .box-photo p {
+    color: #ffffff; }
+  .dark main .camera .container-camera .box-tape img {
+    content: url("../images/pelicula-modo-noc.svg"); } }
 
 /*# sourceMappingURL=switch.css.map */

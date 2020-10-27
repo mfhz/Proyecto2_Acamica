@@ -5,6 +5,16 @@
         border-color: #000000;
         // background: #37383C;
 
+        .logo {
+
+            a {
+
+                img {
+                    content: url('../images/logo-mobile-modo-noct.svg');
+                }
+            }
+        }
+
         nav {
 
             .menu {
@@ -40,6 +50,13 @@
 
                 input {
                     background: #37383C;
+                }
+
+                #btnSearch {
+
+                    img {
+                        content: url('../images/icon-search-modo-noct.svg');
+                    }
                 }
             }
 
@@ -82,6 +99,7 @@
                 color: #ffffff;
             }
         }
+        
     }
 
     footer {
@@ -107,6 +125,16 @@
         header {
             border-color: #000000;
             // background: #37383C;
+
+            .logo {
+
+                a {
+
+                    img {
+                        content: url('../images/logo-desktop-modo-noc.svg');
+                    }
+                }
+            }
     
             nav {
     
@@ -122,18 +150,59 @@
                         }
 
                         .list-button {
-                            border-color: #ffffff;
-                            background: #ffffff;
-                            
-                            a {                                
-                                height: inherit;
 
-                                svg {  
-                                     color: #000000;                                  
-                                    //  margin-top: 50%;
-                                    //  transform: translateY(-50%);
+                            .recordBtn {
+                                border: 1px solid #ffffff;
+                                svg {
+
+                                    g {
+
+                                        g {
+
+                                            g {
+                                                circle {
+                                                    fill: rgba(255, 0, 0, 0.0);
+                                                }
+
+                                                g {
+                                                          
+                                                    g {
+                                                        fill: #ffffff;
+                                                    }
+                                                }
+                                            }
+
+                                        }
+                                    }
+                                    &:hover {
+                                        g {
+
+                                            g {
+    
+                                                g {
+                                                    circle {
+                                                        fill: #ffffff;
+                                                    }
+    
+                                                    g {
+                                                              
+                                                        g {
+                                                            fill: #000000;
+                                                        }
+                                                    }
+                                                }
+    
+                                            }
+                                        }
+                                    }
+
+
+                                }
+                                &:hover {
+                                    border: 1px solid #000000;
                                 }
                             }
+
                         }
                     }
                 }
@@ -146,11 +215,52 @@
 
                 .list-gifos {
 
-                    .box-gifos {
-                        border-color: #ffffff;
+                    .left-gifos {
+                        content: url('../images/button-slider-left-md-noct.svg');
+                    }
+
+                    .rigth-gifos {
+                        content: url('../images/button-slider-right-md-noct.svg');
                     }
                 }
 
+            }
+
+            .camera {
+
+                .container-camera {
+    
+                    .box-camera {
+    
+                        .img-camera {
+    
+                            img {
+                                content: url('../images/camara-modo-noc.svg');
+                            }
+                        }
+
+                        .container-photo {
+
+                            .box-photo {
+                                
+                                h2 {
+                                    color: #ffffff;
+                                }
+                                
+                                p {
+                                    color: #ffffff;
+                                }
+                            }
+                        }
+                    }
+                    
+                    .box-tape {
+    
+                        img {
+                            content: url('../images/pelicula-modo-noc.svg');
+                        }
+                    }
+                }
             }
         }       
     }
