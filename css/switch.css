@@ -12,10 +12,27 @@
     color: #ffffff; }
   .dark main .search .inp-search {
     border-color: #ffffff; }
-    .dark main .search .inp-search input {
+    .dark main .search .inp-search .inp-search-container input {
       background: #37383C; }
-    .dark main .search .inp-search #btnSearch img {
+    .dark main .search .inp-search .inp-search-container #btnSearch img {
       content: url("../images/icon-search-modo-noct.svg"); }
+  .dark main .search .inp-search-active .inp-search-container #btnSearch {
+    height: 40px;
+    border-bottom: 1px solid #9cafc3; }
+    .dark main .search .inp-search-active .inp-search-container #btnSearch img {
+      content: url("../images/close-modo-noct.svg"); }
+  .dark main .search .inp-search-active .list-search {
+    position: absolute;
+    top: 64px; }
+    .dark main .search .inp-search-active .list-search li {
+      width: 210px;
+      height: 22px;
+      color: #9CAFC3;
+      font-size: 16px;
+      margin-bottom: 10px;
+      opacity: .5;
+      list-style: none;
+      cursor: pointer; }
   .dark main .search .text-search h3 {
     color: #ffffff; }
   .dark main .search .text-search p {

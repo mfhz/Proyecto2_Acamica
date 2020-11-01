@@ -177,28 +177,34 @@ body {
 
                .inp-search {
 
-                    display: flex;   
-                    justify-content: space-between;
-                    align-items: center;
-                    padding-left: 55px;
-                    padding-right: 25px;    
-                    width: 334px;
-                    height: 50px;
-                    margin: 0 auto;
-                    margin-bottom: 31px;
-                    border: 1px solid #572EE5;
-                    border-radius: 27px;
+                         padding-left: 55px;
+                         padding-right: 25px;    
+                         width: 334px;
+                         height: 50px;
+                         margin: 0 auto;
+                         margin-bottom: 31px;
+                         border: 1px solid #572EE5;
+                         border-radius: 27px;
 
-                    input {
-                         width: 220px;
-                         height: 40px;
-                         font-size: 16px;
-                         font-family: 'Roboto';
-                         outline: none;
-                    }
+                    .inp-search-container {
 
-                    #btnSearch {
-                         cursor: pointer;
+                         height: inherit;
+                         display: flex;   
+                         justify-content: space-between;
+                         align-items: center;
+                         
+
+                         input {
+                              width: 420px;
+                              height: 40px;
+                              font-size: 16px;
+                              font-family: 'Roboto';
+                              outline: none;
+                         }
+     
+                         #btnSearch {
+                              cursor: pointer;
+                         }
                     }
                }
 
@@ -564,34 +570,65 @@ body {
                          width: 551px;
                          margin-bottom: 73px;
 
-                         input {
-                              width: 430px;
-                              color: #9CAFC3;                              
-                         }
+                         .inp-search-container {
+     
+                              input {
+                                   width: 430px;
+                                   color: #9CAFC3;
+                              }
+          
+                              #btnSearch {
+                                   cursor: pointer;
+                              }
+                         }                         
                     }
 
                     .inp-search-active {
                          height: 200px;
                          padding-top: 2px;
-                         align-items: unset;
-                         -webkit-box-align: unset;
-                         flex-wrap: wrap;
+                         position: relative;
+                         
+                         
+                         .inp-search-container{
+                              align-items: unset;
+                              -webkit-box-align: unset;
+                              // flex-wrap: wrap;
+                              input {
+                                   width: 455px;
+                                   border-bottom: 1px solid #9CAFC3;
+                                   margin-bottom: 14px;     
+                              }
      
-                         input {
-                              width: 449px;
-                              border-bottom: 1px solid #9CAFC3;
-                              margin-bottom: 14px;     
-                         }
-
-                         #btnSearch {
-
-                              img {
-                                   width: 20px;
+                              #btnSearch {
                                    height: 40px;
-                                   line-height: 50px;
                                    border-bottom: 1px solid rgb(156, 175, 195);
+                                   img {
+                                        content: url('../images/close.svg');
+                                        width: 14px;
+                                        height: 14px;
+                                        transform: translateY(90%);
+                                        // line-height: 50px;
+                                        // border-bottom: 1px solid rgb(156, 175, 195);
+                                   }
                               }
                          }
+
+                         .list-search {
+                              position: absolute;
+                              top: 64px;
+
+                              li {
+                                   width: 210px;
+                                   height: 22px;
+                                   color: #9CAFC3;
+                                   font-size: 16px;
+                                   margin-bottom: 10px;
+                                   opacity: .5;
+                                   list-style: none;
+                                   cursor: pointer;
+                              }
+                         }
+
                     }
 
                     .inp-search-inactive {
