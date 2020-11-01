@@ -177,44 +177,91 @@ body {
 
                .inp-search {
 
-                    display: flex;   
-                    justify-content: space-between;
-                    align-items: center;
-                    padding-left: 55px;
-                    padding-right: 25px;    
-                    width: 334px;
-                    height: 50px;
-                    margin: 0 auto;
-                    margin-bottom: 31px;
-                    border: 1px solid #572EE5;
-                    border-radius: 27px;
+                         padding-left: 55px;
+                         padding-right: 25px;    
+                         width: 334px;
+                         height: 50px;
+                         margin: 0 auto;
+                         margin-bottom: 31px;
+                         border: 1px solid #572EE5;
+                         border-radius: 27px;
 
-                    input {
-                         width: 220px;
-                         height: 40px;
-                         font-size: 16px;
-                         font-family: 'Roboto';
-                         outline: none;
-                    }
+                    .inp-search-container {
 
-                    #btnSearch {
-                         cursor: pointer;
+                         height: inherit;
+                         display: flex;   
+                         justify-content: space-between;
+                         align-items: center;
+                         
+
+                         input {
+                              width: 420px;
+                              height: 40px;
+                              font-size: 16px;
+                              font-family: 'Roboto';
+                              outline: none;
+                         }
+     
+                         #btnSearch {
+                              cursor: pointer;
+                         }
                     }
                }
 
-               // .inp-search-active {
-               //      height: 200px;
-               //      padding-top: 2px;
-               //      align-items: unset;
-               //      -webkit-box-align: unset;
-               //      flex-wrap: wrap;
+               .inp-search-active {
+                    height: 200px;
+                    padding-top: 2px;
+                    position: relative;
+                    
+                    
+                    .inp-search-container{
+                         align-items: unset;
+                         -webkit-box-align: unset;
+                         // flex-wrap: wrap;
+                         input {
+                              width: 455px;
+                              border-bottom: 1px solid #9CAFC3;
+                              margin-bottom: 14px;     
+                         }
 
-               //      input {
-               //           width: 449px;
-               //           border-bottom: 1px solid #9CAFC3;
-               //           margin-bottom: 14px;     
-               //      }
-               // }
+                         #btnSearch {
+                              height: 40px;
+                              border-bottom: 1px solid rgb(156, 175, 195);
+                              img {
+                                   content: url('../images/close.svg');
+                                   width: 14px;
+                                   height: 14px;
+                                   transform: translateY(90%);
+                                   // line-height: 50px;
+                                   // border-bottom: 1px solid rgb(156, 175, 195);
+                              }
+                         }
+                    }
+
+                    .list-search {
+                         position: absolute;
+                         top: 64px;
+
+                         li {
+                              width: 210px;
+                              height: 22px;
+                              color: #9CAFC3;
+                              font-size: 16px;
+                              margin-bottom: 10px;
+                              opacity: .5;
+                              list-style: none;
+                              cursor: pointer;
+                         }
+                    }
+
+               }
+
+               .inp-search-inactive {
+
+                    .list-search {
+                         display: none;
+                    }
+               }
 
                .text-search {
 
@@ -262,11 +309,11 @@ body {
                     height: 187px;
                     display: flex;                    
                     
-                    .box-gifos {
+                    .left-gifos {
                          display: none;
                     }
 
-                    .box-gifos1 {
+                    .rigth-gifos {
                          display: none;
                     }
 
@@ -331,10 +378,27 @@ body {
                     }
                }
 
+               .social-fb {
+
+                    &:hover {
+                         content: url('../images/icon_facebook_hover.svg');
+                    }
+               }
+
+               .social-tt {
+
+                    &:hover {
+                         content: url('../images/icon-twitter-hover.svg');
+                    }
+               }
+
                .social-right {
                     margin-right: 0;
+                    &:hover {
+                         content: url('../images/icon_instagram-hover.svg');
+                    }
                }
-          }
+          }          
 
           .text-two-footer {
                font-size: 14px;
@@ -360,6 +424,13 @@ body {
                .logo {
                     width: 71px;
                     height: 59.1px;
+
+                    a {
+                         
+                         img {
+                              content: url('../images/logo-desktop.svg');                              
+                         }
+                    }
                }
 
                nav {
@@ -384,7 +455,7 @@ body {
                               height: auto;
                               background: none;
 
-                              li {
+                              .hov-list {
                                    margin: 0;
                                    list-style: none;
 
@@ -447,25 +518,66 @@ body {
 
                               .list-button {
                                    display: block;
-                                   width: 54px;
-                                   height: 54px;
-                                   border: 1px solid #572EE5;
-                                   border-radius:50%;
+                                   margin-top: 18px;
                                    cursor: pointer;
 
-                                   a {
-                                        height: inherit;
-                                        svg {  
-                                             color: #572EE5;                                  
-                                             margin-top: 50%;
-                                             transform: translateY(-50%);
+                                   .recordBtn {
+                                        width: 56px;
+                                        height: 56px;
+                                        border: 1px solid #572EE5;
+                                        border-radius: 50%;
+                                        svg {
+                                             g {
+
+                                                  g {
+
+                                                       g {
+
+                                                            circle {
+                                                                 fill: #ffffff;
+                                                            }
+
+                                                            g {
+                                                                 
+                                                                 g {
+                                                                      fill: #572EE5;
+                                                                 }
+                                                            }
+                                                       }
+
+                                                  }
+                                             }
+                                             &:hover {
+                                                  g {
+
+                                                       g {
+               
+                                                           g {
+                                                               circle {
+                                                                   fill: #572EE5;
+                                                               }
+               
+                                                               g {
+                                                                         
+                                                                   g {
+                                                                       fill: #ffffff;
+                                                                   }
+                                                               }
+                                                           }
+               
+                                                       }
+                                                   }
+                                             }
+                                        }
+                                        &:hover {
+                                             border: unset;
                                         }
                                    }
 
+                              }
 
-                                   &:hover {
-                                        border-bottom: 1px solid #572EE5;;
-                                   }
+                              .record {
+                                   cursor: pointer;
 
                               }
                          }
@@ -499,42 +611,18 @@ body {
                          width: 551px;
                          margin-bottom: 73px;
 
-                         input {
-                              width: 430px;
-                              color: #9CAFC3;                              
-                         }
-                    }
-
-                    .inp-search-active {
-                         height: 200px;
-                         padding-top: 2px;
-                         align-items: unset;
-                         -webkit-box-align: unset;
-                         flex-wrap: wrap;
+                         .inp-search-container {
      
-                         input {
-                              width: 449px;
-                              border-bottom: 1px solid #9CAFC3;
-                              margin-bottom: 14px;     
-                         }
-
-                         #btnSearch {
-
-                              img {
-                                   width: 20px;
-                                   height: 40px;
-                                   line-height: 50px;
-                                   border-bottom: 1px solid rgb(156, 175, 195);
+                              input {
+                                   width: 430px;
+                                   color: #9CAFC3;
                               }
-                         }
-                    }
-
-                    .inp-search-inactive {
-
-                         .list-search {
-                              display: none;
-                         }
-                    }
+          
+                              #btnSearch {
+                                   cursor: pointer;
+                              }
+                         }                         
+                    }                    
 
                     .text-search {
 
@@ -577,69 +665,25 @@ body {
                          align-items: center;
                          justify-content: center;
 
-                         .box-gifos{
+                         .left-gifos{
                               display: block;     
                               width: 40px;
-                              height: 40px;                         
-                              border: 1px solid #572EE5;
+                              height: 40px;
                               margin-right: 22px;
-                              // margin-left: 22px;
-
-                              .left-gifos {
-                                   width: inherit;
-                                   height: inherit;
-                                   cursor: pointer;                                   
-     
-                                   img {
-                                        // color: #572EE5;
-                                        width: 8px;
-                                        height: 14px;      
-                                        margin: 0 auto;                                  
-                                        position: relative;
-                                        top: 50%;
-                                        transform: translateY(-50%);
-                                   }
-                                   &:hover {
-                                        // background-color: #572EE5;
-                                   }
-                              }
-
-                              .rigth-gifos {
-                                   width: inherit;
-                                   height: inherit;                                   
-                                   cursor: pointer;
-
-                                   img {
-                                        width: 8px;
-                                        height: 14px;      
-                                        margin: 0 auto;                                  
-                                        position: relative;
-                                        top: 50%;
-                                        transform: translateY(-50%);
-                                   }
+                              cursor: pointer;
+                              &:hover {
+                                   content: url('../images/button-slider-left-hover.svg');
                               }
                          }
 
-                         .box-gifos1{
+                         .rigth-gifos{
                               display: block;     
                               width: 40px;
-                              height: 40px;                         
-                              border: 1px solid #572EE5;
+                              height: 40px;
                               margin-left: 25px;
-                              cursor: pointer; 
-
-                              .rigth-gifos {
-                                   width: inherit;
-                                   height: inherit;                                   
-     
-                                   img {
-                                        width: 8px;
-                                        height: 14px;      
-                                        margin: 0 auto;                                  
-                                        position: relative;
-                                        top: 50%;
-                                        transform: translateY(-50%);
-                                   }
+                              cursor: pointer;
+                              &:hover {
+                                   content: url('../images/button-slider-right-hover.svg');
                               }
                          }
 
@@ -676,6 +720,7 @@ body {
                                              margin-top: 10px;
                                              z-index: 10;
                                              cursor: pointer;
+
                                              .boxImg {
                                                   width: 20px;
                                                   height: 18px;
@@ -683,6 +728,12 @@ body {
                                                   cursor: pointer;
                                                   
                                              }
+                                             &:hover {
+                                                  opacity: 1;
+                                             }
+                                        }
+                                        .hov-ls {
+                                             opacity: 1;
                                         }
                                         .containImg2 {
                                              right: 54px;      
@@ -722,7 +773,6 @@ body {
                                         opacity: .6;
                                         
                                         
-                                        
                                    }
                                    .containImgActive {                                        
                                         width: 32px;
@@ -744,11 +794,20 @@ body {
                                              
                                         }
                                         .imgActive {
-                                             background: url('../images/icon-fav-active.svg');
+                                             content: url('../images/icon-fav-active.svg');
                                              // background-repeat: no-repeat;
                                              // background-position: center;
                                              width: 20px;
-                                             height: 18px;                                        }
+                                             height: 18px; 
+                                                                     
+                                        }
+                                        &:hover {
+                                             opacity: 1;
+                                        }
+                                        
+                                   }
+                                   .hov-ls {
+                                        opacity: 1;
                                    }
                                    .containImg2Active {
                                         right: 54px;      

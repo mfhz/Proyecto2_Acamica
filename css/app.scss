@@ -30,7 +30,7 @@ body {
                 grid-column-gap: 21px;                
                 justify-content: center;   
                 
-                div {
+                .trending {
                     width: inherit;
 
                     .imgGif {
@@ -188,18 +188,97 @@ body {
                 }
         
                 .box-search {
-                grid-template-columns: 260px 260px 260px 260px;
-                grid-row-gap: 29px;
-                grid-column-gap: 28px;
+                    grid-template-columns: 260px 260px 260px 260px;
+                    grid-row-gap: 29px;
+                    grid-column-gap: 28px;
 
                     
-                    div {
-                        // width: inherit;
-    
+                    .trending {
+                        position: relative;
+                        height: 200px;
+                        
+                        &:hover {
+
+                            .searchHov {                                
+                               position: absolute;
+                               width:  260px;
+                               height: 200px;
+                               top: 0;
+                               background-color: #572EE5;   
+                               opacity: .6;                           
+                            }
+                           .containImg {
+                               display: block;
+                                width: 32px;
+                                height: 32px;
+                                background-color: #ffffff;
+                                position: absolute;
+                                top: 0;
+                                opacity: .7;
+                                border-radius: 6px;
+                                right: 97px;
+                                margin-top: 10px;
+                                z-index: 10;
+                                cursor: pointer;
+
+                                .boxImg {
+                                     width: 20px;
+                                     height: 18px;
+                                     margin-top: 8.1px;
+                                     cursor: pointer;
+                                     
+                                }
+                                &:hover {
+                                     opacity: 1;
+                                }
+                           }
+                           .hov-ls {
+                                opacity: 1;
+                           }
+                           .containImg2 {
+                                right: 54px;      
+                           }     
+                           .containImg3 {
+                                right: 11px;      
+                           } 
+                           .text-gif {
+                               display: block;
+                                position: absolute;
+                                bottom: 0;
+                                left: 18px;
+                                width: 100%;
+                                text-align: left;
+                                margin-bottom: 76px;
+                                font-size: 15px;
+                                color: #ffffff;
+                           }
+                           .title-gif {
+                               display: block;
+                                position: absolute;
+                                bottom: 0;
+                                width: 90%;
+                                height: 19px;
+                                text-align: left;
+                                left: 18.5px;
+                                margin-bottom: 51px;
+                                font-size: 16px;
+                                color: #ffffff;
+                           }
+                        }
+
                         .imgGif {
-                            width: 100%;
-                            height: 200px;
-                            // border: 1px solid;
+                            height: inherit;
+                            // opacity: 0;
+                        }
+
+                        .containImg {
+                            display: none;
+                        }
+                        .text-gif {
+                            display: none;
+                        }
+                        .title-gif {
+                            display: none;
                         }
                     }
                 }
