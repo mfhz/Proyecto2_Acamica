@@ -145,15 +145,68 @@ function obtenerApi(user) {
                     const image = document.createElement('img');
                     // const title = document.createElement('h2');
                     const boxGif = document.createElement('div');
+                    boxGif.classList.add('trending');
 
                     image.src = el.images.downsized.url;
                     image.classList.add('imgGif');
+                    image.setAttribute('data-user', el.username);
+                    image.setAttribute('data-title', el.title);
+                    image.setAttribute('data-id', el.id);
                     
                     // title.textContent = el.title;
                     
                     boxGif.appendChild(image);
                     // boxGif.appendChild(title);
                     caja1.insertAdjacentElement('afterbegin', boxGif);
+
+                    if (x.matches) {
+                        const searchHov = document.createElement('div');
+                        // const textHover = document.createElement('div');
+                        searchHov.classList.add('searchHov');
+                        // textHover.classList.add('text-hover');                    
+                        boxGif.appendChild(searchHov);
+                        
+                        const box1 = document.createElement('div');
+                        const img1 = document.createElement('img');
+                        const box2 = document.createElement('div');
+                        const img2 = document.createElement('img');
+                        const box3 = document.createElement('div');
+                        const img3 = document.createElement('img');
+            
+                        img1.setAttribute('src', '../images/icon-fav-hover.svg');
+                        img1.classList.add('boxImg');
+                        box1.appendChild(img1);                
+                        box1.classList.add('containImg');
+                        boxGif.appendChild(box1);
+
+
+                        img2.setAttribute('src', '../images/icon-download.svg');
+                        img2.classList.add('boxImg');
+                        box2.appendChild(img2);
+                        box2.classList.add('containImg');
+                        box2.classList.add('containImg2');
+                        boxGif.appendChild(box2);
+            
+            
+                        img3.setAttribute('src', '../images/icon-max.svg');
+                        img3.classList.add('boxImg');
+                        img3.classList.add('boxImg3');
+                        box3.appendChild(img3);
+                        box3.classList.add('containImg');
+                        box3.classList.add('containImg3');
+                        boxGif.appendChild(box3);
+            
+                        const title = document.createElement('h3');
+                        const text = document.createElement('p');
+                        text.classList.add('text-gif');
+                        title.classList.add('title-gif')
+                        title.innerHTML = el.title;
+                        text.innerHTML = el.username;
+                        boxGif.appendChild(text);
+                        boxGif.appendChild(title)
+    
+                        
+                    }
                 });   
                 
                 btnMore.addEventListener('click', (ev)=> {                    
@@ -171,29 +224,84 @@ function obtenerApi(user) {
                         posicionStart += 8;
 
                         gifParcial.forEach(function(el) {                
-                            // console.log(el.images.downsized.url);          
+                            // console.log(el.images.downsized.url);         
                             
                             // console.log(titulo);
                             
                             const image = document.createElement('img');
                             // const title = document.createElement('h2');
                             const boxGif = document.createElement('div');
+                            boxGif.classList.add('trending');
         
                             image.src = el.images.downsized.url;
+                            
                             image.classList.add('imgGif');
+                            image.setAttribute('data-user', el.username);
+                            image.setAttribute('data-title', el.title);
+                            image.setAttribute('data-id', el.id);
                             
                             // title.textContent = el.title;
                             
                             boxGif.appendChild(image);
                             // boxGif.appendChild(title);
                             caja1.appendChild(boxGif);
+
+                            if (x.matches) {
+                                const searchHov = document.createElement('div');
+                                // const textHover = document.createElement('div');
+                                searchHov.classList.add('searchHov');
+                                // textHover.classList.add('text-hover');                    
+                                boxGif.appendChild(searchHov);
+                                
+                                const box1 = document.createElement('div');
+                                const img1 = document.createElement('img');
+                                const box2 = document.createElement('div');
+                                const img2 = document.createElement('img');
+                                const box3 = document.createElement('div');
+                                const img3 = document.createElement('img');
+                    
+                                img1.setAttribute('src', '../images/icon-fav-hover.svg');
+                                img1.classList.add('boxImg');
+                                box1.appendChild(img1);                
+                                box1.classList.add('containImg');
+                                boxGif.appendChild(box1);
+        
+        
+                                img2.setAttribute('src', '../images/icon-download.svg');
+                                img2.classList.add('boxImg');
+                                box2.appendChild(img2);
+                                box2.classList.add('containImg');
+                                box2.classList.add('containImg2');
+                                boxGif.appendChild(box2);
+                    
+                    
+                                img3.setAttribute('src', '../images/icon-max.svg');
+                                img3.classList.add('boxImg');
+                                img3.classList.add('boxImg3');
+                                box3.appendChild(img3);
+                                box3.classList.add('containImg');
+                                box3.classList.add('containImg3');
+                                boxGif.appendChild(box3);
+                    
+                                const title = document.createElement('h3');
+                                const text = document.createElement('p');
+                                text.classList.add('text-gif');
+                                title.classList.add('title-gif')
+                                title.innerHTML = el.title;
+                                text.innerHTML = el.username;
+                                boxGif.appendChild(text);
+                                boxGif.appendChild(title)
+            
+                                
+                            }
                         });   
                     } else {
                         console.log(totalGifs);
                     }
 
                 })
-
+                
+                
             }
 
         })
