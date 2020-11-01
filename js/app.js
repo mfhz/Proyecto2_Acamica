@@ -278,8 +278,6 @@ function eventoClick() {
         } else {
             throw new Error(('success') + ' no comunica con la API');
         }
-        
-
     })
     .then((data) => {
         // console.log(data.data);
@@ -292,10 +290,8 @@ function eventoClick() {
         const imgSearch = document.createElement('img');
         
         if (!info.value == "") {
-            // console.log('No vacio');   
-            btn.addEventListener('click', cleanSearch);        
-            const element = document.querySelector('#btnSearch');
-
+            console.log('No vacio');   
+            btn.addEventListener('click', cleanSearch);
             boxInp.classList.remove('inp-search-inactive');
             boxInp.classList.add('inp-search-active');            
             boxComplete.classList.add('list-search');
@@ -305,11 +301,7 @@ function eventoClick() {
                 // console.log('existe')
                 boxInp.removeChild(document.querySelector('.list-search'));
             }    
-            boxInp.appendChild(boxComplete); 
-            
-            
-
-
+            boxInp.appendChild(boxComplete);
 
             for (let i = 0; i < data.data.length - 1; i++) {
                 const boxList = document.createElement('li');                
@@ -344,9 +336,6 @@ function eventoClick() {
             // imgSearch.setAttribute('src', './images/icon-search.svg')
             // imgBoxSearch.appendChild(imgSearch);
         }
-
-
-
     })
     .catch((err) => {
         console.log(`${err}`);
@@ -365,7 +354,7 @@ function searchClick(e) {
         document.querySelector('.inp-search').classList.add('inp-search-inactive');
         // document.querySelector('.inp-search').removeChild(document.querySelector('.list-search'));
         document.querySelector('#search-img').setAttribute('src', './images/close.svg');
-    }  else {
+    } else {
         // console.log('OSCURO');
         document.querySelector('.inp-search').classList.remove('inp-search-active');
         document.querySelector('.inp-search').classList.add('inp-search-inactive');
@@ -375,8 +364,6 @@ function searchClick(e) {
     }
     obtenerApi(e.path[0].firstChild.data);
 }
-
-
 
 //Imprimir Trending
 
