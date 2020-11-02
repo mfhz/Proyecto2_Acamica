@@ -5,6 +5,7 @@ const textColor = document.querySelector('.colorP1');
 const repeat = document.querySelector('.container-photo');
 const api_key1 = 'aSfyIm4TLkXUqhZxWhGqVaDndjyX8PBd';
 const btnSwitch = document.querySelector('#switch');
+const counterRecording = document.querySelector('#counter'); 
 
 // Modo Oscuro
 btnSwitch.addEventListener('click', (e) => {
@@ -114,9 +115,35 @@ function accederCamara() {
                 },
                 // onGifPreview: function(gifURL) {
                 //     video.src = gifURL;
-                // }
+                // }                
             });
+            let dateStart = new Date();
+            initCounter();
+            keepCounter();
+            // se obtiene e inicializa el contador de la grabacion
+            function initCounter() {                               
+                let dateCurrent = new Date();
+                let hours = dateCurrent.getHours() - dateStart.getHours();
+                let minutes = dateCurrent.getMinutes() - dateStart.getMinutes();
+                let seconds = dateCurrent.getSeconds() - dateStart.getSeconds();
 
+                if (hours < 10) {
+                    hours = '0' + hours;
+                }
+                if (minutes < 10) {
+                    minutes = '0' + minutes;
+                }
+                if (seconds < 10) {
+                    seconds = '0' + seconds;
+                }
+                counterRecording.style.display = 'block';
+                counterRecording.innerHTML = hours + ':' + minutes + ':' + seconds;
+            }
+
+            // funcion que mantiene el contador sumando hasta que se pida detener
+            function keepCounter() {
+                counterStart = setInterval(initCounter, 1000);
+            }
 
             // recorderUser.record().saveAs({'video': 'vid.webn'});
 
@@ -130,6 +157,7 @@ function accederCamara() {
         })
 
         function stopRecordingCallback() {
+            counterRecording.style.display = 'none';
             console.log('Gif recording stopped: ' + bytesToSize(recorder.getBlob().size));
             let blob = recorder.getBlob();
             // let blobUser = recorderUser.getBlob();
@@ -140,6 +168,7 @@ function accederCamara() {
             console.log(recorder.getBlob());
             console.log(video.src);
             vidSave.setAttribute('src', video.src);
+            vidSave.classList.add('img-finish');
             // vidSave.setAttribute('controls', "");
             vidSave.setAttribute('width', "488");
             vidSave.setAttribute('height', "300");
@@ -159,14 +188,22 @@ function accederCamara() {
             
 
             btnGif.addEventListener('click' , ev => {
+                const filling3 = document.querySelector('.item3');
+                const textColor3 = document.querySelector('.colorP3');
+                filling3.style.background = '#572EE5';
+                textColor3.style.color = '#ffffff';
+                filling2.style.background = '#ffffff';
+                textColor2.style.color = '#572EE5';
+                btnGif.style.display = 'none';
+                textRepeat.style.display = 'none';
                 uploadGif();
                 // var id = uploadGif();
                 // console.log(id);
                 // console.log(id.status);
                 // console.log(id.meta);
             });            
-            
             function uploadGif() {
+                document.querySelector('.upload-gif').style.display = 'block';
                 let upload = new FormData();
                 upload.append("file", blob, "usergif.gif");
                 console.log(upload.get('file'))
@@ -195,7 +232,12 @@ function accederCamara() {
                 .then((data) => {  
                     // console.log('ACA');                  
                     console.log(data.data.id);
-                    // console.log(data.status);
+                    // console.log(data.status);                    
+                    const imgLoad = document.querySelector('.img-upload-load');
+                    const titleUpload = document.querySelector('.text-upload');
+                    imgLoad.style.content = 'url(./images/check.svg)';
+                    titleUpload.innerHTML = 'GIFO subido con éxito';
+
                     miGifo(data.data.id);
                 })
                 .catch((err) => {
@@ -205,6 +247,8 @@ function accederCamara() {
         }
 
         btnStopRecord.addEventListener('click', ev => {
+            clearInterval(counterStart);
+            counterRecording.style.display = 'none';
             recorder.stopRecording(stopRecordingCallback);
         });
         textRepeat.addEventListener('click', ev => {

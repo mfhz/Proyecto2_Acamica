@@ -31,6 +31,7 @@
                               .box-photo {
                                    width: 688px;
                                    height: 390px;
+                                   position: relative;
                                    border: 1px solid #572EE5;
                                    padding: 0 69px;
                                    text-align: center;
@@ -52,11 +53,37 @@
                                         font-size: 16px;
                                    }
 
-                                   video {
-                                        margin-top: 44px;
+                                   .upload-gif {
+                                        display: none;
+                                        width: 488px;
+                                        height: 300px;
+                                        background: #572EE5;
+                                        position: absolute;
+                                        top: 44px;
+                                        left: 99px;
+                                        z-index: 10;
+                                        opacity: .6;
+
+                                        .img-upload-load {
+                                             margin-top: 122px;
+                                        }
+
+                                        .text-upload {
+                                             font-size: 15px;
+                                             color: #ffffff;
+                                             text-align: center;
+                                             font-weight: bold;
+                                             margin-top: 10px;
+                                        }
                                    }
 
-                                   img {
+                                   video {
+                                        position: absolute;
+                                        top: 44px;
+                                        transform: translateX(-50%);
+                                   }
+
+                                   .img-finish {
                                         margin-top: 44px;
                                    }
                               }
@@ -85,6 +112,18 @@
                                    }
 
                                    
+                              }
+
+                              .nonvisible {
+                                   display: none;
+                                   position: relative;
+                                   width: 131px;
+                                   left: 608px;
+                                   top: -50px;
+                                   font-weight: bold;
+                                   color: #572EE5;
+                                   font-size: 15px;
+                                   line-height: 22px;
                               }
 
                               .text-repeat {
