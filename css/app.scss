@@ -280,6 +280,85 @@ body {
                         .title-gif {
                             display: none;
                         }
+
+                        .searchHovActive {                                
+                            position: absolute;
+                            width:  260px;
+                            height: 200px;
+                            top: 0;
+                            background-color: #572EE5;   
+                            opacity: .6;                           
+                         }
+                        .containImgActive {
+                            display: block;
+                             width: 32px;
+                             height: 32px;
+                             background-color: #ffffff;
+                             position: absolute;
+                             top: 0;
+                             opacity: .7;
+                             border-radius: 6px;
+                             right: 97px;
+                             margin-top: 10px;
+                             z-index: 10;
+                             cursor: pointer;
+
+                            .imgActive {  
+                                content: url(../images/icon-fav-active.svg);
+                                margin-top: 8.1px;
+                                cursor: pointer;                                  
+                            }
+
+                            // .boxImg {
+                            //     margin-top: 8.1px;
+                            // }
+
+                            &:hover {
+                                opacity: 1;
+                            }
+                        }
+                        .hov-ls {
+                             opacity: 1;
+                        }
+                        .containImg2Active {
+                             right: 54px;
+                             
+                             img {
+                                 margin-top: 5.1px;
+                             }
+                        }     
+                        .containImg3Active {
+                             right: 11px; 
+                             
+                             img {
+                                margin-top: 7.1px;
+                            }
+                        } 
+                        .text-gifActive {
+                            display: block;
+                             position: absolute;
+                             bottom: 0;
+                             left: 18px;
+                             width: 100%;
+                             text-align: left;
+                             margin-bottom: 76px;
+                             font-size: 15px;
+                             color: #ffffff;
+                        }
+                        .title-gifActive {
+                            display: block;
+                             position: absolute;
+                             bottom: 0;
+                             width: 90%;
+                             height: 19px;
+                             text-align: left;
+                             left: 18.5px;
+                             margin-bottom: 51px;
+                             font-size: 16px;
+                             color: #ffffff;
+                        }
+
+                        
                     }
                 }
     

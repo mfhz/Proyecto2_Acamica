@@ -20,6 +20,7 @@
           body .camera .container-camera .box-camera .container-photo .box-photo {
             width: 688px;
             height: 390px;
+            position: relative;
             border: 1px solid #572EE5;
             padding: 0 69px;
             text-align: center; }
@@ -34,9 +35,29 @@
             body .camera .container-camera .box-camera .container-photo .box-photo p {
               line-height: 28px;
               font-size: 16px; }
+            body .camera .container-camera .box-camera .container-photo .box-photo .upload-gif {
+              display: none;
+              width: 488px;
+              height: 300px;
+              background: #572EE5;
+              position: absolute;
+              top: 44px;
+              left: 99px;
+              z-index: 10;
+              opacity: .6; }
+              body .camera .container-camera .box-camera .container-photo .box-photo .upload-gif .img-upload-load {
+                margin-top: 122px; }
+              body .camera .container-camera .box-camera .container-photo .box-photo .upload-gif .text-upload {
+                font-size: 15px;
+                color: #ffffff;
+                text-align: center;
+                font-weight: bold;
+                margin-top: 10px; }
             body .camera .container-camera .box-camera .container-photo .box-photo video {
-              margin-top: 44px; }
-            body .camera .container-camera .box-camera .container-photo .box-photo img {
+              position: absolute;
+              top: 44px;
+              transform: translateX(-50%); }
+            body .camera .container-camera .box-camera .container-photo .box-photo .img-finish {
               margin-top: 44px; }
           body .camera .container-camera .box-camera .container-photo .box-items {
             display: flex;
@@ -56,6 +77,16 @@
                 text-align: center;
                 margin-top: 50%;
                 transform: translateY(-10px); }
+          body .camera .container-camera .box-camera .container-photo .nonvisible {
+            display: none;
+            position: relative;
+            width: 131px;
+            left: 608px;
+            top: -50px;
+            font-weight: bold;
+            color: #572EE5;
+            font-size: 15px;
+            line-height: 22px; }
           body .camera .container-camera .box-camera .container-photo .text-repeat {
             position: relative;
             width: 131px;

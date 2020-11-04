@@ -212,6 +212,63 @@ body main .caja-off {
           display: none; }
         body main .interactive-search .box-search .trending .title-gif {
           display: none; }
+        body main .interactive-search .box-search .trending .searchHovActive {
+          position: absolute;
+          width: 260px;
+          height: 200px;
+          top: 0;
+          background-color: #572EE5;
+          opacity: .6; }
+        body main .interactive-search .box-search .trending .containImgActive {
+          display: block;
+          width: 32px;
+          height: 32px;
+          background-color: #ffffff;
+          position: absolute;
+          top: 0;
+          opacity: .7;
+          border-radius: 6px;
+          right: 97px;
+          margin-top: 10px;
+          z-index: 10;
+          cursor: pointer; }
+          body main .interactive-search .box-search .trending .containImgActive .imgActive {
+            content: url(../images/icon-fav-active.svg);
+            margin-top: 8.1px;
+            cursor: pointer; }
+          body main .interactive-search .box-search .trending .containImgActive:hover {
+            opacity: 1; }
+        body main .interactive-search .box-search .trending .hov-ls {
+          opacity: 1; }
+        body main .interactive-search .box-search .trending .containImg2Active {
+          right: 54px; }
+          body main .interactive-search .box-search .trending .containImg2Active img {
+            margin-top: 5.1px; }
+        body main .interactive-search .box-search .trending .containImg3Active {
+          right: 11px; }
+          body main .interactive-search .box-search .trending .containImg3Active img {
+            margin-top: 7.1px; }
+        body main .interactive-search .box-search .trending .text-gifActive {
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: 18px;
+          width: 100%;
+          text-align: left;
+          margin-bottom: 76px;
+          font-size: 15px;
+          color: #ffffff; }
+        body main .interactive-search .box-search .trending .title-gifActive {
+          display: block;
+          position: absolute;
+          bottom: 0;
+          width: 90%;
+          height: 19px;
+          text-align: left;
+          left: 18.5px;
+          margin-bottom: 51px;
+          font-size: 16px;
+          color: #ffffff; }
     body main .interactive-search #error p {
       font-size: 22px; }
     body main .interactive-search button {
