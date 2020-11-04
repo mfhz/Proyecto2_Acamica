@@ -91,7 +91,7 @@ info.addEventListener('keyup', eventoClick);
 
 function obtenerApi(user) {
     const url = `https://api.giphy.com/v1/gifs/search?q=${user}&api_key=${api_key}&limit=25`;
-
+    // leerLocalStorage();
     fetch(url)
         .then((success) => {
             // console.log(success);
@@ -107,13 +107,20 @@ function obtenerApi(user) {
             // console.log(data.data);
             // console.log(data.data[0].images.downsized.url);
             // console.log(data.meta);
+            let arraySearch = [];
             line.classList.remove('error');
             sectionGifs.classList.remove('error');
             impresionError.classList.add('error');
             if (data.data.length === 0) {
                 // console.log('ERROR')
                 throw new Error(' (data) No existe valor ingresado por el usuario');
-            } else {                
+            } else { 
+                // console.log(data.data);
+                data.data.forEach(element => {
+                    // console.log(element.id);
+                    arraySearch.push(element.id);
+                });
+                
                 caja1.classList.add('box-search');                
 
                 // console.log(caja.children.length);                
@@ -157,7 +164,7 @@ function obtenerApi(user) {
                     
                     boxGif.appendChild(image);
                     // boxGif.appendChild(title);
-                    caja1.insertAdjacentElement('afterbegin', boxGif);
+                    caja1.insertAdjacentElement('afterbegin', boxGif);                    
 
                     if (x.matches) {
                         const searchHov = document.createElement('div');
@@ -204,6 +211,97 @@ function obtenerApi(user) {
                         text.innerHTML = el.username;
                         boxGif.appendChild(text);
                         boxGif.appendChild(title)
+
+                        // Al presionar como favorito Guardar en LS 
+                        img1.onclick = imprimirFav;
+                        function imprimirFav(e) {
+                            // e.preventDefault();
+                            const validar = e.target
+                            // console.log(validar)
+                            // console.log(!validar.classList.contains('containImgActive'))
+                            // console.log(!validar.classList.contains('imgActive'))
+                            // console.log(validar.getAttribute('class'));
+                            if (!validar.classList.contains('imgActive')) {                    
+                                // console.log('entra');
+                                // img1.setAttribute('src', '');
+                                img1.classList.add('imgActive');
+                                // img1.setAttribute('src', '../images/icon-fav-active.svg');
+                                let element = document.createElement('div');
+                                element.style.height = '200px'
+                                let elementImg = document.createElement('img');
+                                elementImg.src = image.getAttribute('src');
+                                element.appendChild(elementImg);
+                                // console.log(element);
+                                boxFavoritos.appendChild(element);                    
+                                // console.log(elementImg);
+            
+                                searchHov.classList.add('searchHovActive');
+                                box1.classList.add('containImgActive');
+                                box1.classList.add('hov-ls');
+                                box2.classList.add('containImgActive');
+                                box2.classList.add('containImg2Active');
+                                box3.classList.add('containImgActive');
+                                box3.classList.add('containImg3Active');
+                                text.classList.add('text-gifActive');
+                                title.classList.add('title-gifActive');
+            
+                                searchHov.classList.remove('searchHov');
+                                box1.classList.remove('containImg');
+                                box2.classList.remove('containImg');
+                                box2.classList.remove('containImg2');
+                                box3.classList.remove('containImg');
+                                box3.classList.remove('containImg3');
+                                text.classList.remove('text-gif');
+                                title.classList.remove('title-gif');
+                                // console.log(e.target.parentElement.parentElement);
+                                box1.classList.add('hov-ls');
+                                img1.classList.add('hovImg-ls');
+                                if (e.target.classList.contains('hov-ls')) {
+                                    const test = e.target.parentElement;
+                                    const infImg = {
+                                        imagen: test.querySelector('.imgGif').src,
+                                        id: test.querySelector('.imgGif').getAttribute('data-id')
+                                    };
+                                    guardarGifLocalStorage(infImg);  
+                                } else if (e.target.classList.contains('hovImg-ls')) {
+                                    const test = e.target.parentElement.parentElement;
+                                    // console.log(test);
+                                    // console.log(test.querySelector('.imgGif'));
+                                    const infImg = {
+                                        imagen: test.querySelector('.imgGif').src,
+                                        id: test.querySelector('.imgGif').getAttribute('data-id')
+                                    };
+                                    guardarGifLocalStorage(infImg);  
+                                }                     
+                            } else {    
+                                img1.classList.remove('imgActive');
+                                searchHov.classList.remove('searchHovActive');
+                                box1.classList.remove('containImgActive');
+                                box1.classList.remove('hov-ls');
+                                box2.classList.remove('containImgActive');
+                                box2.classList.remove('containImg2Active');
+                                box3.classList.remove('containImgActive');
+                                box3.classList.remove('containImg3Active');
+                                text.classList.remove('text-gifActive');
+                                title.classList.remove('title-gifActive');
+                
+                                searchHov.classList.add('searchHov');
+                                box1.classList.add('containImg');
+                                box2.classList.add('containImg');
+                                box2.classList.add('containImg2');
+                                box3.classList.add('containImg');
+                                box3.classList.add('containImg3');
+                                text.classList.add('text-gif');
+                                title.classList.add('title-gif');
+            
+                                box1.classList.remove('hov-ls');
+                                img1.classList.remove('hovImg-ls');
+                                // console.log(validar.parentElement.parentElement);
+                                const sinHov = validar.parentElement.parentElement.children[0];
+                                // console.log(sinHov.getAttribute('data-id'));
+                                actualizarSearchEnFavLocalStorage(sinHov.getAttribute('data-id'));                               
+                            }                
+                        }
     
                         
                     }
@@ -291,9 +389,101 @@ function obtenerApi(user) {
                                 text.innerHTML = el.username;
                                 boxGif.appendChild(text);
                                 boxGif.appendChild(title)
+        
+                                // Al presionar como favorito Guardar en LS 
+                                img1.onclick = imprimirFav;
+                                function imprimirFav(e) {
+                                    // e.preventDefault();
+                                    const validar = e.target
+                                    // console.log(validar)
+                                    // console.log(!validar.classList.contains('containImgActive'))
+                                    // console.log(!validar.classList.contains('imgActive'))
+                                    // console.log(validar.getAttribute('class'));
+                                    if (!validar.classList.contains('imgActive')) {                    
+                                        // console.log('entra');
+                                        // img1.setAttribute('src', '');
+                                        img1.classList.add('imgActive');
+                                        // img1.setAttribute('src', '../images/icon-fav-active.svg');
+                                        let element = document.createElement('div');
+                                        element.style.height = '200px'
+                                        let elementImg = document.createElement('img');
+                                        elementImg.src = image.getAttribute('src');
+                                        element.appendChild(elementImg);
+                                        // console.log(element);
+                                        boxFavoritos.appendChild(element);                    
+                                        // console.log(elementImg);
+                    
+                                        searchHov.classList.add('searchHovActive');
+                                        box1.classList.add('containImgActive');
+                                        box1.classList.add('hov-ls');
+                                        box2.classList.add('containImgActive');
+                                        box2.classList.add('containImg2Active');
+                                        box3.classList.add('containImgActive');
+                                        box3.classList.add('containImg3Active');
+                                        text.classList.add('text-gifActive');
+                                        title.classList.add('title-gifActive');
+                    
+                                        searchHov.classList.remove('searchHov');
+                                        box1.classList.remove('containImg');
+                                        box2.classList.remove('containImg');
+                                        box2.classList.remove('containImg2');
+                                        box3.classList.remove('containImg');
+                                        box3.classList.remove('containImg3');
+                                        text.classList.remove('text-gif');
+                                        title.classList.remove('title-gif');
+                                        // console.log(e.target.parentElement.parentElement);
+                                        box1.classList.add('hov-ls');
+                                        img1.classList.add('hovImg-ls');
+                                        if (e.target.classList.contains('hov-ls')) {
+                                            const test = e.target.parentElement;
+                                            const infImg = {
+                                                imagen: test.querySelector('.imgGif').src,
+                                                id: test.querySelector('.imgGif').getAttribute('data-id')
+                                            };
+                                            guardarGifLocalStorage(infImg);  
+                                        } else if (e.target.classList.contains('hovImg-ls')) {
+                                            const test = e.target.parentElement.parentElement;
+                                            // console.log(test);
+                                            // console.log(test.querySelector('.imgGif'));
+                                            const infImg = {
+                                                imagen: test.querySelector('.imgGif').src,
+                                                id: test.querySelector('.imgGif').getAttribute('data-id')
+                                            };
+                                            guardarGifLocalStorage(infImg);  
+                                        }                     
+                                    } else {    
+                                        img1.classList.remove('imgActive');
+                                        searchHov.classList.remove('searchHovActive');
+                                        box1.classList.remove('containImgActive');
+                                        box1.classList.remove('hov-ls');
+                                        box2.classList.remove('containImgActive');
+                                        box2.classList.remove('containImg2Active');
+                                        box3.classList.remove('containImgActive');
+                                        box3.classList.remove('containImg3Active');
+                                        text.classList.remove('text-gifActive');
+                                        title.classList.remove('title-gifActive');
+                        
+                                        searchHov.classList.add('searchHov');
+                                        box1.classList.add('containImg');
+                                        box2.classList.add('containImg');
+                                        box2.classList.add('containImg2');
+                                        box3.classList.add('containImg');
+                                        box3.classList.add('containImg3');
+                                        text.classList.add('text-gif');
+                                        title.classList.add('title-gif');
+                    
+                                        box1.classList.remove('hov-ls');
+                                        img1.classList.remove('hovImg-ls');
+                                        // console.log(validar.parentElement.parentElement);
+                                        const sinHov = validar.parentElement.parentElement.children[0];
+                                        // console.log(sinHov.getAttribute('data-id'));
+                                        actualizarSearchEnFavLocalStorage(sinHov.getAttribute('data-id'));                               
+                                    }                
+                                }
             
                                 
                             }
+                            leerLocalStorage();
                         });   
                     } else {
                         console.log(totalGifs);
@@ -303,6 +493,8 @@ function obtenerApi(user) {
                 
                 
             }
+            searchLS(arraySearch);
+            leerLocalStorage();
 
         })
         .catch((err) => {
@@ -372,6 +564,43 @@ function obtenerApi(user) {
         })
 }
 
+function searchLS(e) {
+    // let test;
+    // test = obtenerLS();
+    // console.log(text);
+    // test.push(e);
+    localStorage.setItem('search', JSON.stringify(e));
+}
+
+//Obtiene Gifs del LS
+function obtenerSearchLS() {
+    let test1;
+    if (localStorage.getItem('search') === null) {
+        test1 = [];
+    } else {
+        test1 = JSON.parse(localStorage.getItem('search'));
+    }
+    return test1;
+}
+
+function actualizarSearchEnFavLocalStorage(ls) {
+    // console.log(ls);
+    let favoritos;    
+    favoritos = obtenerGifLocalStorage();
+    // console.log(favoritos);
+    for (let i = favoritos.length; i--;) {
+        // console.log(favoritos[i].id);
+        if (favoritos[i].id === ls) {
+            favoritos.splice(i, 1);
+        }
+        
+    }
+    // console.log(favoritos);
+    // Se actualiza el LS de favoritos si el gif no es favorito
+    localStorage.setItem('fav', JSON.stringify(favoritos));
+    // location.reload(); // No olvidar activar
+}
+
 function eventoClick() {
     
     // console.log(info.value);
@@ -398,7 +627,7 @@ function eventoClick() {
         const imgSearch = document.createElement('img');
         
         if (!info.value == "") {
-            console.log('No vacio');   
+            // console.log('No vacio');   
             btn.addEventListener('click', cleanSearch);
             boxInp.classList.remove('inp-search-inactive');
             boxInp.classList.add('inp-search-active');            
@@ -664,7 +893,7 @@ function actualizarGifLocalStorage(ls) {
     // console.log(favoritos);
     // Se actualiza el LS de favoritos si el gif no es favorito
     localStorage.setItem('fav', JSON.stringify(favoritos));
-    location.reload();
+    location.reload(); // No olvidar activar
 }
 
 function testLS(e) {
@@ -672,16 +901,16 @@ function testLS(e) {
     // test = obtenerLS();
     // console.log(text);
     // test.push(e);
-    localStorage.setItem('test', JSON.stringify(e));
+    localStorage.setItem('trending', JSON.stringify(e));
 }
 
 //Obtiene Gifs del LS
 function obtenerLS() {
     let test1;
-    if (localStorage.getItem('test') === null) {
+    if (localStorage.getItem('trending') === null) {
         test1 = [];
     } else {
-        test1 = JSON.parse(localStorage.getItem('test'));
+        test1 = JSON.parse(localStorage.getItem('trending'));
     }
     return test1;
 }
@@ -907,9 +1136,11 @@ function obtenerGifLocalStorage() {
 function leerLocalStorage() {
     let favoritosLS;
     let trendingLS;
+    let searchLS;
 
     favoritosLS = obtenerGifLocalStorage();
     trendingLS = obtenerLS();
+    searchLS = obtenerSearchLS();
     // console.log(favoritosLS);
     // console.log(trendingLS);
 
@@ -1009,6 +1240,50 @@ function leerLocalStorage() {
         errorBox.appendChild(errorText);
         boxFavoritos.classList.remove('card-favoritos');
         boxFavoritos.classList.add('card-Sinfavoritos');
+    }
+
+    if (x.matches) {
+        favoritosLS.forEach(fav => {
+            searchLS.forEach((search) => {
+                // console.log(fav.id);
+                // console.log(search);
+                if (search === fav.id) {
+                    // console.log('SI');
+                    // console.log(element);
+                    // console.log(i);
+                    const gif =  document.querySelectorAll('.imgGif');
+                    // console.log(gif);
+                    gif.forEach(element => {
+                        // console.log(element.getAttribute('data-id'));
+                        let domTrending = element;
+                        // let domTrending = element.getAttribute('data-id');
+                        if (fav.id == domTrending.getAttribute('data-id')) {
+                            // console.log(domTrending);
+                            // console.log(domTrending.parentElement);
+                            const hovDiv = domTrending.parentElement.children[1];
+                            // console.log(hovDiv);
+                            hovDiv.classList.add('searchHovActive');
+                            const hovContain = domTrending.parentElement.children[2];
+                            hovContain.classList.add('containImgActive');
+                            hovContain.classList.add('hov-ls');
+                            const hovImg = domTrending.parentElement.children[2].children[0];
+                            hovImg.classList.add('imgActive');
+                            const hovContain2 = domTrending.parentElement.children[3];
+                            hovContain2.classList.add('containImgActive');
+                            hovContain2.classList.add('containImg2Active');
+                            const hovContain3 = domTrending.parentElement.children[4];
+                            hovContain3.classList.add('containImgActive');
+                            hovContain3.classList.add('containImg3Active');
+                            const hovText = domTrending.parentElement.children[5];
+                            hovText.classList.add('text-gifActive');
+                            const hovTitle = domTrending.parentElement.children[6];
+                            hovTitle.classList.add('title-gifActive');
+                        }
+                    });
+                }    
+            });
+        });
+                        
     }
 
 }
