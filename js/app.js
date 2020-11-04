@@ -917,10 +917,12 @@ function obtenerLS() {
 
 
 //Ventana Modal
+
+caja1.addEventListener('click', ventanaModal);
 boxtrending.addEventListener('click', ventanaModal);
 
 function ventanaModal(e) {
-    // console.log(e.target);
+    console.log(e.target);
     e.preventDefault();
 
     // console.log(e.target);
@@ -929,6 +931,10 @@ function ventanaModal(e) {
         // console.log(test);
         leerDatos(test);
         // re.style.pointerEvents = "none";
+    } else if (e.target.classList.contains('imgGif')) {
+        const test = e.target.parentElement;
+        // console.log(test)
+        leerDatos(test);
     } else if (e.target.classList.contains('containImg3')) {
         const test = e.target.parentElement;
         // console.log(test)
@@ -946,16 +952,27 @@ function ventanaModal(e) {
 
 
 function leerDatos(gif) {
-    // console.log(gif)
-    let user = gif.querySelector('.zoom-img').getAttribute('data-user');
-    // console.log(user);
-    let title = gif.querySelector('.zoom-img').getAttribute('data-title');
-    // console.log(title);
-    const infoImg = {
-        imagen: gif.querySelector('.zoom-img').src
-    };
-    // console.log(infoImg);
-    insertarImg(infoImg, user, title);
+    // console.log(gif.querySelector('.zoom-img'));
+    if (gif.querySelector('.zoom-img')) {
+        let user = gif.querySelector('.zoom-img').getAttribute('data-user');
+        // console.log(user);
+        let title = gif.querySelector('.zoom-img').getAttribute('data-title');
+        // console.log(title);
+        const infoImg = {
+            imagen: gif.querySelector('.zoom-img').src
+        };
+        insertarImg(infoImg, user, title);
+    } else {
+        let user = gif.querySelector('.imgGif').getAttribute('data-user');
+        // console.log(user);
+        let title = gif.querySelector('.imgGif').getAttribute('data-title');
+        // console.log(title);
+        const infoImg = {
+            imagen: gif.querySelector('.imgGif').src
+        };
+        insertarImg(infoImg, user, title);
+    }
+    
     
 }
 
