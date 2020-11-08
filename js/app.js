@@ -183,14 +183,14 @@ function obtenerApi(user) {
                         const box3 = document.createElement('div');
                         const img3 = document.createElement('img');
             
-                        img1.setAttribute('src', '../images/icon-fav-hover.svg');
+                        img1.setAttribute('src', './images/icon-fav-hover.svg');
                         img1.classList.add('boxImg');
                         box1.appendChild(img1);                
                         box1.classList.add('containImg');
                         boxGif.appendChild(box1);
 
 
-                        img2.setAttribute('src', '../images/icon-download.svg');
+                        img2.setAttribute('src', './images/icon-download.svg');
                         img2.classList.add('boxImg');
                         box2.appendChild(img2);
                         box2.classList.add('containImg');
@@ -198,7 +198,7 @@ function obtenerApi(user) {
                         boxGif.appendChild(box2);
             
             
-                        img3.setAttribute('src', '../images/icon-max.svg');
+                        img3.setAttribute('src', './images/icon-max.svg');
                         img3.classList.add('boxImg');
                         img3.classList.add('boxImg3');
                         box3.appendChild(img3);
@@ -362,14 +362,14 @@ function obtenerApi(user) {
                                 const box3 = document.createElement('div');
                                 const img3 = document.createElement('img');
                     
-                                img1.setAttribute('src', '../images/icon-fav-hover.svg');
+                                img1.setAttribute('src', './images/icon-fav-hover.svg');
                                 img1.classList.add('boxImg');
                                 box1.appendChild(img1);                
                                 box1.classList.add('containImg');
                                 boxGif.appendChild(box1);
         
         
-                                img2.setAttribute('src', '../images/icon-download.svg');
+                                img2.setAttribute('src', './images/icon-download.svg');
                                 img2.classList.add('boxImg');
                                 box2.appendChild(img2);
                                 box2.classList.add('containImg');
@@ -377,7 +377,7 @@ function obtenerApi(user) {
                                 boxGif.appendChild(box2);
                     
                     
-                                img3.setAttribute('src', '../images/icon-max.svg');
+                                img3.setAttribute('src', './images/icon-max.svg');
                                 img3.classList.add('boxImg');
                                 img3.classList.add('boxImg3');
                                 box3.appendChild(img3);
