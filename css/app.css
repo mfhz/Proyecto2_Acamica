@@ -74,7 +74,8 @@ body main .caja-off {
       -ms-flex-item-align: end;
           align-self: flex-end;
       margin-bottom: 74px;
-      margin-right: 35px; }
+      margin-right: 35px;
+      cursor: pointer; }
     body main .caja-off .zoom .zoom-img {
       width: 318px;
       height: 245px; }
