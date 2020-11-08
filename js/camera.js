@@ -37,9 +37,10 @@ if (localStorage.getItem('dark-mode') === 'true') {
 
 btnGif.style.display = 'none';
 
-btnStart.addEventListener('click', item1);
+btnStart.addEventListener('click', record);
 
-function item1() {     
+// Funcion de inicializacion para grabar GIFS
+function record() {     
      btnGif.style.display = 'none';
      const textP = document.querySelector('#textP');
      const title = document.querySelector('#title');
@@ -51,10 +52,7 @@ function item1() {
      accederCamara();
 }
 
-
-
-
-
+// Funcion donde pide permisos y realiza la grabacion y subida del GIF a Giphy
 function accederCamara() {
      filling.style.background = '#FFFFFF';
      textColor.style.color = '#572EE5';
@@ -264,7 +262,7 @@ function accederCamara() {
 }
 
 
-
+//Funcion que obtiene el ID del GIF grabado y lo guarda en LS
 function miGifo(gif) {
     // alert(gif);
     infoImg = {
@@ -305,8 +303,3 @@ function obtenerCursosLocalStorage() {
     }
     return gifosLS;
 }
-
-
-// let favoritosLS = JSON.parse(localStorage.getItem('fav'));
-
-// console.log(favoritosLS);
