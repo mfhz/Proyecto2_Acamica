@@ -91,6 +91,10 @@ body {
                 margin-top: 78px;
                 margin-bottom: 31px;
                 font-weight: 600px;
+                &:hover {
+                    color: #ffffff;
+                    background: #572ee5;
+                }
             }
             
             .error {
@@ -182,6 +186,7 @@ body {
                 button {
                     margin-top: 78px;
                     margin-bottom: 52px;
+                    cursor: pointer;
                 }
 
             }

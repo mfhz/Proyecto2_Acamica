@@ -40,6 +40,9 @@ body main .interactive-search {
     margin: 0 auto;
     margin-top: 78px;
     font-weight: 600px; }
+    body main .interactive-search button:hover {
+      color: #ffffff;
+      background: #572ee5; }
 body main .error {
   display: none; }
 body main .caja-off {
@@ -124,8 +127,7 @@ body main .caja-off {
                   justify-content: center;
           border: 1px solid #9CAFC3;
           border-radius: 6px;
-          margin-left: 29px;
-          opacity: .5; }
+          margin-left: 29px; }
           body main .caja-off .zoom .container .container-img .box-img-download .img-download {
             width: 19.2px;
             height: 21.1px;
@@ -272,7 +274,8 @@ body main .caja-off {
     body main .interactive-search #error p {
       font-size: 22px; }
     body main .interactive-search button {
-      margin-bottom: 62px; }
+      margin-bottom: 62px;
+      cursor: pointer; }
   body main .caja-off .zoom {
     padding-top: 66.4px; }
     body main .caja-off .zoom .close {

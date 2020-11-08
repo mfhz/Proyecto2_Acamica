@@ -114,6 +114,17 @@
             h1 {
                 color: #ffffff;
             }
+
+            button {
+                border: 1px solid #ffffff;
+                color: #ffffff;
+                background: #37383C;
+                &:hover {
+                    color: #000000;
+                    background: #ffffff;
+                    font-weight: bold;
+                }
+            }
         }
 
         .gifos {
@@ -126,6 +137,20 @@
             p {
                 color: #ffffff;
                 font-weight: 300;
+            }
+        }
+
+        .interactive-search {
+
+            button {
+                border: 1px solid #ffffff;
+                color: #ffffff;
+                background: #37383C;
+                &:hover {
+                    color: #000000;
+                    background: #ffffff;
+                    font-weight: bold;
+                }
             }
         }
 

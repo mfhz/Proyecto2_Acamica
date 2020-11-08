@@ -59,6 +59,10 @@ body {
                 margin: 0 auto;
                 margin-top: 78px;
                 font-weight: 600px;
+                &:hover {
+                    color: #ffffff;
+                    background: #572ee5;
+                }
             }
     
         }
@@ -150,7 +154,6 @@ body {
                             border: 1px solid #9CAFC3;
                             border-radius: 6px;
                             margin-left: 29px;
-                            opacity: .5;
 
                             .img-download {
                                 width: 19.2px;
@@ -371,6 +374,7 @@ body {
         
                 button {
                     margin-bottom: 62px;
+                    cursor: pointer;
                 }
         
             }
