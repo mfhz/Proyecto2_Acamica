@@ -12,6 +12,8 @@ const boxGif = document.querySelector('.card-gifos');
 const  span = document.querySelector('#checkbox');
 let x = window.matchMedia("(min-width: 1440px)");
 const api_key = 'aSfyIm4TLkXUqhZxWhGqVaDndjyX8PBd';
+let downloadArrayTrending = [];
+let downloadArraySearch= [];
 
 // Mostrar Trending en pantalla principal
 obtenerTrending();
@@ -120,7 +122,7 @@ function obtenerApi(user) {
                     // console.log(element.id);
                     arraySearch.push(element.id);
                 });
-                
+                downloadArraySearch = data.data;
                 caja1.classList.add('box-search');                
 
                 // console.log(caja.children.length);                
@@ -302,6 +304,8 @@ function obtenerApi(user) {
                                 actualizarSearchEnFavLocalStorage(sinHov.getAttribute('data-id'));                               
                             }                
                         }
+
+                        img2.onclick = downloadGifSearch;
     
                         
                     }
@@ -325,7 +329,6 @@ function obtenerApi(user) {
                             // console.log(el.images.downsized.url);         
                             
                             // console.log(titulo);
-                            
                             const image = document.createElement('img');
                             // const title = document.createElement('h2');
                             const boxGif = document.createElement('div');
@@ -480,6 +483,8 @@ function obtenerApi(user) {
                                         actualizarSearchEnFavLocalStorage(sinHov.getAttribute('data-id'));                               
                                     }                
                                 }
+
+                                img2.onclick = downloadGifSearch;
             
                                 
                             }
@@ -710,6 +715,7 @@ async function obtenerTrending() {
     let trending = await response.json();
     // console.log(trending.data);
     let arrayGif = [];
+    downloadArrayTrending = trending.data;
     await trending.data.forEach((el) => {
         // console.log(el);                                    
         // console.log(el.username);                                    
@@ -871,6 +877,7 @@ async function obtenerTrending() {
                 }                
             }
 
+            img2.onclick = downloadGifTrending;
         }
 
     })
@@ -915,6 +922,98 @@ function obtenerLS() {
     return test1;
 }
 
+// Función para descargar GIFS en la seccion de Trending
+function downloadGifTrending(url) {
+    let btnDownload = url.target.parentElement.parentElement.children[0].getAttribute('data-id');
+    let btnDownloadM = url.target.parentElement.parentElement.parentElement.parentElement.children[1].children[0];
+    console.log(btnDownloadM);
+    downloadArrayTrending.map(async function (download) {
+        // console.log(gif);
+        if (download.id === btnDownload) {
+            let descargar = await fetch(download.images.downsized.url)
+                .then((success) => {
+                    // console.log(success);
+                    success.blob()
+                        .then((data) => {
+                            // console.log(data);
+                            let tagDownload = document.createElement("a");
+                            tagDownload.href = URL.createObjectURL(data);
+                            tagDownload.download = 'Mi-Gif';
+                            tagDownload.click();
+                    });
+                });
+        }
+    });
+}
+
+// Función para descargar GIFS en la seccion de Trending-Mobile
+function downloadGifTrendingMobile(url) {
+    let btnDownload = url.target.parentElement.parentElement.parentElement.parentElement.children[1].children[0].getAttribute('src');
+    console.log(btnDownload);
+    downloadArrayTrending.map(async function (download) {
+        // console.log(gif);
+        if (download.images.downsized.url === btnDownload) {
+            validator = true;
+            let descargar = await fetch(download.images.downsized.url)
+                .then((success) => {
+                    // console.log(success);
+                    success.blob()
+                        .then((data) => {
+                            // console.log(data);
+                            let tagDownload = document.createElement("a");
+                            tagDownload.href = URL.createObjectURL(data);
+                            tagDownload.download = 'Mi-Gif';
+                            tagDownload.click();
+                    });
+                });
+        }
+    });
+}
+
+// Función para descargar GIFS en la seccion de Busqueda
+function downloadGifSearch(url) {
+    let btnDownload = url.target.parentElement.parentElement.children[0].getAttribute('data-id');
+    downloadArraySearch.map(async function (download) {
+        // console.log(gif);
+        if (download.id === btnDownload) {
+            let descargar = await fetch(download.images.downsized.url)
+                .then((success) => {
+                    // console.log(success);
+                    success.blob()
+                        .then((data) => {
+                            // console.log(data);
+                            let tagDownload = document.createElement("a");
+                            tagDownload.href = URL.createObjectURL(data);
+                            tagDownload.download = 'Mi-Gif';
+                            tagDownload.click();
+                    });
+                });
+        }
+    });
+}
+// // Función para descargar GIFS en la seccion de Busqueda-Mobile
+// function downloadGifSearchMobile(url) {
+//     let btnDownload = url.target.parentElement.parentElement.parentElement.parentElement.children[1].children[0].getAttribute('src');
+//     console.log(btnDownload);
+//     downloadArraySearch.map(async function (download) {
+//         // console.log(gif);
+//         if (download.images.downsized.url === btnDownload) {
+//             let descargar = await fetch(download.images.downsized.url)
+//                 .then((success) => {
+//                     // console.log(success);
+//                     success.blob()
+//                         .then((data) => {
+//                             // console.log(data);
+//                             let tagDownload = document.createElement("a");
+//                             tagDownload.href = URL.createObjectURL(data);
+//                             tagDownload.download = 'Mi-Gif';
+//                             tagDownload.click();
+//                     });
+//                 });
+//         }
+//     });
+// }
+
 
 //Ventana Modal
 
@@ -922,7 +1021,7 @@ caja1.addEventListener('click', ventanaModal);
 boxtrending.addEventListener('click', ventanaModal);
 
 function ventanaModal(e) {
-    console.log(e.target);
+    // console.log(e.target);
     e.preventDefault();
 
     // console.log(e.target);
@@ -1028,7 +1127,7 @@ function insertarImg(infImg,user,title) {
         contenedor.appendChild(cerrar);
         let copyImgGif = document.createElement('div');
         copyImgGif.innerHTML = `
-            <img src="${infImg.imagen}" class="zoom-img">
+            <img src="${infImg.imagen}" class="zoom-img" data-title="${title}">
         `
         contenedor.appendChild(copyImgGif);
         contenedor5 = document.createElement('div');
@@ -1057,7 +1156,8 @@ function insertarImg(infImg,user,title) {
         descarga.setAttribute('src', './images/icon-download.svg');
         descarga.setAttribute('class', 'img-download');
         contenedor4.appendChild(descarga);
-
+        // descarga.onclick = downloadGifSearchMobile;
+        descarga.onclick = downloadGifTrendingMobile;
         // Al presionar como favorito Guardar en LS  
         fav.addEventListener('click', imprimirFav);
 
@@ -1066,7 +1166,7 @@ function insertarImg(infImg,user,title) {
         function imprimirFav(e) {
             console.log(e.target);
             if (!e.target.classList.contains('active-mobile')) {
-                console.log('SI');
+                // console.log('SI');
                 fav.classList.add('active-mobile');
                 fav.style.content = 'url(./images/icon-fav-active.svg)';
                 let element = document.createElement('div');
@@ -1306,13 +1406,6 @@ function leerLocalStorage() {
 }
 
 // Pagina mis Gifos
-// const boxGifos = document.querySelector('.card-gifos');
-// const btnGifos = document.querySelector('#btnGifos');
-
-
-
-
-
 
 //Obtiene Gifs del LS
 function obtenerCursosLocalStorage1() {
@@ -1385,3 +1478,9 @@ flechaDerecha.addEventListener('click', () => {
 flechaIzquierda.addEventListener('click', () => {
     padreImg.scrollLeft -= padreImg.offsetWidth = 379;
 })
+
+
+let resultsListModal = ['https://media2.giphy.com/media/rHs3ZuhIV25vE9mbuR/giphy-downsized.gif?cid=bab8c665wb0s1hixl2rwojk8bmkuukzzjba51x7q23tj8yit&rid=giphy-downsized.gif'];
+
+
+
