@@ -70,6 +70,8 @@
     background-color: #37383C; }
     .dark main .caja-off .container-text {
       color: #ffffff; }
+    .dark main .caja-off .zoom .close {
+      content: url(../images/close-modo-noct.svg); }
   .dark footer {
     border-color: #000000; }
     .dark footer .text-one-footer {
