@@ -14,8 +14,11 @@
     border-color: #ffffff; }
     .dark main .search .inp-search .inp-search-container input {
       background: #37383C; }
-    .dark main .search .inp-search .inp-search-container #btnSearch img {
-      content: url("../images/icon-search-modo-noct.svg"); }
+    .dark main .search .inp-search .inp-search-container #btnSearch {
+      width: 20px;
+      height: 24px; }
+      .dark main .search .inp-search .inp-search-container #btnSearch #search-img {
+        content: url("../images/icon-search-modo-noct.svg"); }
   .dark main .search .inp-search-active .inp-search-container #btnSearch {
     height: 40px;
     border-bottom: 1px solid #9cafc3; }
@@ -40,6 +43,14 @@
     font-weight: 300; }
   .dark main .my-gifos h1 {
     color: #ffffff; }
+  .dark main .my-gifos button {
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    background: #37383C; }
+    .dark main .my-gifos button:hover {
+      color: #000000;
+      background: #ffffff;
+      font-weight: bold; }
   .dark main .gifos {
     background: #222326; }
     .dark main .gifos h2 {
@@ -47,6 +58,14 @@
     .dark main .gifos p {
       color: #ffffff;
       font-weight: 300; }
+  .dark main .interactive-search button {
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    background: #37383C; }
+    .dark main .interactive-search button:hover {
+      color: #000000;
+      background: #ffffff;
+      font-weight: bold; }
   .dark main .caja-off {
     background-color: #37383C; }
     .dark main .caja-off .container-text {

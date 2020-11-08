@@ -63,6 +63,9 @@ body main .my-gifos {
     margin-top: 78px;
     margin-bottom: 31px;
     font-weight: 600px; }
+    body main .my-gifos button:hover {
+      color: #ffffff;
+      background: #572ee5; }
   body main .my-gifos .error {
     display: none; }
 
@@ -114,6 +117,7 @@ body main .my-gifos {
         font-size: 22px; }
     body main .my-gifos button {
       margin-top: 78px;
-      margin-bottom: 52px; } }
+      margin-bottom: 52px;
+      cursor: pointer; } }
 
 /*# sourceMappingURL=style2.css.map */

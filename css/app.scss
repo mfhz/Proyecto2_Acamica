@@ -59,6 +59,10 @@ body {
                 margin: 0 auto;
                 margin-top: 78px;
                 font-weight: 600px;
+                &:hover {
+                    color: #ffffff;
+                    background: #572ee5;
+                }
             }
     
         }
@@ -370,6 +374,7 @@ body {
         
                 button {
                     margin-bottom: 62px;
+                    cursor: pointer;
                 }
         
             }
