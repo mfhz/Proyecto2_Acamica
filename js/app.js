@@ -1016,7 +1016,7 @@ function downloadGifSearch(url) {
 
 
 //Ventana Modal
-
+// console.log(caja1);
 caja1.addEventListener('click', ventanaModal);
 boxtrending.addEventListener('click', ventanaModal);
 
@@ -1479,8 +1479,6 @@ flechaIzquierda.addEventListener('click', () => {
     padreImg.scrollLeft -= padreImg.offsetWidth = 379;
 })
 
-
-let resultsListModal = ['https://media2.giphy.com/media/rHs3ZuhIV25vE9mbuR/giphy-downsized.gif?cid=bab8c665wb0s1hixl2rwojk8bmkuukzzjba51x7q23tj8yit&rid=giphy-downsized.gif'];
 
 
 
