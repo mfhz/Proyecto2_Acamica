@@ -114,7 +114,9 @@ body {
         border: 1px solid #ffffff;
         opacity: .5;
         margin: 0 auto;
-        margin-bottom: 11.9px; }
+        margin-bottom: 11.9px;
+        height: 0;
+        list-style: none; }
       body header nav .menu ul .list-button {
         display: none; }
   body main .title {
