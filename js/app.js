@@ -570,7 +570,7 @@ function obtenerApi(user) {
         })
 }
 
-//Funcion que crea la llave de los gifs buscados
+//Funcion que guarda llave de los gifs buscados en LS
 function searchLS(e) {
     // let test;
     // test = obtenerLS();
@@ -610,7 +610,7 @@ function actualizarSearchEnFavLocalStorage(ls) {
 }
 
 //Funcion del autocomplete cuando se escribe en el input
-function eventoClick() {
+function eventoClick(e) {
     
     // console.log(info.value);
     // console.log(info);
@@ -634,6 +634,12 @@ function eventoClick() {
         const boxComplete = document.createElement('div');
         const imgBoxSearch = document.createElement('div');
         const imgSearch = document.createElement('img');
+
+        // info.addEventListener('onkeypress', test);
+
+        
+        
+      
         
         if (!info.value == "") {
             // console.log('No vacio');   
@@ -659,6 +665,12 @@ function eventoClick() {
                 boxList.addEventListener('click', searchClick);
             
             }
+            if (e.keyCode === 13) {
+                e.preventDefault();
+                // console.log(info.value);
+                searchClick(info.value);
+            }
+            
 
             //Funcion para cambiar los iconos si esta en modo nocturno o no
             function cleanSearch() {
@@ -689,9 +701,8 @@ function eventoClick() {
 
 //Funcion cuando se presiona alguna palabra del autocomplete realiza la busqueda de los GIFS
 function searchClick(e) {
-    // console.log(e);
-    // console.log(info);
-    info.value = e.path[0].firstChild.data;
+    // console.log(e);    
+    // console.log(info.value);
     if (document.querySelector('.inp-search').classList.contains('inp-search-active') && !document.querySelector('body').classList.contains('dark')) {
         // console.log('CLARO');
         document.querySelector('.inp-search').classList.remove('inp-search-active');
@@ -706,7 +717,13 @@ function searchClick(e) {
         document.querySelector('#search-img').setAttribute('src', './images/close.svg');
         document.querySelector('#search-img').style.content = 'url(./images/close-modo-noct.svg)';
     }
-    obtenerApi(e.path[0].firstChild.data);
+    // console.log(typeof e === 'string');
+    if (typeof e === 'string') {
+        obtenerApi(e);        
+    } else {
+        info.value = e.path[0].firstChild.data;
+        obtenerApi(info.value);
+    }
 }
 
 //Imprimir Trending
