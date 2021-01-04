@@ -89,7 +89,7 @@
       color: #ffffff;
       font-weight: 100; }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1200px) {
   .dark header {
     border-color: #000000; }
     .dark header .logo a img {

@@ -134,7 +134,7 @@ body main .caja-off {
             height: 21.1px;
             opacity: .5; }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1200px) {
   body main #line {
     margin-top: 74px;
     margin-bottom: 83.9px;

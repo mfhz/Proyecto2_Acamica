@@ -105,13 +105,13 @@ body {
 }
 
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1200px) {
     body {
 
         main {
     
             .my-gifos {
-                padding: 0 156px;
+                padding: 0 10.83%;
                 
                 .icon-gifos {
                     width: 24px;
@@ -126,13 +126,14 @@ body {
                 }
     
                 .card-gifos {
-                    grid-template-columns: 260px 260px 260px 260px;
+                    grid-template-columns: 23% 23% 23% 23%;
                     grid-row-gap: 29px;
-                    grid-column-gap: 35px;
+                    // grid-column-gap: 35px;
+                    justify-content: center;
                     
                     .containerGif {
-                        width: 260px;
-                        height: 200px;
+                        width: inherit;
+                        height: 13.9vmax;
                         margin-right: 21px;
 
                         img {
@@ -145,13 +146,14 @@ body {
                 }
 
                 .card-favoritos {
-                    grid-template-columns: 260px 260px 260px 260px;
+                    grid-template-columns: 23% 23% 23% 23%;
                     grid-row-gap: 29px;
                     grid-column-gap: 35px;
+                    justify-content: center;
 
                     div {
-                        width: 260px;
-                        height: 200px;
+                        width: inherit;
+                        height: 13.9vmax;
                         margin-right: 21px; 
 
                         img {
@@ -193,3 +195,92 @@ body {
         }
     }
 }
+
+// @media screen and (min-width: 1440px) {
+//     body {
+
+//         main {
+    
+//             .my-gifos {
+//                 padding: 0 156px;
+                
+//                 .icon-gifos {
+//                     width: 24px;
+//                     height: 21.9px;
+//                     margin-bottom: 8.1px;
+//                 }
+    
+//                 h1 {
+//                     font-size: 25px;
+//                     line-height: 30px;
+//                     margin-bottom: 36px;                    
+//                 }
+    
+//                 .card-gifos {
+//                     grid-template-columns: 260px 260px 260px 260px;
+//                     grid-row-gap: 29px;
+//                     grid-column-gap: 35px;
+                    
+//                     .containerGif {
+//                         width: 260px;
+//                         height: 200px;
+//                         margin-right: 21px;
+
+//                         img {
+//                             width: inherit;
+//                             height: inherit;
+//                             margin-right: 0;
+//                         }
+//                     }
+
+//                 }
+
+//                 .card-favoritos {
+//                     grid-template-columns: 260px 260px 260px 260px;
+//                     grid-row-gap: 29px;
+//                     grid-column-gap: 35px;
+
+//                     div {
+//                         width: 260px;
+//                         height: 200px;
+//                         margin-right: 21px; 
+
+//                         img {
+//                             width: inherit;
+//                             height: inherit;
+//                             margin-right: 0;                            
+//                         }
+//                     }
+    
+
+//                 }
+
+//                 .card-Sinfavoritos {                    
+//                     margin-top: 63.3px;
+
+//                     div {
+//                         img {
+//                             width: 150px;
+//                             height: 151px;
+//                         }
+    
+//                         p {                            
+//                             line-height: 33px;
+//                             margin: 0 auto;                            
+//                             margin-top: 23.7px;              
+//                             width: 431px;
+//                             font-size: 22px;
+//                         }
+//                     }
+//                 }
+    
+//                 button {
+//                     margin-top: 78px;
+//                     margin-bottom: 52px;
+//                     cursor: pointer;
+//                 }
+
+//             }
+//         }
+//     }
+// }

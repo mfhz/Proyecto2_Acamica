@@ -414,14 +414,12 @@ body {
 
 
 
-
-
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1200px) {
      body {
 
           header {
                height: 90px;
-               padding: 0 156px;
+               padding: 0 10.8333333%;
 
                .logo {
                     width: 71px;
@@ -460,6 +458,7 @@ body {
                               .hov-list {
                                    margin: 0;
                                    list-style: none;
+                                   cursor: pointer;
 
                                    a {                                        
                                         font-size: 14px;
@@ -682,7 +681,7 @@ body {
                               display: block;     
                               width: 40px;
                               height: 40px;
-                              margin-left: 25px;
+                              margin-left: 22px;
                               cursor: pointer;
                               &:hover {
                                    content: url('../images/button-slider-right-hover.svg');
@@ -690,14 +689,17 @@ body {
                          }
 
                          .box-zoom-img {
-                              width: 1121px;
+                              width: 77.47vw;
                               overflow: hidden;
                               scroll-behavior: smooth;
 
                               .trending {
-                                   width: 357px;
-                                   height: 275px;
+                                   // width: 357px;
+                                   width: 24.79vw;
+                                   // height: 37.67vh;
+                                   height: 19.1vmax;
                                    position: relative;
+                                   margin-right: 1.965%;
 
                                    &:hover {
 
@@ -870,4 +872,7 @@ body {
                }
           }
      }
+}
+
+@media screen and (min-width: 1440px) {
 }

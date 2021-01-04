@@ -10,10 +10,20 @@ const boxtrending = document.querySelector('.box-zoom-img');
 const boxFavoritos = document.querySelector('.card-favoritos');
 const boxGif = document.querySelector('.card-gifos');
 const  span = document.querySelector('#checkbox');
-let x = window.matchMedia("(min-width: 1440px)");
+let x = window.matchMedia("(min-width: 1199px)");
 const api_key = 'aSfyIm4TLkXUqhZxWhGqVaDndjyX8PBd';
 let downloadArrayTrending = [];
 let downloadArraySearch= [];
+
+
+function name(n=20) {
+    if (n == 0) {
+	    return n;
+	} else {
+	    return console.log((n % 10));
+	}
+}
+name();
 
 // Mostrar Trending en pantalla principal
 obtenerTrending();
@@ -316,10 +326,10 @@ function obtenerApi(user) {
                     // console.log('click');
                     // console.log(posicionStart);
                     // console.log(positionEnd);
-                    console.log(totalGifs.length);
+                    // console.log(totalGifs.length);
                     // if (positionEnd + 8 <= totalGifs.length) {
                         if (posicionStart + 8  <= totalGifs.length || positionEnd + 8 <= totalGifs.length) {
-                        console.log('entra');
+                        // console.log('entra');
                         // console.log(posicionStart + 8);
                         console.log(positionEnd + 8);
                         gifParcial = totalGifs.slice(posicionStart + 8, positionEnd + 8 );
@@ -492,7 +502,7 @@ function obtenerApi(user) {
                             leerLocalStorage();
                         });   
                     } else {
-                        console.log(totalGifs);
+                        // console.log(totalGifs);
                     }
 
                 })
@@ -944,21 +954,24 @@ function obtenerLS() {
 
 // Función para descargar GIFS en la seccion de Trending
 function downloadGifTrending(url) {
+    // console.log(url);
     let btnDownload = url.target.parentElement.parentElement.children[0].getAttribute('data-id');
     let btnDownloadM = url.target.parentElement.parentElement.parentElement.parentElement.children[1].children[0];
-    console.log(btnDownloadM);
+    // console.log(btnDownload);
+    // console.log(btnDownloadM);
+    // console.log(downloadArrayTrending);
     downloadArrayTrending.map(async function (download) {
-        // console.log(gif);
+        // console.log(download.id);
         if (download.id === btnDownload) {
             let descargar = await fetch(download.images.downsized.url)
                 .then((success) => {
-                    // console.log(success);
+                    console.log(success);
                     success.blob()
                         .then((data) => {
-                            // console.log(data);
+                            // console.log(URL.createObjectURL(data));
                             let tagDownload = document.createElement("a");
                             tagDownload.href = URL.createObjectURL(data);
-                            tagDownload.download = 'Mi-Gif';
+                            tagDownload.download = download.title;
                             tagDownload.click();
                     });
                 });
@@ -1492,11 +1505,13 @@ const flechaIzquierda = document.querySelector('.left-gifos');
 const flechaDerecha = document.querySelector('.rigth-gifos');
 
 flechaDerecha.addEventListener('click', () => {
-    padreImg.scrollLeft += padreImg.offsetWidth = 379;
+    console.log(padreImg.scrollLeft);
+    console.log(padreImg.offsetWidth);
+    padreImg.scrollLeft += padreImg.offsetWidth = padreImg.offsetWidth + 20;
 })
 
 flechaIzquierda.addEventListener('click', () => {
-    padreImg.scrollLeft -= padreImg.offsetWidth = 379;
+    padreImg.scrollLeft -= padreImg.offsetWidth = padreImg.offsetWidth + 20;
 })
 
 
