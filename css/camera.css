@@ -1,34 +1,39 @@
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1200px) {
   body .camera {
     display: flex;
     flex-direction: column;
-    padding-left: 156px;
-    padding-right: 167px; }
+    padding-left: 10.83%;
+    padding-right: 11.61%; }
     body .camera .container-camera {
       display: flex; }
       body .camera .container-camera .box-camera {
         display: flex;
         align-items: center;
         width: 90%;
-        margin-left: 22px; }
-        body .camera .container-camera .box-camera .img-camera svg {
-          position: relative;
-          top: -15px; }
+        margin-left: 1.97%; }
+        body .camera .container-camera .box-camera .img-camera {
+          display: flex; }
+          body .camera .container-camera .box-camera .img-camera img {
+            width: 8.541vw; }
+          body .camera .container-camera .box-camera .img-camera svg {
+            margin: auto;
+            margin-left: .555vw;
+            width: 5.277vw; }
         body .camera .container-camera .box-camera .container-photo {
           display: flex;
           flex-direction: column; }
           body .camera .container-camera .box-camera .container-photo .box-photo {
-            width: 688px;
-            height: 390px;
+            width: 47.777vw;
+            height: 27.09vmax;
             position: relative;
             border: 1px solid #572EE5;
-            padding: 0 69px;
+            padding: 0 4.791vw;
             text-align: center; }
             body .camera .container-camera .box-camera .container-photo .box-photo h2 {
               color: #572EE5;
               font-size: 25px;
               line-height: 35px;
-              margin-top: 134px;
+              margin-top: 9.31vmax;
               margin-bottom: 3px; }
               body .camera .container-camera .box-camera .container-photo .box-photo h2 span {
                 color: #50E3C2; }
@@ -63,13 +68,13 @@
             display: flex;
             justify-content: center;
             height: 57px;
-            margin-top: 24px; }
+            margin-top: 1.665vmax; }
             body .camera .container-camera .box-camera .container-photo .box-items .items {
               width: 32px;
               height: 32px;
               border: 1px solid #572EE5;
               border-radius: 50%;
-              margin-right: 26px; }
+              margin-right: 1.805vw; }
               body .camera .container-camera .box-camera .container-photo .box-items .items p {
                 color: #572EE5;
                 height: inherit;
@@ -98,12 +103,14 @@
             font-weight: bold;
             cursor: pointer; }
       body .camera .container-camera .box-tape {
-        height: 88px;
+        height: 6.112vmax;
         align-self: flex-end; }
+        body .camera .container-camera .box-tape img {
+          width: 9.861vw; }
     body .camera .container-interaction {
       text-align: center; }
       body .camera .container-interaction .line-interaction {
-        width: 795.9px;
+        width: 55.270vw;
         border: 2.9px solid #572EE5;
         border-radius: 7px;
         margin: 0 auto;

@@ -301,10 +301,10 @@ body {
       font-size: 14px;
       font-family: 'Roboto'; }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1200px) {
   body header {
     height: 90px;
-    padding: 0 156px; }
+    padding: 0 10.8333333%; }
     body header .logo {
       width: 71px;
       height: 59.1px; }
@@ -334,7 +334,8 @@ body {
       background: none; }
       body header nav .menu ul .hov-list {
         margin: 0;
-        list-style: none; }
+        list-style: none;
+        cursor: pointer; }
         body header nav .menu ul .hov-list a {
           font-size: 14px;
           color: #572EE5;
@@ -455,18 +456,19 @@ body {
           display: block;
           width: 40px;
           height: 40px;
-          margin-left: 25px;
+          margin-left: 22px;
           cursor: pointer; }
           body main .gifos .list-gifos .rigth-gifos:hover {
             content: url("../images/button-slider-right-hover.svg"); }
         body main .gifos .list-gifos .box-zoom-img {
-          width: 1121px;
+          width: 77.47vw;
           overflow: hidden;
           scroll-behavior: smooth; }
           body main .gifos .list-gifos .box-zoom-img .trending {
-            width: 357px;
-            height: 275px;
-            position: relative; }
+            width: 24.79vw;
+            height: 19.1vmax;
+            position: relative;
+            margin-right: 1.965%; }
             body main .gifos .list-gifos .box-zoom-img .trending:hover .hover {
               width: inherit;
               height: inherit;

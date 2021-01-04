@@ -69,9 +69,9 @@ body main .my-gifos {
   body main .my-gifos .error {
     display: none; }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1200px) {
   body main .my-gifos {
-    padding: 0 156px; }
+    padding: 0 10.83%; }
     body main .my-gifos .icon-gifos {
       width: 24px;
       height: 21.9px;
@@ -81,24 +81,25 @@ body main .my-gifos {
       line-height: 30px;
       margin-bottom: 36px; }
     body main .my-gifos .card-gifos {
-      grid-template-columns: 260px 260px 260px 260px;
+      grid-template-columns: 23% 23% 23% 23%;
       grid-row-gap: 29px;
-      grid-column-gap: 35px; }
+      justify-content: center; }
       body main .my-gifos .card-gifos .containerGif {
-        width: 260px;
-        height: 200px;
+        width: inherit;
+        height: 13.9vmax;
         margin-right: 21px; }
         body main .my-gifos .card-gifos .containerGif img {
           width: inherit;
           height: inherit;
           margin-right: 0; }
     body main .my-gifos .card-favoritos {
-      grid-template-columns: 260px 260px 260px 260px;
+      grid-template-columns: 23% 23% 23% 23%;
       grid-row-gap: 29px;
-      grid-column-gap: 35px; }
+      grid-column-gap: 35px;
+      justify-content: center; }
       body main .my-gifos .card-favoritos div {
-        width: 260px;
-        height: 200px;
+        width: inherit;
+        height: 13.9vmax;
         margin-right: 21px; }
         body main .my-gifos .card-favoritos div img {
           width: inherit;
